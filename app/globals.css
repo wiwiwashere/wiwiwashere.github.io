@@ -113,13 +113,46 @@ button { font: inherit; }
   text-transform: uppercase;
 }
 
+/* disable resume embeed on mobile */
+@media (max-width: 768px) {
+  .resume-viewer {
+    display: none;
+  }
+}
+
+/* disable butterfly background on mobile
+@media (max-width: 768px) {
+  .global-butterfly {
+    display: none;
+  }
+} */
+
+/* disable 3d animation on mobile*/
+@media (max-width: 768px) {
+  .butterfly-cloud,
+  .butterfly-particle,
+  /* .butterfly-star,
+  .butterfly-meteor, */
+  .butterfly-trail {
+    animation: none !important;
+  }
+}
+
+/* disable blur effect on mobile*/
+@media (max-width: 768px) {
+  .site-poster-header,
+  .glass-panel,
+  .scrapbook-card,
+  .archive-hero {
+    backdrop-filter: none !important;
+    filter: none !important;
+  }
+}
+
+/* disable 3d annimation on mobile*/
 @media (max-width: 768px) {
   .butterfly-cloud {
-    right: -9rem;
-    top: 10rem;
-    width: 520px;
-    height: 520px;
-    opacity: 0.65;
+    display: none;
   }
 }
 .collection-cover::before,

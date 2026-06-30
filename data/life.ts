@@ -12,7 +12,7 @@ export const lifeEntries: LifeEntry[] = [
   {
     id: "museum-note",
     title: "Museum afternoon",
-    date: "May 2026",
+    date: "June 2026",
     category: "Gallery",
     imageUrl: "/life/met.jpg",
     thought: "I like places where everything slows down for a second. The museum is one of those places.",
@@ -21,7 +21,7 @@ export const lifeEntries: LifeEntry[] = [
   {
     id: "bun_cat",
     title: "She's a little softie",
-    date: "May 2026",
+    date: "June 2026",
     category: "Animals",
     imageUrl: "/life/bun_cafe.jpg",
     thought: "Doesn't she looks like a screaming bun. Sooo cute ~~",
@@ -30,7 +30,7 @@ export const lifeEntries: LifeEntry[] = [
   {
     id: "louse_kill_me",
     title: "She looks annoyed but she loves me (I think)",
-    date: "May 2026",
+    date: "June 2026",
     category: "Animals",
     imageUrl: "/life/louise_kill_me.jpg",
     thought: "She loves me right? I think she does. I hope she does...",
@@ -137,7 +137,7 @@ export const lifeEntries: LifeEntry[] = [
   },
   {
     id: "mellon_me",
-    title: "Mellon me",
+    title: "Melon me",
     date: "2008?",
     category: "Memory",
     imageUrl: "/life/mellon_me.jpg",

@@ -1220,8 +1220,8 @@ body:has(.home-reference-page) .global-butterfly .butterfly-cloud {
   top: clamp(2.8rem, 8vh, 6rem);
   width: min(47vw, 760px);
   height: min(47vw, 760px);
-  opacity: 0.56;
-  filter: grayscale(0.2) sepia(0.08) hue-rotate(166deg) saturate(1.15) drop-shadow(0 16px 30px rgba(47, 68, 90, 0.12));
+  opacity: 0.92;
+  filter: saturate(1.15) sepia(0.1) drop-shadow(0 16px 30px rgba(47, 68, 90, 0.12));
 }
 
 body:has(.home-reference-page) .global-butterfly .butterfly-particle::before {
@@ -1893,7 +1893,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
     top: 8rem;
     width: 42rem;
     height: 42rem;
-    opacity: 0.28;
+    opacity: 0.28
   }
 }
 

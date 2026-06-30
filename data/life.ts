@@ -127,7 +127,7 @@ export const lifeEntries: LifeEntry[] = [
     tags: ["cat"]
   }, 
   {
-    id: "mellon_me",
+    id: "little_me",
     title: "little me",
     date: "idk",
     category: "Memory",
@@ -136,7 +136,7 @@ export const lifeEntries: LifeEntry[] = [
     tags: ["memory", "family"]
   },
   {
-    id: "mellon_me",
+    id: "melon_me",
     title: "Melon me",
     date: "2008?",
     category: "Memory",

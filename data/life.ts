@@ -109,6 +109,15 @@ export const lifeEntries: LifeEntry[] = [
     tags: ["career", "gratitude"]
   }, 
   {
+    id: "universal_studio_cousin",
+    title: "Universal Studio with cousin",
+    date: "July 2025",
+    category: "People",
+    imageUrl: "/life/universal_w_cousin.jpg",
+    thought: "I need someone who can go on thrill rides with me :<",
+    tags: ["memory"]
+  }, 
+  {
     id: "kitten_louise",
     title: "My little Louise",
     date: "May 2025",

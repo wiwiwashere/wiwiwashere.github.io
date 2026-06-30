@@ -2401,3 +2401,58 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
     flex-direction: column;
   }
 }
+
+/* Final Home card alignment override */
+.home-archive-layout {
+  align-items: stretch !important;
+}
+
+.home-project-panel,
+.home-music-panel,
+.home-life-panel {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0;
+}
+
+.home-project-grid {
+  flex: 1 1 auto !important;
+  height: auto !important;
+  display: grid !important;
+  align-items: stretch !important;
+}
+
+.home-project-card,
+.home-music-card,
+.home-life-card {
+  box-sizing: border-box;
+  height: 38rem !important;
+  min-height: 38rem !important;
+  max-height: none !important;
+}
+
+.home-music-card,
+.home-life-card {
+  width: 100%;
+  max-width: none !important;
+}
+
+.home-project-card {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.home-card-link {
+  margin-top: auto !important;
+  padding-top: 1rem;
+}
+
+@media (max-width: 1180px) {
+  .home-project-card,
+  .home-music-card,
+  .home-life-card {
+    height: auto !important;
+    min-height: 34rem !important;
+    max-height: none !important;
+  }
+}

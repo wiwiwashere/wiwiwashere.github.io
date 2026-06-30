@@ -21,6 +21,21 @@ export default function LifePage() {
         </div>
       </section>
 
+      <section className="archive-section diary-archive-section">
+        <div className="archive-section-heading">
+          <span>*</span>
+          <h2>yap</h2>
+        </div>
+        <div className="diary-fragment-grid">
+          {diaryNotes.map((note, index) => (
+            <article key={note} className="diary-fragment-card">
+              <p className="archive-kicker">note {String(index + 1).padStart(2, "0")}</p>
+              <p>{note}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="archive-section">
         <div className="archive-section-heading">
           <span>*</span>
@@ -41,21 +56,6 @@ export default function LifePage() {
                   {entry.tags.map((tag) => <span key={tag}>{tag}</span>)}
                 </div>
               </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="archive-section diary-archive-section">
-        <div className="archive-section-heading">
-          <span>*</span>
-          <h2>yap fragments</h2>
-        </div>
-        <div className="diary-fragment-grid">
-          {diaryNotes.map((note, index) => (
-            <article key={note} className="diary-fragment-card">
-              <p className="archive-kicker">note {String(index + 1).padStart(2, "0")}</p>
-              <p>{note}</p>
             </article>
           ))}
         </div>

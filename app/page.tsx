@@ -2,7 +2,6 @@ import Link from "next/link";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { homeProjectHighlights, musicPicks } from "@/data/home";
 import { projects } from "@/data/projects";
-import { Navbar } from "@/components/layout/Navbar";
 
 const featuredProjects = homeProjectHighlights
   .map((slug) => projects.find((project) => project.slug === slug))

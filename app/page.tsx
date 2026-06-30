@@ -1,0 +1,140 @@
+import Link from "next/link";
+import { PageContainer } from "@/components/layout/PageContainer";
+import { homeProjectHighlights, musicPicks } from "@/data/home";
+import { projects } from "@/data/projects";
+import { Navbar } from "@/components/layout/Navbar";
+
+const featuredProjects = homeProjectHighlights
+  .map((slug) => projects.find((project) => project.slug === slug))
+  .filter(Boolean);
+
+const cardVisuals = ["void bloom", "delicate bloom", "focus bloom"];
+const currentSong = musicPicks[0];
+
+export default function HomePage() {
+  return (
+    <PageContainer className="home-reference-page">
+      <section className="home-poster">
+        {/* <nav className="home-poster-nav" aria-label="Home navigation">
+          <Link className="home-wordmark" href="/">Winnie Lin</Link>
+          <div className="home-nav-center">
+            <Link href="/projects">all projects</Link>
+            <Link href="/life">life archive</Link>
+            <Link href="/contact">contact</Link>
+          </div>
+          <div className="home-nav-right">
+            <Link href="/about">about</Link>
+            <span aria-hidden="true">*</span>
+            <Link href="/resume">resume</Link>
+          </div>
+        </nav> */}
+
+        <section className="home-hero" aria-labelledby="home-title">
+          <div className="home-botanical home-botanical-left" aria-hidden="true" />
+          <div className="home-botanical home-botanical-right" aria-hidden="true" />
+
+          <div className="home-hero-copy">
+            <h1 id="home-title" className="home-title">Winnie Lin</h1>
+            <p className="home-script">software / ai</p>
+            <p className="home-intro">
+              I build thoughtful software, explore AI,
+              <br />
+              and collect ideas that shape how
+              <br />
+              I see the world.
+            </p>
+            <div className="home-rule" aria-hidden="true">
+              <span />
+              <b>*</b>
+              <span />
+            </div>
+          </div>
+        </section>
+
+        <section className="home-archive-layout">
+          <div id="project-highlights" className="home-project-panel">
+            <div className="home-section-topline">
+              <SectionHeading>project highlights</SectionHeading>
+              <Link href="/projects" className="home-section-action">all projects -&gt;</Link>
+            </div>
+            <div className="home-project-grid">
+              {featuredProjects.slice(0, 3).map((project, index) => project ? (
+                <Link key={project.id} href={`/projects/${project.slug}`} className="home-project-card">
+                  <div className={`home-card-art home-card-art-${index + 1}`}>
+                    <span>{cardVisuals[index]}</span>
+                  </div>
+                  <h2>{index === 0 ? "void bloom" : index === 1 ? "delicate, but intentional" : "focus, faith, hope"}</h2>
+                  <p className="home-card-subtitle">{project.subtitle}</p>
+                  <p>{project.description}</p>
+                  <span className="home-card-link">view project -&gt;</span>
+                </Link>
+              ) : null)}
+            </div>
+          </div>
+
+          <aside id="music-notes" className="home-music-panel">
+            <SectionHeading>music notes</SectionHeading>
+            <article className="home-music-card">
+              <div className="home-album-art" aria-hidden="true" />
+              <div className="home-song-meta">
+                <div>
+                  <h2>finding hope</h2>
+                  <p>a late night reset.</p>
+                </div>
+                <span>3:21</span>
+              </div>
+              <div className="home-player-line" aria-hidden="true">
+                <span />
+              </div>
+              <div className="home-player-controls" aria-hidden="true">
+                <span>&lt;</span>
+                <b>&gt;</b>
+                <span>&gt;</span>
+              </div>
+              <p className="home-playlist-note">saved on your playlist</p>
+              <a href={currentSong.embedUrl.replace("/embed/track/", "/track/").split("?")[0]} target="_blank" rel="noreferrer" className="home-card-link">
+                open song -&gt;
+              </a>
+            </article>
+          </aside>
+
+          <aside id="outside-tech" className="home-life-panel">
+            <div className="home-section-topline">
+              <SectionHeading>life fragment</SectionHeading>
+              <Link href="/life" className="home-section-action">all life -&gt;</Link>
+            </div>
+            <Link href="/life" className="home-life-card">
+              <div className="home-life-collage" aria-hidden="true">
+                <span className="home-life-paper home-life-paper-pink" />
+                <span className="home-life-photo" />
+                <span className="home-life-paper home-life-paper-blue" />
+                <span className="home-life-label">archive<br />no. 2026</span>
+              </div>
+              <p>
+                moments, places, books, and little things
+                <br />
+                that keep life feeling full.
+              </p>
+              <span className="home-card-link">explore more -&gt;</span>
+            </Link>
+          </aside>
+        </section>
+
+        <footer className="home-poster-footer">
+          <span>*</span>
+          <p>(c) 2026 Winnie Lin</p>
+          <p>building soft things with strong intention.</p>
+        </footer>
+      </section>
+    </PageContainer>
+  );
+}
+
+function SectionHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="home-section-heading">
+      <span aria-hidden="true">*</span>
+      <h2>{children}</h2>
+    </div>
+  );
+}

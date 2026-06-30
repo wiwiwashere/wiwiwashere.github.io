@@ -138,17 +138,6 @@ button { font: inherit; }
   }
 }
 
-/* disable blur effect on mobile */
-/* @media (max-width: 768px) {
-  .site-poster-header,
-  .glass-panel,
-  .scrapbook-card,
-  .archive-hero {
-    backdrop-filter: none !important;
-    filter: none !important;
-  }
-} */
-
 /* disable 3d annimation on mobile*/
 @media (max-width: 768px) {
   .butterfly-cloud {
@@ -2669,5 +2658,47 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   .skills-archive-grid,
   .archive-poster-footer {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Shared mobile navbar: keep this at the end so every page uses the same menu. */
+@media (max-width: 900px) {
+  .site-poster-header {
+    background: #f9f3e9;
+    backdrop-filter: none;
+  }
+
+  .site-poster-nav {
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    gap: 1rem !important;
+  }
+
+  .site-poster-nav .desktop-nav-links {
+    display: none !important;
+  }
+
+  .site-poster-nav .mobile-menu-button {
+    display: inline-flex !important;
+    justify-self: end;
+    min-height: 2rem;
+    align-items: center;
+  }
+
+  .site-poster-nav .mobile-nav-list {
+    display: none !important;
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr;
+    width: 100%;
+    border-top: 1px solid rgba(30, 43, 69, 0.18);
+    padding-top: 1rem;
+  }
+
+  .site-poster-nav .mobile-nav-list.is-open {
+    display: grid !important;
+  }
+
+  .site-poster-nav .mobile-nav-list a {
+    display: block;
+    padding: 0.65rem 0;
   }
 }

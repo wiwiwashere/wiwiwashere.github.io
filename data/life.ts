@@ -37,12 +37,30 @@ export const lifeEntries: LifeEntry[] = [
     tags: ["cat"]
   },
   {
+    id: "starry_night_cali",
+    title: "Starry Night at Cali",
+    date: "May 2026",
+    category: "Gallery",
+    imageUrl: "/life/stars.jpg",
+    thought: "I love stars.",
+    tags: ["star", "travel"]
+  },
+  {
+    id: "griffin",
+    title: "Griffin Observatory",
+    date: "May 2026",
+    category: "Gallery",
+    imageUrl: "/life/griffin.jpg",
+    thought: "I love the night sky.",
+    tags: ["star", "travel"]
+  },
+  {
     id: "erha",
     title: "Erha likes me",
     date: "Apr 2026",
     category: "Animals",
     imageUrl: "/life/erha_likes_me.jpg",
-    thought: "I collect little visual references: labels, colors, receipts, notes. They usually become moodboards before I realize they are moodboards.",
+    thought: "Aww he let me pet him.",
     tags: ["dog", "travel"]
   },
   {
@@ -64,6 +82,15 @@ export const lifeEntries: LifeEntry[] = [
     tags: ["friend", "life", "gratitude"]
   },
   {
+    id: "louise_laying_on_bed",
+    title: "Aww",
+    date: "Jan 2026",
+    category: "Animals",
+    imageUrl: "/life/louise_chiling.jpg",
+    thought: "She grown up so fast.",
+    tags: ["cat"]
+  },
+  {
     id: "friend-memory",
     title: "A soft memory",
     date: "Nov 2025",
@@ -82,23 +109,23 @@ export const lifeEntries: LifeEntry[] = [
     tags: ["career", "gratitude"]
   }, 
   {
-    id: "louise_laying_on_bed",
-    title: "Aww",
-    date: "May 2026",
-    category: "Animals",
-    imageUrl: "/life/louise_chiling.jpg",
-    thought: "She grown up so fast.",
-    tags: ["cat"]
-  },
-  {
     id: "kitten_louise",
     title: "My little Louise",
-    date: "May 2026",
+    date: "May 2025",
     category: "Animals",
-    imageUrl: "/life/louise_chiling.jpg",
+    imageUrl: "/life/kitten_louise.jpg",
     thought: "Introducing my cat: Louise.",
     tags: ["cat"]
   }, 
+  {
+    id: "mellon_me",
+    title: "little me",
+    date: "idk",
+    category: "Memory",
+    imageUrl: "/life/childhood.jpg",
+    thought: "Child pic with my favorite cousin :3",
+    tags: ["memory", "family"]
+  },
   {
     id: "mellon_me",
     title: "Mellon me",

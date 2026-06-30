@@ -16,11 +16,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <div className="global-butterfly" aria-hidden="true">
           <ButterflyParticles />
         </div>
-
         <Navbar />
-
         <main className="relative z-10 pt-24">{children}</main>
-        
       </body>
     </html>
   );

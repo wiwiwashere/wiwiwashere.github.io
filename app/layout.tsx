@@ -20,8 +20,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Navbar />
 
         <main className="relative z-10 pt-24">{children}</main>
-
-        {/* <Footer /> */}
+        
       </body>
     </html>
   );

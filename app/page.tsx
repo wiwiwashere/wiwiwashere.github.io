@@ -39,9 +39,7 @@ export default function HomePage() {
             <p className="home-intro">
               I build thoughtful software, explore AI,
               <br />
-              and collect ideas that shape how
-              <br />
-              I see the world.
+              and collect ideas that shape how I see the world.
             </p>
             <div className="home-rule" aria-hidden="true">
               <span />

@@ -14,8 +14,12 @@ export default function ContactPage() {
       <section className="archive-hero archive-hero-contact">
         <div>
           <p className="archive-kicker">contact</p>
-          <h1>Let&apos;s connect, collaborate, and trade ideas</h1>
+          <h1>Let&apos;s connect</h1>
           <p>
+            I&apos;m someone who values connections with genuine people, 
+            and I&apos;m always excited to meet people who inspire me to see the world a little differently.
+            <br />
+            <br />
             Preferred: LinkedIn. Emails are also welcome, but please allow a few days for a response.
           </p>
         </div>

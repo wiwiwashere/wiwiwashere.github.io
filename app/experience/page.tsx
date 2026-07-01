@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { experienceItems } from "@/data/experience";
+import { skills } from "@/data/contact";
 
 const typeLabels = {
   technical: "technical",
@@ -14,16 +15,33 @@ export default function ExperiencePage() {
       <section className="archive-hero archive-hero-blue">
         <div>
           <p className="archive-kicker">growth</p>
-          <h1>Technical work, leadership, and programs</h1>
+          <h1>Experience</h1>
           <p>
-            A growth map for experience: technical roots, community branches, and
-            program notes that changed how I think about building.
+            A growth map that collects my work, leadership, and other technical experiences.
           </p>
         </div>
         <div className="archive-side-note">
           <span>entries</span>
           <strong>{experienceItems.length.toString().padStart(2, "0")}</strong>
           <Link href="/">back home -&gt;</Link>
+        </div>
+      </section>
+
+      <section className="archive-section">
+        <div className="archive-section-heading">
+          <span>*</span>
+          <h2>technical shelf</h2>
+        </div>
+        <div className="skills-archive-grid">
+          {skills.map((group, index) => (
+            <article key={group.category} className="skills-archive-card">
+              <p className="archive-kicker">{String(index + 1).padStart(2, "0")} / stack</p>
+              <h2>{group.category}</h2>
+              <div>
+                {group.items.map((item) => <span key={item}>{item}</span>)}
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 

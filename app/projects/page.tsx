@@ -8,8 +8,8 @@ export default function ProjectsPage() {
     <PageContainer className="archive-page py-12">
       <section className="archive-hero archive-hero-blue">
         <div>
-          <p className="archive-kicker">all projects</p>
-          <h1>Software, AI, and Data</h1>
+          <p className="archive-kicker">all</p>
+          <h1>Projects</h1>
           <p>
             The Home page only holds a few selected pieces. This is the full project shelf.
           </p>

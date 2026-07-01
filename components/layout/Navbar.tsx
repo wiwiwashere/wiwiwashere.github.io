@@ -7,8 +7,8 @@ const navItems = [
   { href: "/projects", label: "projects" },
   { href: "/experience", label: "growth" },
   { href: "/life", label: "life" },
+  { href: "/footprints", label: "footprints" },
   { href: "/contact", label: "contact" },
-  { href: "/about", label: "about" },
   { href: "/resume", label: "resume" }
 ];
 
@@ -18,7 +18,7 @@ export function Navbar() {
   return (
     <header className="site-poster-header fixed inset-x-0 top-0 z-50">
       <nav className="site-poster-nav" aria-label="Primary navigation">
-        <Link className="home-wordmark" href="/" onClick={() => setIsOpen(false)}>Winnie Lin</Link>
+        <Link className="home-wordmark" href="/" onClick={() => setIsOpen(false)}>WL</Link>
 
         <button
           type="button"
@@ -37,7 +37,7 @@ export function Navbar() {
         </div>
 
         <div className="home-nav-right desktop-nav-links">
-          <Link href="/about">about</Link>
+          <Link href="/contact">contact</Link>
           <span aria-hidden="true">*</span>
           <Link href="/resume">resume</Link>
         </div>

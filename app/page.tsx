@@ -14,20 +14,6 @@ export default function HomePage() {
   return (
     <PageContainer className="home-reference-page">
       <section className="home-poster">
-        {/* <nav className="home-poster-nav" aria-label="Home navigation">
-          <Link className="home-wordmark" href="/">Winnie Lin</Link>
-          <div className="home-nav-center">
-            <Link href="/projects">all projects</Link>
-            <Link href="/life">life archive</Link>
-            <Link href="/contact">contact</Link>
-          </div>
-          <div className="home-nav-right">
-            <Link href="/about">about</Link>
-            <span aria-hidden="true">*</span>
-            <Link href="/resume">resume</Link>
-          </div>
-        </nav> */}
-
         <section className="home-hero" aria-labelledby="home-title">
           <div className="home-botanical home-botanical-left" aria-hidden="true" />
           <div className="home-botanical home-botanical-right" aria-hidden="true" />
@@ -36,9 +22,9 @@ export default function HomePage() {
             <h1 id="home-title" className="home-title">Winnie Lin</h1>
             <p className="home-script">software / ai</p>
             <p className="home-intro">
-              I build thoughtful software, explore AI,
-              <br />
-              and collect ideas that shape how I see the world.
+              Hi, I&apos;m Winnie Lin! I&apos;m currently a student at the University of Florida, trying to figure out what kind of impact I want to make.
+              Outside of school, I enjoy spending time with friends and family, 
+              trying new things, and finding ideas that shape how I see the world.
             </p>
             <div className="home-rule" aria-hidden="true">
               <span />

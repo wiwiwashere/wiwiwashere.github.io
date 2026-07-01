@@ -5,7 +5,7 @@
 /* ==========================================================================
    Global stylesheet map
 
-   The order matters: later sections intentionally refine earlier experiments.
+   The order: later sections intentionally refine earlier experiments.
    Keep new page-specific styles near the matching section below.
 
    01. Theme tokens and base document styles
@@ -43,7 +43,7 @@ body {
   color: var(--ink);
   background:
     radial-gradient(circle at 82% 12%, rgba(245, 169, 199, 0.2), transparent 28rem),
-    radial-gradient(circle at 12% 72%, rgba(255, 232, 240, 0.72), transparent 24rem),
+    radial-gradient(circle at 12% 72%, rgba(255, 232, 240, 0.815), transparent 24rem),
     linear-gradient(180deg, #fffafc 0%, #ffffff 46%, #fff7fa 100%);
   font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   letter-spacing: 0;
@@ -302,6 +302,7 @@ button { font: inherit; }
 
 .life-card img {
   aspect-ratio: 4 / 5;
+  /* polaroid ratio*/
 }
 
 @media (min-width: 1024px) {
@@ -623,6 +624,25 @@ body {
     linear-gradient(180deg, #fffdfb 0%, #fffafc 45%, #fff8fb 100%);
 }
 
+body {
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 86% 24%, rgba(200, 217, 230, 0.42), transparent 24rem),
+    radial-gradient(circle at 92% 58%, rgba(255, 225, 230, 0.52), transparent 18rem),
+    linear-gradient(180deg, #f9f3e9 0%, #fbf5eb 100%);
+}
+
+.site-bg {
+  background:
+    radial-gradient(circle at 8% 38%, rgba(103, 135, 162, 0.22), transparent 13rem),
+    radial-gradient(circle at 89% 43%, rgba(184, 95, 124, 0.14), transparent 15rem),
+    linear-gradient(180deg, rgba(250, 244, 235, 0.84), rgba(250, 244, 235, 0.72));
+}
+
+.site-bg::before {
+  opacity: 0.62;
+}
+/* 
 .site-bg {
   z-index: -2;
   background:
@@ -648,7 +668,7 @@ body {
   mask-image: none;
   opacity: 0.48;
   filter: contrast(1.08);
-}
+} */
 
 .site-bg::after {
   content: "";
@@ -1217,7 +1237,7 @@ body:has(.home-reference-page) > footer {
 body:has(.home-reference-page) main {
   padding-top: 0;
 }
-
+/* 
 body:has(.home-reference-page) {
   overflow-x: hidden;
   background:
@@ -1235,7 +1255,7 @@ body:has(.home-reference-page) .site-bg {
 
 body:has(.home-reference-page) .site-bg::before {
   opacity: 0.62;
-}
+} */
 
 body:has(.home-reference-page) .global-butterfly .butterfly-cloud {
   right: clamp(4rem, 8vw, 12rem);
@@ -2114,6 +2134,22 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   color: #f9f3e9;
 }
 
+.archive-hero,
+.project-archive-card,
+.life-archive-card,
+.contact-archive-card,
+.experience-archive-card-inner,
+.about-archive-card,
+.skills-archive-card,
+.footprint-constellation,
+.footprint-board,
+.footprint-form,
+.footprint-note {
+  background:
+    linear-gradient(135deg, rgba(249, 243, 233, 0.72), rgba(255, 225, 230, 0.16), rgba(200, 217, 230, 0.12)),
+    rgba(249, 243, 233, 0.358);
+}
+
 .project-archive-card,
 .life-archive-card,
 .diary-fragment-card,
@@ -2179,6 +2215,179 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
     rgba(255, 225, 230, 0.52);
 }
 
+.project-detail-page {
+  position: relative;
+}
+
+.project-detail-hero,
+.project-detail-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(30, 43, 69, 0.22);
+  background:
+    linear-gradient(135deg, rgba(249, 243, 233, 0.78), rgba(255, 225, 230, 0.16), rgba(200, 217, 230, 0.14)),
+    rgba(249, 243, 233, 0.54);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.26);
+}
+
+.project-detail-hero {
+  padding: clamp(2.4rem, 6vw, 5rem);
+}
+
+.project-detail-card {
+  padding: clamp(1.35rem, 3vw, 2rem);
+}
+
+.project-detail-hero::before,
+.project-detail-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle, rgba(47, 68, 90, 0.12) 0.3px, transparent 0.75px),
+    repeating-linear-gradient(90deg, rgba(47, 68, 90, 0.022) 0 1px, transparent 1px 9px);
+  background-size: 8px 8px, 100% 100%;
+  opacity: 0.3;
+}
+
+.project-detail-hero::after,
+.project-detail-card::after {
+  content: "";
+  position: absolute;
+  right: -4rem;
+  bottom: -4rem;
+  width: clamp(12rem, 24vw, 22rem);
+  aspect-ratio: 1;
+  pointer-events: none;
+  background:
+    repeating-radial-gradient(circle at center, rgba(47, 68, 90, 0.14) 0 1px, transparent 1px 7px),
+    radial-gradient(circle at 55% 46%, rgba(200, 217, 230, 0.28), transparent 58%);
+  opacity: 0.42;
+}
+
+.project-detail-hero > *,
+.project-detail-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.project-detail-kicker,
+.project-detail-number,
+.project-detail-split h3 {
+  color: #1e2b45;
+  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.project-detail-hero h1 {
+  margin-top: clamp(2.2rem, 5vw, 4rem);
+  color: #1e2b45;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(4rem, 10vw, 8.5rem);
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.project-detail-subtitle {
+  margin-top: 1.4rem;
+  max-width: 48rem;
+  color: rgba(30, 43, 69, 0.72);
+  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+.project-detail-description {
+  margin-top: 1.8rem;
+  max-width: 58rem;
+  color: rgba(30, 43, 69, 0.78);
+  font-size: 0.98rem;
+  letter-spacing: 0;
+  line-height: 1.8;
+}
+
+.project-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2.2rem;
+}
+
+.project-detail-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1.5rem;
+}
+
+.project-detail-wide {
+  grid-column: 1 / -1;
+}
+
+.project-detail-card h2 {
+  margin: 1.8rem 0 0.7rem;
+  color: #1e2b45;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.project-detail-body,
+.project-detail-body p,
+.project-detail-body li,
+.project-detail-split li {
+  color: rgba(30, 43, 69, 0.78);
+  font-size: 0.88rem;
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+
+.project-detail-split {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1.4rem;
+}
+
+.project-detail-split ul {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.project-detail-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.project-detail-tech-list span {
+  border: 1px solid rgba(30, 43, 69, 0.18);
+  background: rgba(249, 243, 233, 0.62);
+  padding: 0.28rem 0.7rem;
+  color: #1e2b45;
+  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 900px) {
+  .project-detail-grid,
+  .project-detail-split {
+    grid-template-columns: 1fr;
+  }
+}
+
 .project-archive-tag {
   border: 1px solid rgba(30, 43, 69, 0.18);
   background: rgba(249, 243, 233, 0.62);
@@ -2196,7 +2405,8 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 }
 
 .life-archive-card {
-  padding: 1rem;
+  padding: 1.2rem;
+  /* border: 1px solid rgba(30, 43, 69, 0.22); */
 }
 
 .life-archive-card-large {
@@ -2207,6 +2417,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 .life-archive-image {
   overflow: hidden;
   border: 1px solid rgba(30, 43, 69, 0.16);
+  border-radius: 0.2rem;
   background: rgba(249, 243, 233, 0.72);
 }
 
@@ -2215,7 +2426,6 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   width: 100%;
   min-height: 16rem;
   object-fit: cover;
-  filter: saturate(0.82) contrast(0.95);
 }
 
 .life-archive-card-large .life-archive-image img {
@@ -2240,9 +2450,9 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 .diary-fragment-card p,
 .contact-archive-card p {
   color: rgba(30, 43, 69, 0.78);
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  line-height: 1.8;
+  font-size: 0.88rem;
+  /* letter-spacing: 0.06em; */
+  line-height: 1.6;
 }
 
 .life-archive-date {
@@ -2263,7 +2473,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   background: rgba(249, 243, 233, 0.6);
   padding: 0.22rem 0.55rem;
   color: rgba(30, 43, 69, 0.7);
-  font-size: 0.65rem;
+  font-size: 0.78rem;
 }
 
 .diary-fragment-grid,
@@ -2691,6 +2901,45 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   }
 }
 
+/* Card typography alignment: match life archive card scale. */
+.project-archive-card h2,
+.experience-archive-card h2,
+.about-archive-card h2,
+.skills-archive-card h2,
+.diary-fragment-card h2,
+.contact-archive-card h2,
+.footprint-preview h2 {
+  margin: 0.8rem 0 0.2rem;
+  color: #1e2b45;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.project-archive-card p,
+.experience-archive-card p,
+.experience-archive-card li,
+.about-archive-card p,
+.about-archive-card li,
+.skills-archive-card p,
+.diary-fragment-card p,
+.contact-archive-card p,
+.footprint-preview p,
+.footprint-note p {
+  color: rgba(30, 43, 69, 0.78);
+  font-size: 0.88rem;
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+
+.project-archive-tag,
+.experience-skill-row span,
+.skills-archive-card div span,
+.life-archive-copy div span {
+  font-size: 0.78rem;
+}
+
 /* ==========================================================================
    09. Final responsive/navbar overrides
    ========================================================================== */
@@ -3098,4 +3347,111 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   .footprint-notes {
     grid-template-columns: 1fr;
   }
+}
+
+/* Final footprint card type alignment with life archive cards. */
+.footprint-preview p,
+.footprint-note p {
+  color: rgba(30, 43, 69, 0.78);
+  font-size: 0.88rem;
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+
+/* Final card overlay only: use uploaded assets without changing card formats. */
+/* .project-archive-card::before, */
+/* .life-archive-card::before, */
+.contact-archive-card::before,
+/* .experience-archive-card-inner::before, */
+/* .about-archive-card::before, */
+/* /* .skills-archive-card::before, */
+/* .footprint-note::before,  */
+.diary-fragment-card::before{
+  background-image: url("/overlays/ribbon-stars.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: min(50%, 24rem) auto;
+  opacity: 0.1;
+  filter: contrast(2);
+} 
+
+.contact-archive-card::before,
+.project-archive-card::before{
+  background-image: url("/overlays/but_fly.jpg");
+  background-position: right -5rem bottom;
+  rotate: 20deg;
+  background-repeat: no-repeat;
+  background-size: min(75%, 24rem) auto;
+  opacity: 0.15;
+  filter: contrast(3);
+} 
+
+.contact-archive-card:not(:nth-child(3n))::before,
+.project-archive-card:not(:nth-child(3n))::before{
+  background-image: none;
+} 
+
+.experience-archive-card-inner::before{
+  background-image: url("/overlays/constellation.png");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: min(35%, 24rem) auto;
+  opacity: 0.1;
+  filter: contrast(2);
+}
+
+@media (max-width: 768px) {
+  .project-archive-card::before,
+  .life-archive-card::before,
+  .diary-fragment-card::before,
+  .contact-archive-card::before,
+  .experience-archive-card-inner::before,
+  .about-archive-card::before,
+  .skills-archive-card::before,
+  .footprint-note::before {
+    background-image: none;
+  }
+}
+
+/* Final page-header treatment: match Home, no framed block around hero text. */
+.archive-hero {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: clamp(3.2rem, 8vw, 6.8rem) clamp(0.2rem, 3vw, 4.6rem) clamp(2rem, 5vw, 4.5rem);
+}
+
+.archive-hero::before {
+  display: none;
+}
+
+.archive-hero::after {
+  right: clamp(-6rem, -3vw, -2rem);
+  bottom: clamp(-4rem, -2vw, -1rem);
+  opacity: 0.26;
+}
+
+.archive-side-note {
+  border: 1px solid rgba(30, 43, 69, 0.18);
+  background:
+    radial-gradient(circle at 68% 44%, rgba(200, 217, 230, 0.26), transparent 8rem),
+    radial-gradient(circle at 24% 82%, rgba(255, 225, 230, 0.24), transparent 7rem),
+    rgba(249, 243, 233, 0.52);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+  padding: 1.2rem;
+  transform: none;
+}
+
+@media (max-width: 700px) {
+  .archive-hero {
+    padding: 2rem 0 2.5rem;
+  }
+
+  .archive-side-note {
+    max-width: 18rem;
+  }
+}
+
+body:has(.home-reference-page) .global-celestial {
+  display: none;
 }

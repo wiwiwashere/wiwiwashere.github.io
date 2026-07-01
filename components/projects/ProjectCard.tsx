@@ -7,7 +7,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
   return (
     <article className="project-archive-card group flex h-full flex-col p-5 transition hover:-translate-y-1">
       <div className="flex items-center justify-between gap-4">
-        <p className="archive-kicker">{String(index + 1).padStart(2, "0")} / 05</p>
+        <p className="archive-kicker">{String(index + 1).padStart(2, "0")} / {String(ProjectCardProps.length).padStart(2, "0")}</p>
         <p className="project-archive-tag">{project.tags[0]}</p>
       </div>
       <h2 className="display-serif mt-12 text-3xl leading-tight text-ink">{project.title}</h2>

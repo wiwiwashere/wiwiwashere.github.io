@@ -112,6 +112,32 @@ const meteors = [
 export function ButterflyParticles() {
   return (
     <div className="butterfly-field" aria-hidden="true">
+      <CelestialParticles />
+      <div className="butterfly-trail butterfly-trail-one" />
+      <div className="butterfly-trail butterfly-trail-two" />
+      <div className="butterfly-cloud">
+        {particles.map((particle) => (
+          <span
+            key={particle.index}
+            className={`butterfly-particle butterfly-particle-${particle.kind}`}
+            style={{
+              "--x": `${particle.x}px`,
+              "--y": `${particle.y}px`,
+              "--z": `${particle.z}px`,
+              "--size": `${particle.size}px`,
+              "--opacity": particle.opacity,
+              "--delay": `${particle.delay}s`
+            } as React.CSSProperties}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function CelestialParticles() {
+  return (
+    <>
       <div className="butterfly-meteor-layer">
         {meteors.map((meteor, index) => (
           <span
@@ -142,24 +168,6 @@ export function ButterflyParticles() {
           />
         ))}
       </div>
-      <div className="butterfly-trail butterfly-trail-one" />
-      <div className="butterfly-trail butterfly-trail-two" />
-      <div className="butterfly-cloud">
-        {particles.map((particle) => (
-          <span
-            key={particle.index}
-            className={`butterfly-particle butterfly-particle-${particle.kind}`}
-            style={{
-              "--x": `${particle.x}px`,
-              "--y": `${particle.y}px`,
-              "--z": `${particle.z}px`,
-              "--size": `${particle.size}px`,
-              "--opacity": particle.opacity,
-              "--delay": `${particle.delay}s`
-            } as React.CSSProperties}
-          />
-        ))}
-      </div>
-    </div>
+    </>
   );
 }

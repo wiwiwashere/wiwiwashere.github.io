@@ -7,10 +7,10 @@ export default function FootprintsPage() {
     <PageContainer className="archive-page footprint-page py-12">
       <section className="archive-hero archive-hero-blue footprint-hero">
         <div>
-          <p className="archive-kicker">footprints</p>
-          <h1>A guestbook</h1>
+          <p className="archive-kicker"></p>
+          <h1>Footprints</h1>
           <p>
-            Leave a mark in the collection!
+            Leave a mark in the guestbook!
           </p>
         </div>
         <div className="archive-side-note">
@@ -23,7 +23,7 @@ export default function FootprintsPage() {
       <section className="archive-section">
         <div className="archive-section-heading">
           <span>*</span>
-          <h2>visitor marks</h2>
+          <h2>visitor constellation</h2>
         </div>
         <FootprintGuestbook />
       </section>

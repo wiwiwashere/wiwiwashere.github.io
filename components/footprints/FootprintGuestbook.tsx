@@ -23,8 +23,8 @@ const moodOptions = [
   stamps.butterflyI,
   stamps.swirl
 ];
-const maxMessageLength = 160;
-const submitCooldownMs = 15000;
+const maxMessageLength = 50;
+const submitCooldownMs = 10000; // 10 seconds
 
 function cleanText(value: string, maxLength: number) {
   return value
@@ -180,7 +180,7 @@ export function FootprintGuestbook() {
     <div className="footprint-guestbook">
       <section className="footprint-constellation" aria-label="Visitor constellation">
         <div className="footprint-constellation-copy">
-          <p className="archive-kicker">visitor constellation</p>
+          <p className="archive-kicker"></p>
           <h2>Become part of the sky.</h2>
           {activeFootprint ? (
             <article className="footprint-preview">

@@ -13,7 +13,7 @@ export default function ContactPage() {
     <PageContainer className="archive-page py-12">
       <section className="archive-hero archive-hero-contact">
         <div>
-          <p className="archive-kicker">contact</p>
+          <p className="archive-kicker"></p>
           <h1>Let&apos;s connect</h1>
           <p>
             I&apos;m someone who values connections with genuine people, 

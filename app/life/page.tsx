@@ -7,11 +7,11 @@ export default function LifePage() {
     <PageContainer className="archive-page py-12">
       <section className="archive-hero archive-hero-pink">
         <div>
-          <p className="archive-kicker">all life</p>
-          <h1>Little collections</h1>
+          <p className="archive-kicker"></p>
+          <h1>Moments in Life</h1>
           <p>
-            A fuller archive for photos, diary scraps, moodboards, campus walks, and the
-            soft little things that do not fit inside the selected Home preview.
+            A fuller archive for photos, diary scraps, moodboards, and the 
+            little things that do not fit inside the selected Home preview.
           </p>
         </div>
         <div className="archive-side-note">
@@ -24,7 +24,7 @@ export default function LifePage() {
       <section className="archive-section diary-archive-section">
         <div className="archive-section-heading">
           <span>*</span>
-          <h2>yap</h2>
+          <h2>diary scraps</h2>
         </div>
         <div className="diary-fragment-grid">
           {diaryNotes.map((note, index) => (

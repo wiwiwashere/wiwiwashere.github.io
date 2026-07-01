@@ -14,8 +14,8 @@ export default function ExperiencePage() {
     <PageContainer className="archive-page py-12">
       <section className="archive-hero archive-hero-blue">
         <div>
-          <p className="archive-kicker">growth</p>
-          <h1>Experience</h1>
+          <p className="archive-kicker"></p>
+          <h1>Experiences</h1>
           <p>
             A growth map that collects my work, leadership, and other technical experiences.
           </p>

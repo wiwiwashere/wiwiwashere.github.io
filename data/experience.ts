@@ -13,71 +13,6 @@ export type Experience = {
   link?: string;
 };
 
-// export const experienceItems: Experience[] = [
-//   { id: "rec", 
-//     title: "Software Engineering Intern", 
-//     organization: "REC",
-//     type: "technical", 
-//     startDate: "Jun 2026", 
-//     location: "Remote", 
-//     description: ["Explored applied machine learning workflows through a project-based fellowship.", "Worked with data analysis, model evaluation, and technical communication."], 
-//     skills: ["App Development"]
-//   },
-//   { id: "ai4all", 
-//     title: "Ignite Fellow", 
-//     organization: "AI4ALL",
-//     type: "technical", 
-//     startDate: "May 2026", 
-//     location: "Remote", 
-//     description: ["Explored applied machine learning workflows through a project-based fellowship.", "Worked with data analysis, model evaluation, and technical communication."], 
-//     skills: ["Machine Learning", "Python", "Data Analysis"]
-//   },
-//   { id: "bny",
-//     title: "Engineering Sophomore Summit Participant", 
-//     organization: "BNY", 
-//     type: "program", 
-//     startDate: "May 2025", 
-//     location: "Remote",
-//     description: ["Participated in engineering-focused programming with exposure to technical career paths"], 
-//     skills: ["Career Development", "Communication"] 
-//   },
-//   { id: "amex", 
-//     title: "Software Engineer Apprentice", 
-//     organization: "American Express",
-//     type: "technical", 
-//     startDate: "Jan 2026 - Apr 2026", 
-//     location: "Remote", 
-//     description: ["Explored applied machine learning workflows through a project-based fellowship.", "Worked with data analysis, model evaluation, and technical communication."], 
-//     skills: ["Machine Learning", "Python", "Full stack Development"]
-//   },
-//   { id: "sasehacks", 
-//     title: "Awards & Judging Committee", 
-//     organization: "SASEHacks", 
-//     type: "leadership", 
-//     startDate: "Oct 2025 - Mar 2026",
-//     description: ["Helped support judging workflows and award coordination for a hackathon setting.", "Worked with peers to keep evaluation processes organized and clear."],
-//     skills: ["Event Management", "Collboration"] 
-//   },
-//   { id: "wicse", 
-//     title: "Public Relations Coordinator", 
-//     organization: "WiCSE", 
-//     type: "leadership", 
-//     startDate: "Apr 2025 - Apr 2026", 
-//     // location: "Gainesville, FL", 
-//     description: ["Supported outreach and communication for an inclusive computer science community.", "Created messaging that helped students discover events, resources, and opportunities."],
-//     skills: ["Leadership", "Marketing", "Community"] 
-//   },
-//   { id: "gso", 
-//     title: "Volunteer Coordinator", 
-//     organization: "Gator Science Olympiad", 
-//     type: "leadership", 
-//     startDate: "Oct 2024", 
-//     // location: "Gainesville, FL", 
-//     description: ["Coordinated volunteers for science outreach programming.", "Helped organize logistics and communication for a student-run event."], 
-//     skills: ["Operations", "Team Coordination", "STEM Outreach"] 
-//   }
-// ];
-
 export const experienceTypes: { label: string; value: ExperienceType }[] = [
   { label: "Technical", value: "technical" },
   { label: "Leadership", value: "leadership" },
@@ -101,6 +36,20 @@ export const experienceItems: Experience[] = [
     skills: ["App Development", "Frontend", "Firebase", "Collaboration"],
   },
   {
+    id: "esports-sub-instructor",
+    title: "Substitute Instructor",
+    organization: "Esports Class",
+    type: "leadership",
+    startDate: "Jun 2026",
+    location: "Miami, FL",
+    highlight: "Supported classroom instruction and student engagement for an esports-focused program.",
+    description: [
+      "Supported classroom instruction for an esports-focused program.",
+      "Helped guide students through activities while maintaining an engaging and organized learning environment.",
+    ],
+    skills: ["Teaching", "Communication", "Student Support"],
+  },
+  {
     id: "ai4all",
     title: "AI4ALL Ignite Fellow",
     organization: "AI4ALL",
@@ -113,7 +62,7 @@ export const experienceItems: Experience[] = [
       "Worked on a machine learning project focused on classifying IoT network traffic as benign or malicious.",
       "Explored the TON_IoT dataset through data cleaning, feature analysis, model evaluation, and technical communication.",
     ],
-    skills: ["Machine Learning", "Python", "Data Analysis", "Model Evaluation"],
+    skills: ["Data Analysis", "Model Evaluation", "Machine Learning", "Python"],
   },
   {
     id: "bny",
@@ -142,7 +91,7 @@ export const experienceItems: Experience[] = [
       "Participated in software engineering apprenticeship programming focused on technical growth, collaboration, and project-based learning.",
       "Strengthened full-stack development foundations while practicing communication, problem-solving, and software development workflows.",
     ],
-    skills: ["Software Engineering", "Full-Stack Development", "Collaboration"],
+    skills: ["Software Engineering", "Collaboration", "Machine Learning"],
   },
   {
     id: "sasehacks",
@@ -187,19 +136,5 @@ export const experienceItems: Experience[] = [
       "Helped organize resources and processes to support volunteers, event supervisors, and competitors.",
     ],
     skills: ["Volunteer Coordination", "Operations", "STEM Outreach"],
-  },
-  {
-    id: "esports-sub-instructor",
-    title: "Substitute Instructor",
-    organization: "Esports Class",
-    type: "leadership",
-    startDate: "May 2026",
-    location: "Gainesville, FL",
-    highlight: "Supported classroom instruction and student engagement for an esports-focused program.",
-    description: [
-      "Supported classroom instruction for an esports-focused program.",
-      "Helped guide students through activities while maintaining an engaging and organized learning environment.",
-    ],
-    skills: ["Teaching", "Communication", "Student Support"],
-  },
+  }
 ];

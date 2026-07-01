@@ -13,9 +13,9 @@ export const lifeEntries: LifeEntry[] = [
     id: "museum-note",
     title: "Museum afternoon",
     date: "June 2026",
-    category: "Gallery",
+    category: "View",
     imageUrl: "/life/met.jpg",
-    thought: "I like places where everything slows down for a second. The museum is one of those places.",
+    thought: "I like places where everything slows down for a second. The museum is definitely one of those.",
     tags: ["design", "quiet"]
   },
   {
@@ -40,18 +40,18 @@ export const lifeEntries: LifeEntry[] = [
     id: "starry_night_cali",
     title: "Starry Night at Cali",
     date: "May 2026",
-    category: "Gallery",
+    category: "View",
     imageUrl: "/life/stars.jpg",
-    thought: "I love stars.",
+    thought: "stars",
     tags: ["star", "travel"]
   },
   {
     id: "griffin",
     title: "Griffin Observatory",
     date: "May 2026",
-    category: "Gallery",
+    category: "View",
     imageUrl: "/life/griffin.jpg",
-    thought: "I love the night sky.",
+    thought: "night sky.",
     tags: ["star", "travel"]
   },
   {
@@ -78,7 +78,7 @@ export const lifeEntries: LifeEntry[] = [
     date: "Feb 2026",
     category: "People",
     imageUrl: "/life/nook_hangout.jpg",
-    thought: "We were so happy for the birth of Nook. Check out more details about Nook in the project page :D",
+    thought: "We were so happy for the birth of Nook. More details about Nook in the project page :D",
     tags: ["friend", "life", "gratitude"]
   },
   {
@@ -103,7 +103,7 @@ export const lifeEntries: LifeEntry[] = [
     id: "swe_conference",
     title: "SWE conference with friends",
     date: "Oct 2025",
-    category: "People",
+    category: "STEM",
     imageUrl: "/life/swe_nrl.jpg",
     thought: "first conference in my life! So glad I was able to go with friends and connected with excellent individuals. I hope to keep learning and growing in this field.",
     tags: ["career", "gratitude"]
@@ -127,8 +127,35 @@ export const lifeEntries: LifeEntry[] = [
     tags: ["cat"]
   }, 
   {
-    id: "little_me",
-    title: "little me",
+    id: "hs_grad",
+    title: "We graduated",
+    date: "May 2024",
+    category: "People",
+    imageUrl: "/life/hs.jpg",
+    thought: "graduated! so so grateful for the people who made this journey meaningful and memorable. hope to keep learning and growing in the next chapter of my life.",
+    tags: ["HS", "end of a chapter"]
+  }, 
+  {
+    id: "optic",
+    title: "Optic @UF State Tournament",
+    date: "Apr 2024",
+    category: "STEM",
+    imageUrl: "/life/optics.jpg",
+    thought: "2nd/final year of science olympiad, placed 5th in state for optics. truely learned alot and grateful for my teammates and coaches \u2661", 
+    tags: ["STEM", "HS"]
+  }, 
+  {
+    id: "col_nano",
+    title: "Precollege @Columbia",
+    date: "July 2023",
+    category: "STEM",
+    imageUrl: "/life/col.jpg",
+    thought: "Really enjoyed the precollege program at Columbia. During my time there, I took a course called Introduction to nanotechnology and material science, met a lot of amazing people, and learned more about myself and my interests.",
+    tags: ["STEM", "HS"]
+  }, 
+  {
+    id: "cheongsam_me",
+    title: "cheongsam me",
     date: "idk",
     category: "Memory",
     imageUrl: "/life/childhood.jpg",
@@ -148,6 +175,6 @@ export const lifeEntries: LifeEntry[] = [
 
 export const diaryNotes = [
   "I want this space to feel like a portfolio, but also like a small room where my personality can breathe.",
-  "Outside of tech, I care about art direction, community, and the emotional texture of everyday things.",
-  "This page is intentionally unfinished in the best way: it can grow whenever I have a photo, a thought, or a small moment worth keeping."
+  "This page is intentionally unfinished in the best way: it can grow whenever I have a photo, a thought, or a small moment worth keeping.",
+  "I really like hippop & edm music. But yes it doesn't go well with the overall vibe of this page... :("
 ];

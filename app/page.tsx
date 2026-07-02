@@ -63,25 +63,26 @@ export default function HomePage() {
             <aside id="music-notes" className="home-music-panel">
               <SectionHeading>music notes</SectionHeading>
               <article className="home-music-card">
-                <div className="home-album-art" aria-hidden="true" />
                 <div className="home-song-meta">
                   <div>
-                    <h2>finding hope</h2>
-                    <p>a late night reset.</p>
+                    <h2>{currentSong.title}</h2>
+                    <p>{currentSong.note}</p>
                   </div>
-                  <span>3:21</span>
                 </div>
-                <div className="home-player-line" aria-hidden="true">
-                  <span />
-                </div>
-                <div className="home-player-controls" aria-hidden="true">
-                  <span>&lt;</span>
-                  <b>&gt;</b>
-                  <span>&gt;</span>
-                </div>
-                <p className="home-playlist-note">saved on your playlist</p>
-                <a href={currentSong.embedUrl.replace("/embed/track/", "/track/").split("?")[0]} target="_blank" rel="noreferrer" className="home-card-link">
-                  open song -&gt;
+                <iframe
+                  className="home-spotify-embed"
+                  src={currentSong.embedUrl}
+                  width="100%"
+                  height="480"
+                  frameBorder="0"
+                  allowFullScreen
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  title="Spotify playlist"
+                />
+                <p className="home-playlist-note">{currentSong.mood}</p>
+                <a href={currentSong.embedUrl.replace("/embed/playlist/", "/playlist/").split("?")[0]} target="_blank" rel="noreferrer" className="home-card-link">
+                  open playlist -&gt;
                 </a>
               </article>
             </aside>

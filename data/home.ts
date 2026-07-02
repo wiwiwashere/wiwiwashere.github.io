@@ -2,11 +2,11 @@ export const homeProjectHighlights = ["iot-network-intrusion-detection", "meow-c
 
 export const musicPicks = [
   {
-    title: "Heaven can wait",
-    artist: "Michael Jackson",
-    mood: "currently on repeat",
-    note: "A song I want to keep close to this little collection page.",
-    embedUrl: "https://open.spotify.com/embed/track/1AZXNAVDD9ZFIEKySgflFz?utm_source=generator&si=498c4d45bd284e95"
+    // title: "My Space",
+    // artist: "Spotify",
+    // mood: "currently on repeat",
+    note: "Background music for this page :D",
+    embedUrl: "https://open.spotify.com/embed/playlist/5RP14kJquAdP4cAhQFTkb3?utm_source=generator&si=b049c6aa10fa4cef"
   },
   {
     title: "3:00 AM",

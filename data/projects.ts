@@ -13,8 +13,8 @@ export type Project = {
   techStack: string[];
   tags: string[];
   features?: string[];
-  challenges: string[];
-  lessons?: string[];
+  challenges?: string[];
+  insights?: string[];
   startDate?: string;
   endDate?: string;
   status?: ProjectStatus;
@@ -51,24 +51,25 @@ export const projects: Project[] = [
     // solution:
     //   "The project uses preprocessing, feature exploration, and classification models to distinguish traffic categories in the TON_IoT dataset.",
     role:
-      "Cleaned and explored the TON_IoT dataset, prepared modeling splits, built baseline classification models, and evaluated results using accuracy, precision, and recall.",
+      "Cleaned and explored the TON_IoT dataset.",
     techStack: ["Python", "Pandas", "Scikit-learn", "ML Classification"],
     tags: ["AI / ML", "Data", "Cybersecurity"],
     features: [
       "TON_IoT dataset analysis",
       "Preprocessing and feature selection",
-      "Train/test modeling workflow",
-      "Classification model comparison",
-      "Cybersecurity-focused interpretation",
+      // "Train/test modeling workflow",
+      // "Classification model comparison",
+      // "Cybersecurity-focused interpretation",
     ],
     challenges: [
+      "Class imbalance in the dataset",
       "Understanding feature meaning in a security dataset",
-      "Evaluating models beyond surface-level accuracy",
-      "Interpreting false positives and false negatives in a security context",
+      // "Evaluating models beyond surface-level accuracy",
+      // "Interpreting false positives and false negatives in a security context",
     ],
-    lessons: [
-      "Data cleaning shapes model quality early",
-      "Security projects require careful interpretation of false positives and false negatives",
+    insights: [
+      // "Data cleaning shapes model quality early",
+      // "Security projects require careful interpretation of false positives and false negatives",
     ],
     startDate: "June 2026",
     status: "In Progress",
@@ -89,8 +90,8 @@ export const projects: Project[] = [
       "Pet owners and caretakers often need quick alerts when a cat appears in a camera feed, but manual monitoring is tedious and easy to miss.",
     solution:
       "Meow combines a trained detection model, a FastAPI backend, SQLite storage, Hugging Face model hosting, and Twilio notifications so alerts can be sent automatically.",
-    role:
-      "Built the FastAPI backend workflow, connected model inference to prediction endpoints, stored detection history with SQLite, integrated Twilio WhatsApp alerts, and prepared the app for Railway deployment.",
+    // role:
+      // "Built the FastAPI backend workflow, connected model inference to prediction endpoints, stored detection history with SQLite, integrated Twilio WhatsApp alerts, and prepared the app for Railway deployment.",
     techStack: [
       "FastAPI",
       "TensorFlow",
@@ -113,7 +114,7 @@ export const projects: Project[] = [
       "Balancing model response speed with usable detection confidence",
       "Connecting backend states",
     ],
-    lessons: [
+    insights: [
       "Always validdate model performance on unseen data",
     ],
     startDate: "2026",
@@ -135,8 +136,8 @@ export const projects: Project[] = [
     //   "Programming languages require multiple coordinated stages to transform source code into executable behavior while catching syntax and type errors.",
     // solution:
     //   "The project builds a lexer, recursive descent parser, analyzer, and evaluator using AST structures and visitor-style logic.",
-    role:
-      "Implemented and debugged language features across parsing, type analysis, scope handling, expression evaluation, and validation tests.",
+    // role:
+    //   "Implemented and debugged language features across parsing, type analysis, scope handling, expression evaluation, and validation tests.",
     techStack: ["Java", "Recursive Descent Parsing", "AST", "Static Analysis"],
     tags: ["Backend"],
     features: [
@@ -150,10 +151,10 @@ export const projects: Project[] = [
       "Tracking variable scope and initialization state",
       "Debugging edge cases in parser and evaluator tests",
     ],
-    lessons: [
-      "Language tools require careful coordination between syntax, semantics, and runtime behavior",
-      "Small grammar decisions can create large downstream effects",
-    ],
+    // lessons: [
+    //   "Language tools require careful coordination between syntax, semantics, and runtime behavior",
+    //   "Small grammar decisions can create large downstream effects",
+    // ],
     status: "Completed",
     featured: false,
   },
@@ -168,27 +169,27 @@ export const projects: Project[] = [
     //   "Image classification models can perform poorly when datasets are not well understood, especially when there are class imbalance issues, noisy samples, or preprocessing decisions that affect model performance.",
     // solution:
     //   "This project explores the CIFAR dataset through data visualization, preprocessing, and model evaluation. It examines how image data is structured and how different modeling choices impact classification results.",
-    role:
-      "Performed dataset exploration, analyzed image classes and distributions, prepared data for modeling, trained classification models, and evaluated performance using metrics such as accuracy and class-level results.",
+    // role:
+    //   "Performed dataset exploration, analyzed image classes and distributions, prepared data for modeling, trained classification models, and evaluated performance using metrics such as accuracy and class-level results.",
     techStack: ["Python", "TensorFlow", "NumPy", "Pandas", "Matplotlib"],
     tags: ["AI / ML", "Data"],
-    features: [
-      "Explores CIFAR image classes and dataset structure",
-      "Visualizes sample images and class distributions",
-      "Preprocesses image data for machine learning models",
-      "Trains and evaluates image classification models",
-      "Compares model performance using evaluation metrics",
-    ],
-    challenges: [
-      "Understanding how image data is represented numerically",
-      "Improving model performance beyond basic accuracy",
-      "Interpreting classification results across multiple image categories",
-    ],
-    lessons: [
-      "Learned the importance of dataset exploration before modeling",
-      "Practiced computer vision preprocessing workflows",
-      "Gained experience evaluating model performance beyond a single accuracy score",
-    ],
+    // features: [
+    //   "Explores CIFAR image classes and dataset structure",
+    //   "Visualizes sample images and class distributions",
+    //   "Preprocesses image data for machine learning models",
+    //   "Trains and evaluates image classification models",
+    //   "Compares model performance using evaluation metrics",
+    // ],
+    // challenges: [
+    //   "Understanding how image data is represented numerically",
+    //   "Improving model performance beyond basic accuracy",
+    //   "Interpreting classification results across multiple image categories",
+    // ],
+    // lessons: [
+    //   "Learned the importance of dataset exploration before modeling",
+    //   "Practiced computer vision preprocessing workflows",
+    //   "Gained experience evaluating model performance beyond a single accuracy score",
+    // ],
     githubUrl: "",
     demoUrl: "",
     imageUrl: "",
@@ -220,7 +221,7 @@ export const projects: Project[] = [
       "Managing edge cases around missing files, invalid paths, and permissions",
       "Debugging lower-level behavior without the convenience of higher-level abstractions",
     ],
-    lessons: [
+    insights: [
       "Gained a stronger understanding of how operating systems manage files",
       "Learned how system calls connect user programs to kernel-level functionality",
       "Practiced writing more careful error handling for low-level programs",
@@ -257,7 +258,7 @@ export const projects: Project[] = [
       "Designing a marketplace that feels simple instead of overloaded",
       "Keeping listing data consistent between frontend and backend",
     ],
-    lessons: [
+    insights: [
       "Building for a specific student audience made the product easier to scope and design",
       "Clear data models help full-stack teams move faster",
     ],
@@ -292,11 +293,11 @@ export const projects: Project[] = [
       "Balancing useful information with a simple interface",
       "Designing features that feel practical instead of overly complex",
     ],
-    lessons: [
-      "Learned how to translate a real-world transportation problem into a product idea",
-      "Practiced designing around user preferences and decision-making",
-      "Gained experience building a more user-centered application flow",
-    ],
+    // insights: [
+    //   // "Learned how to translate a real-world transportation problem into a product idea",
+    //   // "Practiced designing around user preferences and decision-making",
+    //   "Gained experience building a more user-centered application flow",
+    // ],
     githubUrl: "",
     demoUrl: "",
     imageUrl: "",
@@ -326,14 +327,15 @@ export const projects: Project[] = [
       "Readable summary output",
     ],
     challenges: [
-      "Handling inconsistent label layouts",
-      "Making AI responses concise enough for mobile contexts",
+      // "Handling inconsistent label layouts",
+      // "Making AI responses concise enough for mobile contexts",
+      "Integrating scanning, OCR, and AI features into a smooth mobile flow",
     ],
-    lessons: [
-      "AI features need careful UX framing",
+    insights: [
+      // "AI features need careful UX framing",
       "Mobile workflows should minimize user effort at each step",
     ],
-    status: "Prototype",
+    status: "Completed",
     featured: false,
   },
   {
@@ -363,10 +365,10 @@ export const projects: Project[] = [
       "Keeping recursive reveal behavior predictable",
       "Separating board state from display state",
     ],
-    lessons: [
-      "Small games reward careful modeling",
-      "C++ projects make ownership and state transitions visible",
-    ],
+    // insights: [
+    //   "Small games reward careful modeling",
+    //   "C++ projects make ownership and state transitions visible",
+    // ],
     status: "Completed",
     // Replace with your real repo when ready.
     // githubUrl: "https://github.com/wiwiwashere/minesweeper-sfml",

@@ -6,7 +6,8 @@ import { Footprint, supabase } from "../../lib/supabase";
 const stamps = {
   starSolid: "\u2726",
   starOpen: "\u2727",
-  dot: "\u00B7",
+  starEight: "⟡",
+  starTen: "₊⊹",
   heart: "\u2661",
   butterfly: "\u029A\u025E",
   butterflyI: "\u029A\u0457\u025E",
@@ -16,8 +17,8 @@ const stamps = {
 const moodOptions = [
   stamps.starSolid,
   stamps.starOpen,
-  "*",
-  stamps.dot,
+  stamps.starEight,
+  stamps.starTen,
   stamps.heart,
   stamps.butterfly,
   stamps.butterflyI,

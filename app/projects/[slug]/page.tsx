@@ -16,7 +16,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
   if (!project) notFound();
   const features = project.features ?? [];
   const challenges = project.challenges ?? [];
-  const lessons = project.lessons ?? [];
+  const lessons = project.insights ?? [];
   return (
     <PageContainer className="project-detail-page py-14">
       <ProjectDetailHeader project={project} />
@@ -27,7 +27,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         <DetailSection title="My Role" index={4}><p>{project.role}</p></DetailSection>
         <DetailSection title="Tech Stack" index={5}><TechStackList techStack={project.techStack} /></DetailSection>
         <DetailSection title="Key Features" index={6}><ul className="space-y-3">{features.map((feature) => <li key={feature} className="flex gap-3"><span className="mt-3 size-1.5 rounded-full bg-blush-500" /><span>{feature}</span></li>)}</ul></DetailSection>
-        <section className="project-detail-card project-detail-wide"><p className="project-detail-number">07</p><h2>Challenges & Lessons</h2><div className="project-detail-split"><div><h3>Challenges</h3><ul>{challenges.map((challenge) => <li key={challenge} className="flex gap-3"><span className="mt-3 size-1.5 rounded-full bg-blush-500" /><span>{challenge}</span></li>)}</ul></div><div><h3>Lessons</h3><ul>{lessons.map((lesson) => <li key={lesson} className="flex gap-3"><span className="mt-3 size-1.5 rounded-full bg-blush-500" /><span>{lesson}</span></li>)}</ul></div></div></section>
+        <section className="project-detail-card project-detail-wide"><p className="project-detail-number">07</p><h2>Challenges & Insights</h2><div className="project-detail-split"><div><h3>Challenges</h3><ul>{challenges.map((challenge) => <li key={challenge} className="flex gap-3"><span className="mt-3 size-1.5 rounded-full bg-blush-500" /><span>{challenge}</span></li>)}</ul></div><div><h3>Insights</h3><ul>{lessons.map((lesson) => <li key={lesson} className="flex gap-3"><span className="mt-3 size-1.5 rounded-full bg-blush-500" /><span>{lesson}</span></li>)}</ul></div></div></section>
       </div>
     </PageContainer>
   );

@@ -1185,7 +1185,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   font-size: 1.08rem;
   font-weight: 500;
   letter-spacing: 0.06em;
-  text-transform: lowercase;
+  text-transform: Snakecase;
 }
 
 .home-card-subtitle,
@@ -2068,8 +2068,8 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   content: "";
   position: absolute;
   left: 0.45rem;
-  top: 0.5rem;
-  bottom: 0.5rem;
+  top: 0.2rem;
+  bottom: 0.2rem;
   width: 1px;
   background: linear-gradient(180deg, rgba(47, 68, 90, 0.28), rgba(193, 118, 148, 0.25), rgba(47, 68, 90, 0.08));
 }
@@ -2086,7 +2086,8 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   z-index: 2;
   width: 0.9rem;
   height: 0.9rem;
-  margin-top: 1.35rem;
+  margin-top: 1.2rem;
+  margin-right: 0.3rem;
   border: 1px solid rgba(30, 43, 69, 0.34);
   background: #f9f3e9;
   transform: rotate(45deg);
@@ -2101,7 +2102,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
     linear-gradient(135deg, rgba(249, 243, 233, 0.8), rgba(255, 225, 230, 0.16), rgba(200, 217, 230, 0.14)),
     rgba(249, 243, 233, 0.58);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.26);
-  padding: 1.35rem;
+  padding: 1.1rem 1.35rem 1.1rem;
 }
 
 .experience-archive-card-inner::before {
@@ -2418,9 +2419,8 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   line-height: 1.1;
 }
 
-.project-archive-card p,
-.experience-archive-card p,
-.experience-archive-card li,
+/* .project-archive-card p, */
+/* .experience-archive-card li, */
 .about-archive-card p,
 .about-archive-card li,
 .skills-archive-card p,
@@ -2503,9 +2503,9 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 .footprint-note {
   position: relative;
   border: 1px solid rgba(30, 43, 69, 0.22);
-  background:
+  /* background:
     linear-gradient(135deg, rgba(249, 243, 233, 0.78), rgba(255, 225, 230, 0.16), rgba(200, 217, 230, 0.14)),
-    rgba(249, 233, 233, 0.244);
+    rgba(249, 233, 233, 0.244); */
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
 }
 
@@ -2545,10 +2545,10 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 
 .footprint-constellation-copy h2 {
   max-width: 18rem;
-  margin: 2rem 0 0;
+  margin: 1rem 0 0;
   color: #1e2b45;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-size: clamp(2rem, 3.4vw, 3.4rem);
   font-weight: 500;
   line-height: 1.02;
 }
@@ -2624,9 +2624,9 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 }
 
 .footprint-preview small {
-  color: rgba(30, 43, 69, 0.55);
+  color: rgba(30, 43, 69, 0.7);
   font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   letter-spacing: 0.12em;
   text-transform: lowercase;
 }
@@ -2672,7 +2672,8 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 .footprint-form label {
   display: grid;
   gap: 0.45rem;
-  color: #1e2b45;
+  /* color: #1e2b45; */
+  color: rgba(30, 43, 69, 0.7);
   font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
   font-size: 0.72rem;
   letter-spacing: 0.14em;
@@ -2886,7 +2887,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   background-position: right -5rem top -5rem;
   background-repeat: no-repeat;
   background-size: min(75%, 24rem) auto;
-  opacity: 0.08;
+  opacity: 0.1;
   filter: contrast(10);
 }
 

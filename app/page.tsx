@@ -52,7 +52,7 @@ export default function HomePage() {
                       <span>{cardVisuals[index]}</span>
                     </div>
                     <h2>{project.title === "System Call File Manager" ? "Sys Call" : project.title}</h2>
-                    <p className="home-card-subtitle">{project.subtitle}</p>
+                    {/* <p className="home-card-subtitle">{project.subtitle}</p> */}
                     <p>{project.description}</p>
                     <span className="home-card-link">view project -&gt;</span>
                   </Link>
@@ -99,9 +99,7 @@ export default function HomePage() {
                   <span className="home-life-label">archive<br />no. 2026</span>
                 </div>
                 <p>
-                  moments, places, books, and little things
-                  <br />
-                  that keep life feeling full.
+                  moments, places, books, and little things that keep life feeling full.
                 </p>
                 <span className="home-card-link">explore more -&gt;</span>
               </Link>

@@ -74,7 +74,7 @@ export const projects: Project[] = [
     startDate: "June 2026",
     status: "In Progress",
     // Replace with your real repo when ready.
-    githubUrl: "https://github.com/wiwiwashere/TON_loT_network",
+    // githubUrl: "https://github.com/wiwiwashere/TON_loT_network",
     featured: true,
   },
   {
@@ -312,7 +312,7 @@ export const projects: Project[] = [
     ],
     status: "Completed",
     // Replace with your real repo when ready.
-    githubUrl: "https://github.com/wiwiwashere/nook",
+    // githubUrl: "https://github.com/wiwiwashere/nook",
     featured: true,
   },
   {

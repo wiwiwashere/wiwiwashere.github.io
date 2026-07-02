@@ -8,7 +8,7 @@ export function ProjectDetailHeader({ project }: { project: Project }) {
         <h1>{project.title}</h1>
       </div>
       <div className="archive-side-note">
-        <span>case study</span>
+        <span></span>
         <strong>↩</strong>
         <Link href="/projects">back projects -&gt;</Link>
       </div>

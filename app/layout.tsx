@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { CelestialParticles } from "@/components/home/ButterflyParticles";
 import { Navbar } from "@/components/layout/Navbar";
+import { FloatingMusicPlayer } from "@/components/music/FloatingMusicPlayer";
 
 export const metadata: Metadata = {
   title: "Winnie Lin | Portfolio",
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </div>
         </div>
         <Navbar />
+        <FloatingMusicPlayer />
         <main className="relative z-10 pt-24">{children}</main>
       </body>
     </html>

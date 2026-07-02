@@ -1233,6 +1233,89 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   background: transparent;
 }
 
+.floating-music {
+  position: fixed;
+  right: clamp(0.9rem, 2vw, 1.5rem);
+  bottom: clamp(0.9rem, 2vw, 1.5rem);
+  z-index: 60;
+  color: #1e2b45;
+  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  letter-spacing: 0.12em;
+  text-transform: lowercase;
+}
+
+.floating-music-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  border: 1px solid rgba(30, 43, 69, 0.28);
+  border-radius: 0.4rem;
+  background:
+    linear-gradient(135deg, rgba(249, 243, 233, 0.94), rgba(255, 225, 230, 0.72), rgba(221, 231, 239, 0.72)),
+    #fff6ec;
+  padding: 0.72rem 0.9rem;
+  color: inherit;
+  font: inherit;
+  font-size: 0.72rem;
+  box-shadow: 0 12px 28px rgba(30, 43, 69, 0.12);
+  cursor: pointer;
+}
+
+.floating-music-toggle span:first-child {
+  color: #c17694;
+  font-size: 1rem;
+}
+
+.floating-music-panel {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 0.7rem);
+  width: min(22rem, calc(100vw - 1.8rem));
+  border: 1px solid rgba(30, 43, 69, 0.22);
+  background:
+    linear-gradient(135deg, rgba(249, 243, 233, 0.96), rgba(255, 225, 230, 0.36), rgba(221, 231, 239, 0.28)),
+    #fff6ec;
+  padding: 0.8rem;
+  box-shadow: 0 18px 42px rgba(30, 43, 69, 0.16);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0.5rem);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.floating-music.is-open .floating-music-panel {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.floating-music-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.65rem;
+  color: rgba(30, 43, 69, 0.82);
+  font-size: 0.68rem;
+}
+
+.floating-music-heading button {
+  border: 1px solid rgba(30, 43, 69, 0.2);
+  background: rgba(255, 255, 255, 0.35);
+  color: inherit;
+  width: 1.65rem;
+  height: 1.65rem;
+  cursor: pointer;
+}
+
+.floating-spotify-embed {
+  display: block;
+  width: 100%;
+  min-height: 352px;
+  border: 0;
+  background: transparent;
+}
+
 .home-album-art {
   width: min(8rem, 72%);
   aspect-ratio: 1;

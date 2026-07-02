@@ -1719,7 +1719,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   position: relative;
 }
 
-.project-detail-hero,
+/* .project-detail-hero, */
 .project-detail-card {
   position: relative;
   overflow: hidden;
@@ -1787,14 +1787,14 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   margin-top: clamp(2.2rem, 5vw, 4rem);
   color: #1e2b45;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, vw, 4rem);
+  font-size: clamp(2rem, 8vw, 4rem);
   font-weight: 500;
   line-height: 0.92;
   letter-spacing: 0;
-  text-transform: uppercase;
+  text-transform: Snakecase;
 }
 
-.project-detail-subtitle {
+/* .project-detail-subtitle {
   margin-top: 1.4rem;
   max-width: 48rem;
   color: rgba(30, 43, 69, 0.72);
@@ -1804,7 +1804,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   letter-spacing: 0.16em;
   line-height: 1.7;
   text-transform: uppercase;
-}
+} */
 
 .project-detail-actions {
   display: flex;
@@ -2524,9 +2524,9 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background:
+  /* background:
     radial-gradient(circle, rgba(47, 68, 90, 0.09) 0.3px, transparent 0.75px),
-    repeating-linear-gradient(90deg, rgba(47, 68, 90, 0.018) 0 1px, transparent 1px 9px);
+    repeating-linear-gradient(90deg, rgba(47, 68, 90, 0.018) 0 1px, transparent 1px 9px); */
   background-size: 8px 8px, 100% 100%;
   opacity: 0.28;
 }
@@ -2667,6 +2667,13 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   display: grid;
   gap: 1rem;
   padding: 1.2rem;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.footprint-form::before {
+  display: none;
 }
 
 .footprint-form label {

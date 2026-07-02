@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useMemo, useState } from "react";
-import { Footprint, supabase } from "@/lib/supabase";
+import { Footprint, supabase } from "../../lib/supabase";
 
 const stamps = {
   starSolid: "\u2726",

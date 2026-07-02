@@ -78,6 +78,54 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    id: "recod-ai",
+    slug: "recod-ai-image-forgery-detection",
+    title: "Recod.ai - Scientific Image Forgery Detection",
+    subtitle: "Scientific Image Forgery Detection Framework",
+    description:
+      "A computer vision project for detecting manipulated biomedical and scientific images, built for the LUC Scientific Image Forgery Detection Competition.",
+    problem:
+      "Scientific and biomedical images can be manipulated in subtle ways, making it difficult to identify forged or tampered regions through manual inspection alone. These challenges become harder when images vary in scale, structure, and manipulation type.",
+    solution:
+      "developed a computer vision pipeline that identify potential image forgeries. The system incorporates DINOv2, YOLO, and SAM, along with attention-based localization and routing strategies for more robust detection.",
+    role:
+      "Contributed to the design of the forgery-detection framework and worked on improving robustness through instance-based augmentation and Mixture-of-Experts routing.",
+    techStack: [
+      "Python",
+      // "DINOv2",
+      // "YOLO",
+      // "SAM",
+      // "Computer Vision",
+      // "Deep Learning"
+    ],
+    tags: ["AI / ML", "Data"],
+    features: [
+      "Detects potential manipulation in scientific and biomedical images",
+      "Uses DINOv2 for visual representation learning",
+      "Incorporates YOLO for object detection support",
+      "Uses SAM for segmentation-based analysis",
+      "Applies attention-based localization to identify suspicious regions",
+      "Uses instance-based augmentation to improve training diversity",
+      "Explores Mixture-of-Experts routing for class imbalance and multi-scale image challenges",
+    ],
+    challenges: [
+      "Handling class imbalance across different forgery categories",
+      "Detecting small or subtle tampered regions in complex scientific images",
+      "Combining multiple computer vision models into a coherent detection framework",
+      // "Improving robustness across images with different scales and visual patterns",
+    ],
+    insights: [
+      "Learned how modern computer vision models can be combined for specialized detection tasks",
+      // "Gained experience thinking about image forensics, localization, and segmentation",
+      "Practiced designing model strategies for imbalanced and multi-scale datasets",
+      // "Developed a stronger understanding of how AI can support scientific integrity and research trust",
+    ],
+    githubUrl: "",
+    demoUrl: "",
+    imageUrl: "",
+    featured: false,
+  },
+  {
     id: "meow",
     slug: "meow-cat-detector",
     title: "Meow",
@@ -317,7 +365,7 @@ export const projects: Project[] = [
     solution:
       "LUNA uses mobile scanning, OCR, and AI interpretation to turn dense label text into clearer summaries.",
     role:
-      "Explored the product concept, planned the mobile flow, and connected the AI feature set to a practical user need.",
+      "Designed UI/UX for the mobile flow.",
     techStack: ["React Native", "Google Vision", "Gemini API"],
     tags: ["AI / ML", "Mobile"],
     features: [

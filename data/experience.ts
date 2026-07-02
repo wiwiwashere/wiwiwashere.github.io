@@ -100,10 +100,10 @@ export const experienceItems: Experience[] = [
     type: "leadership",
     startDate: "Oct 2025",
     endDate: "Mar 2026",
+    location: "Gainesville, FL",
     // highlight: "Supported judging and awards coordination for a student-led hackathon.",
     description: [
-      "Supported judging and awards coordination for a student-led hackathon.",
-      "Helped organize evaluation workflows to keep project judging clear, fair, and efficient.",
+      "Supported judging and awards coordination for a student-led hackathon."
     ],
     skills: ["Event Management", "Judging Operations", "Collaboration"],
   },

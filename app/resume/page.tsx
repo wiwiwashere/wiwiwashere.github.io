@@ -8,8 +8,8 @@ export default function ResumePage() {
     <PageContainer className="archive-page py-12">
       <section className="archive-hero archive-hero-contact">
         <div>
-          <p className="archive-kicker">resume</p>
-          <h1>Resume archive</h1>
+          <p className="archive-kicker"></p>
+          <h1>Resume</h1>
           <p>
             A more formal snapshot of the same work: projects, tools, experience,
             and technical interests collected into one document.
@@ -22,7 +22,7 @@ export default function ResumePage() {
         </div>
       </section>
 
-      <section className="archive-section resume-archive-card">
+      {/* <section className="archive-section resume-archive-card">
         <div className="archive-section-heading">
           <span>*</span>
           <h2>review copy</h2>
@@ -33,7 +33,7 @@ export default function ResumePage() {
           <Link href="/contact">contact -&gt;</Link>
         </div>
         <ResumeViewer />
-      </section>
+      </section> */}
 
       <footer className="home-poster-footer">
           <span>*</span>

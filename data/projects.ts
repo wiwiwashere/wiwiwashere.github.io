@@ -7,14 +7,14 @@ export type Project = {
   subtitle: string;
   cardSummary?: string;
   description: string;
-  problem: string;
-  solution: string;
-  role: string;
+  problem?: string;
+  solution?: string;
+  role?: string;
   techStack: string[];
   tags: string[];
-  features: string[];
+  features?: string[];
   challenges: string[];
-  lessons: string[];
+  lessons?: string[];
   startDate?: string;
   endDate?: string;
   status?: ProjectStatus;
@@ -43,13 +43,13 @@ export const projects: Project[] = [
     title: "IoT Network Intrusion Detection",
     subtitle: "ML-Based Traffic Classification Using TON_IoT",
     cardSummary:
-      "Built and evaluated machine learning models for classifying IoT network traffic as benign or malicious.",
+      "Building and evaluating machine learning models for classifying IoT network traffic as benign or malicious.",
     description:
       "A machine learning project for classifying IoT network traffic and exploring cybersecurity patterns in structured data.",
-    problem:
-      "IoT environments can generate complex traffic patterns, making it difficult to identify potentially malicious behavior at scale.",
-    solution:
-      "The project uses preprocessing, feature exploration, and classification models to distinguish traffic categories in the TON_IoT dataset.",
+    // problem:
+    //   "IoT environments can generate complex traffic patterns, making it difficult to identify potentially malicious behavior at scale.",
+    // solution:
+    //   "The project uses preprocessing, feature exploration, and classification models to distinguish traffic categories in the TON_IoT dataset.",
     role:
       "Cleaned and explored the TON_IoT dataset, prepared modeling splits, built baseline classification models, and evaluated results using accuracy, precision, and recall.",
     techStack: ["Python", "Pandas", "Scikit-learn", "ML Classification"],
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     startDate: "June 2026",
     status: "In Progress",
     // Replace with your real repo when ready.
-    // githubUrl: "https://github.com/wiwiwashere/iot-network-intrusion-detection",
+    githubUrl: "https://github.com/wiwiwashere/TON_loT_network",
     featured: true,
   },
   {
@@ -94,10 +94,10 @@ export const projects: Project[] = [
     techStack: [
       "FastAPI",
       "TensorFlow",
-      "Hugging Face",
       "SQLite",
       "Twilio",
       "Railway",
+      "Hugging Face",
     ],
     tags: ["AI / ML", "Full-Stack", "Backend"],
     features: [
@@ -109,13 +109,12 @@ export const projects: Project[] = [
       "Railway-ready backend deployment setup",
     ],
     challenges: [
+      "Data leakage",
       "Balancing model response speed with usable detection confidence",
-      "Connecting backend state, prediction results, and external alert APIs",
-      "Managing environment variables and deployment settings for a hosted workflow",
+      "Connecting backend states",
     ],
     lessons: [
-      "AI projects become more useful when wrapped in a clear product flow",
-      "Deployment, persistence, and alerting details matter as much as model accuracy",
+      "Always validdate model performance on unseen data",
     ],
     startDate: "2026",
     status: "Completed",
@@ -132,10 +131,10 @@ export const projects: Project[] = [
       "Built core stages of a custom programming language pipeline, including parsing, analysis, and evaluation.",
     description:
       "A programming languages project that implements core parts of a custom language pipeline, including lexical analysis, parsing, static analysis, and dynamic evaluation.",
-    problem:
-      "Programming languages require multiple coordinated stages to transform source code into executable behavior while catching syntax and type errors.",
-    solution:
-      "The project builds a lexer, recursive descent parser, analyzer, and evaluator using AST structures and visitor-style logic.",
+    // problem:
+    //   "Programming languages require multiple coordinated stages to transform source code into executable behavior while catching syntax and type errors.",
+    // solution:
+    //   "The project builds a lexer, recursive descent parser, analyzer, and evaluator using AST structures and visitor-style logic.",
     role:
       "Implemented and debugged language features across parsing, type analysis, scope handling, expression evaluation, and validation tests.",
     techStack: ["Java", "Recursive Descent Parsing", "AST", "Static Analysis"],
@@ -161,14 +160,14 @@ export const projects: Project[] = [
   {
     id: "cifar-dataset-analysis",
     slug: "cifar-dataset-analysis",
-    title: "CIFAR Dataset Analysis",
+    title: "CIFAR-10 Image Classification & Visualization",
     subtitle: "Computer Vision Dataset Exploration and Image Classification",
     description:
-      "A machine learning project focused on exploring the CIFAR image dataset, analyzing class distributions, preprocessing image data, and evaluating classification model performance.",
-    problem:
-      "Image classification models can perform poorly when datasets are not well understood, especially when there are class imbalance issues, noisy samples, or preprocessing decisions that affect model performance.",
-    solution:
-      "This project explores the CIFAR dataset through data visualization, preprocessing, and model evaluation. It examines how image data is structured and how different modeling choices impact classification results.",
+      "A machine learning project focused on exploring the CIFAR-10 image dataset.",
+    // problem:
+    //   "Image classification models can perform poorly when datasets are not well understood, especially when there are class imbalance issues, noisy samples, or preprocessing decisions that affect model performance.",
+    // solution:
+    //   "This project explores the CIFAR dataset through data visualization, preprocessing, and model evaluation. It examines how image data is structured and how different modeling choices impact classification results.",
     role:
       "Performed dataset exploration, analyzed image classes and distributions, prepared data for modeling, trained classification models, and evaluated performance using metrics such as accuracy and class-level results.",
     techStack: ["Python", "TensorFlow", "NumPy", "Pandas", "Matplotlib"],
@@ -202,10 +201,10 @@ export const projects: Project[] = [
     subtitle: "Low-Level File Management Using UNIX System Calls",
     description:
       "A systems programming project that uses low-level UNIX system calls to perform file operations and explore how operating systems handle files beneath higher-level abstractions.",
-    problem:
-      "Most file management tools hide the lower-level operating system behavior behind simple interfaces, making it harder to understand how files are actually opened, read, written, copied, and managed at the system level.",
-    solution:
-      "This project implements file management functionality using UNIX system calls, allowing direct interaction with file descriptors and OS-level operations. It demonstrates how common file actions work closer to the operating system layer.",
+    // problem:
+    //   "Most file management tools hide the lower-level operating system behavior behind simple interfaces, making it harder to understand how files are actually opened, read, written, copied, and managed at the system level.",
+    // solution:
+    //   "This project implements file management functionality using UNIX system calls, allowing direct interaction with file descriptors and OS-level operations. It demonstrates how common file actions work closer to the operating system layer.",
     role:
       "Designed and implemented the core file operation logic, worked with system calls for file access and manipulation, and tested edge cases involving file input, output, and error handling.",
     techStack: ["C", "UNIX System Calls", "Linux", "File I/O"],
@@ -240,10 +239,10 @@ export const projects: Project[] = [
       "Built a student-focused marketplace for buying and selling furniture around the UF community.",
     description:
       "A student-centered marketplace for buying, selling, and discovering furniture around the University of Florida community.",
-    problem:
-      "UF students moving in and out of apartments often need affordable furniture quickly, but general marketplaces can feel cluttered, unsafe, or too broad.",
-    solution:
-      "Nook creates a focused furniture marketplace with listings, search-friendly information, and a familiar full-stack product structure.",
+    // problem:
+    //   "UF students moving in and out of apartments often need affordable furniture quickly, but general marketplaces can feel cluttered, unsafe, or too broad.",
+    // solution:
+    //   "Nook creates a focused furniture marketplace with listings, search-friendly information, and a familiar full-stack product structure.",
     role:
       "Helped shape the product flow, implemented full-stack features, and organized user-centered listing data for a student audience.",
     techStack: ["MongoDB", "Express", "React", "Node.js"],
@@ -346,12 +345,12 @@ export const projects: Project[] = [
       "Implemented a desktop Minesweeper game using C++ logic, state management, and SFML rendering.",
     description:
       "A desktop Minesweeper implementation that practices C++ logic, state management, and SFML rendering.",
-    problem:
-      "Classic games are a useful way to practice precise state management, input handling, and visual feedback.",
-    solution:
-      "The project implements board generation, tile reveal behavior, win/loss states, and rendering through SFML.",
-    role:
-      "Built gameplay logic, coordinated rendering updates, and tested edge cases in board interactions.",
+    // problem:
+    //   "Classic games are a useful way to practice precise state management, input handling, and visual feedback.",
+    // solution:
+    //   "The project implements board generation, tile reveal behavior, win/loss states, and rendering through SFML.",
+    // role:
+    //   "Built gameplay logic, coordinated rendering updates, and tested edge cases in board interactions.",
     techStack: ["C++", "SFML"],
     tags: ["C++"],
     features: [

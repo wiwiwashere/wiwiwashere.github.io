@@ -8,7 +8,7 @@ const featuredProjects = homeProjectHighlights
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter(Boolean);
 
-const cardVisuals = ["void bloom", "delicate bloom", "focus bloom"];
+const cardVisuals = ["signal bloom", "meow bloom", "system bloom"];
 const currentSong = musicPicks[0];
 
 export default function HomePage() {
@@ -51,7 +51,7 @@ export default function HomePage() {
                     <div className={`home-card-art home-card-art-${index + 1}`}>
                       <span>{cardVisuals[index]}</span>
                     </div>
-                    <h2>{index === 0 ? "void bloom" : index === 1 ? "delicate, but intentional" : "focus, faith, hope"}</h2>
+                    <h2>{project.title === "System Call File Manager" ? "Sys Call" : project.title}</h2>
                     <p className="home-card-subtitle">{project.subtitle}</p>
                     <p>{project.description}</p>
                     <span className="home-card-link">view project -&gt;</span>

@@ -161,157 +161,8 @@ button { font: inherit; }
     display: none;
   }
 }
-.collection-cover::before,
-.life-cover::before {
-  content: "";
-  position: absolute;
-  inset: 1rem;
-  border: 1px solid rgba(192, 68, 120, 0.12);
-  border-radius: 28px;
-  pointer-events: none;
-}
-
-.collage-stage {
-  position: relative;
-  overflow: hidden;
-  min-height: 370px;
-}
-
-.collage-script {
-  position: absolute;
-  left: 7%;
-  top: 6%;
-  color: rgba(192, 68, 120, 0.17);
-  font-size: clamp(4rem, 12vw, 9rem);
-  font-style: italic;
-  line-height: 0.8;
-}
-
-.collage-photo {
-  position: absolute;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(192, 68, 120, 0.18);
-  background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(248,220,230,0.84));
-  color: rgba(192, 68, 120, 0.42);
-  font-family: Georgia, serif;
-  box-shadow: 0 22px 60px rgba(192, 68, 120, 0.12);
-}
-
-.collage-photo-main {
-  left: 12%;
-  bottom: 9%;
-  width: 48%;
-  height: 68%;
-  font-size: 5rem;
-  transform: rotate(-4deg);
-}
-
-.collage-photo-side {
-  right: 10%;
-  top: 16%;
-  width: 38%;
-  height: 48%;
-  font-size: 3.5rem;
-  filter: grayscale(1);
-  transform: rotate(3deg);
-}
-
-.collage-note {
-  position: absolute;
-  right: 14%;
-  bottom: 16%;
-  border: 1px solid rgba(20, 20, 30, 0.14);
-  background: rgba(255, 255, 255, 0.82);
-  padding: 0.65rem 1rem;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: #6f6675;
-}
-
-.collage-dots {
-  position: absolute;
-  left: 12%;
-  bottom: 6%;
-  display: flex;
-  gap: 0.5rem;
-}
-
-.collage-dots span {
-  width: 0.7rem;
-  height: 0.7rem;
-  border-radius: 999px;
-  background: #e7bbc9;
-}
-
-.collage-dots span:nth-child(5) { background: #2d2d38; }
-
-.music-board {
-  position: relative;
-  overflow: hidden;
-}
-
-.music-board::after {
-  content: "music";
-  position: absolute;
-  right: 2rem;
-  bottom: -2rem;
-  font-family: Georgia, serif;
-  font-size: 9rem;
-  font-style: italic;
-  color: rgba(192, 68, 120, 0.08);
-  pointer-events: none;
-}
-
-.music-row { position: relative; z-index: 1; }
-
-.growth-tree {
-  position: relative;
-  display: grid;
-  gap: 1.25rem;
-}
-
-.growth-tree::before {
-  content: "";
-  position: absolute;
-  left: 1.4rem;
-  top: 1rem;
-  bottom: 1rem;
-  width: 1px;
-  background: linear-gradient(#f5a9c7, rgba(245, 169, 199, 0.05));
-}
-
-.growth-node {
-  position: relative;
-  padding-left: 4rem;
-}
-
-.growth-node::before {
-  content: "";
-  position: absolute;
-  left: 0.9rem;
-  top: 1.65rem;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 999px;
-  border: 1px solid rgba(192, 68, 120, 0.28);
-  background: #fff;
-  box-shadow: 0 0 0 0.5rem rgba(245, 169, 199, 0.14);
-}
-
 .life-card img {
   aspect-ratio: 4 / 5;
-  /* polaroid ratio*/
-}
-
-@media (min-width: 1024px) {
-  .growth-tree::before { left: 50%; }
-  .growth-node { width: 50%; padding-left: 0; }
-  .growth-node:nth-child(odd) { padding-right: 3rem; }
-  .growth-node:nth-child(even) { margin-left: 50%; padding-left: 3rem; }
-  .growth-node::before { left: auto; right: -0.5rem; }
-  .growth-node:nth-child(even)::before { left: -0.5rem; right: auto; }
 }
 /* ==========================================================================
    03. Particle butterfly background
@@ -550,45 +401,6 @@ button { font: inherit; }
   top: 44%;
 }
 
-.joy-cover {
-  min-height: calc(100vh - 7rem);
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.62) 54%, rgba(255, 255, 255, 0.16) 100%);
-}
-
-.joy-cover::before {
-  content: "";
-  position: absolute;
-  inset: 1rem;
-  border: 1px solid rgba(192, 68, 120, 0.12);
-  border-radius: 28px;
-  pointer-events: none;
-}
-
-.joy-cover::after {
-  content: "winnie";
-  position: absolute;
-  right: 8%;
-  top: 18%;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(8rem, 18vw, 18rem);
-  font-style: italic;
-  line-height: 1;
-  color: rgba(245, 169, 199, 0.1);
-  pointer-events: none;
-}
-
-.scroll-with-butterfly {
-  min-height: 78vh;
-}
-
-.glass-panel,
-.music-board,
-.life-cover,
-.collection-cover {
-  backdrop-filter: blur(8px);
-}
-
 @media (max-width: 1024px) {
   .global-butterfly .butterfly-cloud {
     right: -19rem;
@@ -598,9 +410,6 @@ button { font: inherit; }
     opacity: 0.48;
   }
 
-  .joy-cover {
-    background: rgba(255, 255, 255, 0.72);
-  }
 }
 
 @media (max-width: 700px) {
@@ -640,21 +449,6 @@ body {
 }
 
 .site-bg::before {
-  opacity: 0.62;
-}
-/* 
-.site-bg {
-  z-index: -2;
-  background:
-    linear-gradient(90deg, rgba(76, 68, 58, 0.028) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(76, 68, 58, 0.02) 1px, transparent 1px),
-    radial-gradient(circle at 28% 18%, rgba(255, 255, 255, 0.7), transparent 18rem),
-    radial-gradient(circle at 82% 22%, rgba(245, 169, 199, 0.12), transparent 24rem);
-  background-size: 3px 100%, 100% 4px, auto, auto;
-  opacity: 1;
-}
-
-.site-bg::before {
   content: "";
   position: absolute;
   inset: -10%;
@@ -665,10 +459,9 @@ body {
     repeating-linear-gradient(2deg, rgba(90, 79, 68, 0.025) 0 1px, transparent 1px 11px);
   background-size: 8px 8px, 11px 11px, 100% 100%, 100% 100%;
   background-position: 0 0, 4px 6px, 0 0, 0 0;
-  mask-image: none;
   opacity: 0.48;
   filter: contrast(1.08);
-} */
+}
 
 .site-bg::after {
   content: "";
@@ -703,16 +496,7 @@ body {
   width: 34rem;
 }
 
-.joy-cover {
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.54) 60%, rgba(255, 255, 255, 0.2) 100%);
-  box-shadow: 0 24px 80px rgba(192, 68, 120, 0.055);
-}
-
-.glass-panel,
-.music-board,
-.life-cover,
-.collection-cover {
+.glass-panel {
   background-color: rgba(255, 255, 255, 0.62);
   backdrop-filter: blur(5px);
 }
@@ -736,7 +520,7 @@ body {
     opacity: 0.34;
   }
 }
-/* Scrapbook palette cards + particle sketch stars */
+/* Scrapbook palette stars */
 :root {
   --navy: #2f445a;
   --pale-pink: #ffe1e6;
@@ -746,57 +530,6 @@ body {
   --ink: #1f2230;
   --pink-strong: #b85f7c;
   --line: rgba(47, 68, 90, 0.16);
-}
-
-.glass-panel,
-.scrapbook-card,
-.music-board,
-.life-cover,
-.collection-cover {
-  border: 1px solid rgba(47, 68, 90, 0.14);
-  background:
-    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.72), transparent 10rem),
-    linear-gradient(135deg, rgba(245, 239, 235, 0.86), rgba(255, 225, 230, 0.54) 48%, rgba(200, 217, 230, 0.34));
-  box-shadow: 0 18px 44px rgba(47, 68, 90, 0.08), inset 0 0 0 1px rgba(255,255,255,0.36);
-  backdrop-filter: blur(3px);
-}
-
-.scrapbook-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.scrapbook-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(circle, rgba(47, 68, 90, 0.13) 0.35px, transparent 0.8px),
-    repeating-linear-gradient(92deg, rgba(47, 68, 90, 0.025) 0 1px, transparent 1px 10px);
-  background-size: 8px 8px, 100% 100%;
-  opacity: 0.28;
-  mix-blend-mode: multiply;
-}
-
-.scrapbook-card > * {
-  position: relative;
-  z-index: 1;
-}
-
-.spotify-card {
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(255, 225, 230, 0.52)),
-    var(--beige);
-  box-shadow: 0 10px 24px rgba(47, 68, 90, 0.07);
-}
-
-.spotify-embed {
-  display: block;
-  border: 0;
-  border-radius: 16px;
-  overflow: hidden;
-  background: var(--beige);
 }
 
 .number-tag,
@@ -882,37 +615,6 @@ body {
   filter: drop-shadow(0 0 6px rgba(47, 68, 90, 0.24));
 }
 
-.joy-cover {
-  background:
-    linear-gradient(90deg, rgba(245, 239, 235, 0.78) 0%, rgba(255, 225, 230, 0.5) 58%, rgba(200, 217, 230, 0.18) 100%);
-}
-/* Tighter radius and aligned frame override */
-.joy-cover,
-.music-board,
-.life-cover,
-.collection-cover {
-  border-radius: 22px !important;
-}
-
-.glass-panel,
-.scrapbook-card {
-  border-radius: 18px !important;
-}
-
-.spotify-card {
-  border-radius: 16px !important;
-}
-
-.spotify-embed {
-  border-radius: 12px !important;
-}
-
-.joy-cover::before,
-.collection-cover::before,
-.life-cover::before {
-  border-radius: 16px !important;
-}
-
 /* Editorial paper archive direction */
 body {
   color: #1f2632;
@@ -955,27 +657,13 @@ body {
 }
 
 .eyebrow-line,
-.number-tag,
-.archive-link {
+.number-tag {
   color: var(--navy);
   font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-}
-
-.glass-panel,
-.scrapbook-card,
-.music-board,
-.life-cover,
-.collection-cover {
-  border-color: rgba(47, 68, 90, 0.16);
-  background:
-    linear-gradient(135deg, rgba(255, 253, 248, 0.82), rgba(255, 225, 230, 0.34) 46%, rgba(200, 217, 230, 0.28)),
-    rgba(245, 239, 235, 0.72);
-  box-shadow: 0 16px 40px rgba(47, 68, 90, 0.07), inset 0 0 0 1px rgba(255,255,255,0.42);
-  backdrop-filter: blur(2px);
 }
 
 /* ==========================================================================
@@ -988,9 +676,16 @@ footer a {
 }
 
 header a:hover,
-footer a:hover,
-.archive-link:hover {
+footer a:hover {
   color: var(--pink-strong);
+}
+
+.page-container {
+  width: 100%;
+  max-width: none;
+  margin-inline: auto;
+  padding-left: clamp(1.25rem, 4.2vw, 5rem);
+  padding-right: clamp(1.25rem, 4.2vw, 5rem);
 }
 
 .site-poster-header {
@@ -1054,128 +749,6 @@ footer a:hover,
   padding: 0.55rem 0;
 }
 
-.home-cover {
-  min-height: calc(100vh - 7rem);
-  border-color: rgba(47, 68, 90, 0.16) !important;
-  background:
-    radial-gradient(ellipse at 72% 28%, rgba(200, 217, 230, 0.34), transparent 22rem),
-    radial-gradient(ellipse at 82% 16%, rgba(255, 255, 255, 0.72), transparent 16rem),
-    linear-gradient(90deg, rgba(255, 253, 248, 0.86) 0%, rgba(255, 248, 249, 0.68) 58%, rgba(200, 217, 230, 0.22) 100%);
-}
-
-.home-cover::before {
-  inset: 1rem;
-  border-color: rgba(47, 68, 90, 0.16);
-}
-
-.home-cover::after {
-  content: "archive";
-  right: 5%;
-  top: 14%;
-  color: rgba(47, 68, 90, 0.065);
-  font-size: clamp(8rem, 20vw, 20rem);
-}
-
-.home-cover-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 0.68fr) minmax(16rem, 0.32fr);
-  gap: clamp(2rem, 6vw, 6rem);
-  align-items: center;
-}
-
-.home-cover-copy {
-  max-width: 48rem;
-}
-
-.cover-meta {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  color: rgba(47, 68, 90, 0.68);
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
-  font-size: 0.74rem;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-}
-
-.cover-meta span:nth-child(2) {
-  text-align: center;
-}
-
-.cover-meta span:nth-child(3) {
-  text-align: right;
-}
-
-.cover-note {
-  align-self: end;
-  margin-bottom: clamp(2rem, 8vh, 5rem);
-  padding: 1.35rem;
-  transform: rotate(1.2deg);
-}
-
-.archive-grid .archive-card:nth-child(1) {
-  background:
-    linear-gradient(135deg, rgba(255, 253, 248, 0.86), rgba(200, 217, 230, 0.46)),
-    var(--beige);
-}
-
-.archive-grid .archive-card:nth-child(2) {
-  background:
-    linear-gradient(135deg, rgba(255, 253, 248, 0.86), rgba(255, 225, 230, 0.58)),
-    var(--pale-pink);
-}
-
-.archive-grid .archive-card:nth-child(3) {
-  background:
-    linear-gradient(135deg, rgba(255, 253, 248, 0.9), rgba(247, 201, 212, 0.5), rgba(200, 217, 230, 0.36)),
-    var(--beige);
-}
-
-.archive-card {
-  border: 1px solid rgba(47, 68, 90, 0.16);
-  min-height: 25rem;
-}
-
-.archive-card:hover,
-.spotify-card:hover {
-  border-color: rgba(47, 68, 90, 0.28);
-  box-shadow: 0 20px 46px rgba(47, 68, 90, 0.1), inset 0 0 0 1px rgba(255,255,255,0.5);
-}
-
-.archive-chip {
-  border: 1px solid rgba(47, 68, 90, 0.18);
-  background: rgba(255, 253, 248, 0.68);
-  padding: 0.28rem 0.7rem;
-  color: rgba(47, 68, 90, 0.78);
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
-  font-size: 0.68rem;
-  text-transform: uppercase;
-}
-
-.music-board {
-  background:
-    radial-gradient(ellipse at 12% 14%, rgba(255, 255, 255, 0.72), transparent 16rem),
-    linear-gradient(135deg, rgba(245, 239, 235, 0.86), rgba(255, 225, 230, 0.46) 44%, rgba(200, 217, 230, 0.38));
-}
-
-.music-board::after {
-  content: "music notes";
-  color: rgba(47, 68, 90, 0.06);
-  right: 1rem;
-  bottom: -1.4rem;
-}
-
-.spotify-card {
-  border-color: rgba(47, 68, 90, 0.14);
-  background:
-    linear-gradient(135deg, rgba(255, 253, 248, 0.86), rgba(255, 225, 230, 0.42)),
-    var(--beige);
-}
-
-.spotify-embed {
-  border-radius: 10px !important;
-}
-
 .inline-flex.rounded-full {
   border-radius: 12px;
 }
@@ -1195,27 +768,9 @@ footer a:hover,
 }
 
 @media (max-width: 1024px) {
-  .home-cover-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cover-note {
-    max-width: 28rem;
-    margin-bottom: 0;
-  }
 }
 
 @media (max-width: 700px) {
-  .cover-meta {
-    grid-template-columns: 1fr;
-  }
-
-  .cover-meta span,
-  .cover-meta span:nth-child(2),
-  .cover-meta span:nth-child(3) {
-    text-align: left;
-  }
-
   .global-butterfly .butterfly-cloud {
     right: -30rem;
     top: 8rem;
@@ -1237,25 +792,6 @@ body:has(.home-reference-page) > footer {
 body:has(.home-reference-page) main {
   padding-top: 0;
 }
-/* 
-body:has(.home-reference-page) {
-  overflow-x: hidden;
-  background:
-    radial-gradient(circle at 86% 24%, rgba(200, 217, 230, 0.42), transparent 24rem),
-    radial-gradient(circle at 92% 58%, rgba(255, 225, 230, 0.52), transparent 18rem),
-    linear-gradient(180deg, #f9f3e9 0%, #fbf5eb 100%);
-}
-
-body:has(.home-reference-page) .site-bg {
-  background:
-    radial-gradient(circle at 8% 38%, rgba(103, 135, 162, 0.22), transparent 13rem),
-    radial-gradient(circle at 89% 43%, rgba(184, 95, 124, 0.14), transparent 15rem),
-    linear-gradient(180deg, rgba(250, 244, 235, 0.84), rgba(250, 244, 235, 0.72));
-}
-
-body:has(.home-reference-page) .site-bg::before {
-  opacity: 0.62;
-} */
 
 body:has(.home-reference-page) .global-butterfly .butterfly-cloud {
   right: clamp(4rem, 8vw, 12rem);
@@ -1295,12 +831,6 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   opacity: 0.16;
 }
 
-.home-reference-page {
-  max-width: none;
-  padding-left: clamp(1.25rem, 4.2vw, 5rem);
-  padding-right: clamp(1.25rem, 4.2vw, 5rem);
-}
-
 .home-poster {
   position: relative;
   min-height: 100vh;
@@ -1321,19 +851,6 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
     radial-gradient(circle, rgba(47, 68, 90, 0.12) 0.35px, transparent 0.8px);
   background-size: 100% 100%, 100% 100%, 7px 7px;
   opacity: 0.36;
-}
-
-.home-poster-nav {
-  display: grid;
-  grid-template-columns: minmax(8rem, 0.65fr) minmax(22rem, 1fr) minmax(10rem, 0.65fr);
-  align-items: center;
-  gap: 1.5rem;
-  border-bottom: 1px solid rgba(30, 43, 69, 0.52);
-  padding: 0 1.35rem 1.25rem;
-  color: #1e2b45;
-  font-size: 0.84rem;
-  letter-spacing: 0.18em;
-  text-transform: lowercase;
 }
 
 .home-wordmark {
@@ -1360,14 +877,6 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 
 .home-nav-right span {
   color: #c17694;
-}
-
-.home-poster-nav a {
-  transition: color 180ms ease;
-}
-
-.home-poster-nav a:hover {
-  color: #b85f7c;
 }
 
 .home-hero {
@@ -1509,7 +1018,6 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   grid-template-columns: minmax(0, 3fr) minmax(18rem, 1.16fr) minmax(18rem, 1.16fr);
   gap: clamp(1.25rem, 2vw, 2rem);
   align-items: stretch;
-  padding: 0 1.35rem;
 }
 
 .home-section-heading {
@@ -1558,7 +1066,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 .home-project-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(1rem, 1.65vw, 1.5rem);
+  gap: clamp(1rem, 1.65vw, 0.9rem);
   margin-top: 1.25rem;
   height: calc(100% - 2.6rem);
 }
@@ -1889,7 +1397,6 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 }
 
 @media (max-width: 900px) {
-  .home-poster-nav,
   .site-poster-nav {
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 1rem;
@@ -1910,12 +1417,6 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
     display: grid;
     grid-column: 1 / -1;
     grid-template-columns: 1fr;
-  }
-
-  .home-poster-nav .home-nav-center,
-  .home-poster-nav .home-nav-right {
-    justify-content: flex-start;
-    flex-wrap: wrap;
   }
 
   .home-hero {
@@ -1940,12 +1441,11 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 }
 
 @media (max-width: 620px) {
-  .home-reference-page {
+  .page-container {
     padding-left: 0.9rem;
     padding-right: 0.9rem;
   }
 
-  .home-poster-nav,
   .home-archive-layout,
   .home-poster-footer {
     padding-left: 0;
@@ -2287,7 +1787,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   margin-top: clamp(2.2rem, 5vw, 4rem);
   color: #1e2b45;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(4rem, 10vw, 8.5rem);
+  font-size: clamp(2rem, vw, 4rem);
   font-weight: 500;
   line-height: 0.92;
   letter-spacing: 0;
@@ -2304,15 +1804,6 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   letter-spacing: 0.16em;
   line-height: 1.7;
   text-transform: uppercase;
-}
-
-.project-detail-description {
-  margin-top: 1.8rem;
-  max-width: 58rem;
-  color: rgba(30, 43, 69, 0.78);
-  font-size: 0.98rem;
-  letter-spacing: 0;
-  line-height: 1.8;
 }
 
 .project-detail-actions {
@@ -2396,6 +1887,16 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   font-size: 0.68rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.archive-chip {
+  border: 1px solid rgba(30, 43, 69, 0.16);
+  background: rgba(249, 243, 233, 0.62);
+  padding: 0.28rem 0.62rem;
+  color: rgba(30, 43, 69, 0.72);
+  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
 }
 
 .life-archive-grid {
@@ -3004,7 +2505,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   border: 1px solid rgba(30, 43, 69, 0.22);
   background:
     linear-gradient(135deg, rgba(249, 243, 233, 0.78), rgba(255, 225, 230, 0.16), rgba(200, 217, 230, 0.14)),
-    rgba(249, 243, 233, 0.62);
+    rgba(249, 233, 233, 0.244);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
 }
 
@@ -3359,24 +2860,18 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 }
 
 /* Final card overlay only: use uploaded assets without changing card formats. */
-/* .project-archive-card::before, */
-/* .life-archive-card::before, */
 .contact-archive-card::before,
-/* .experience-archive-card-inner::before, */
-/* .about-archive-card::before, */
-/* /* .skills-archive-card::before, */
-/* .footprint-note::before,  */
-.diary-fragment-card::before{
+.diary-fragment-card::before {
   background-image: url("/overlays/ribbon-stars.png");
   background-position: right center;
   background-repeat: no-repeat;
   background-size: min(50%, 24rem) auto;
   opacity: 0.1;
   filter: contrast(2);
-} 
+}
 
 .contact-archive-card::before,
-.project-archive-card::before{
+.project-archive-card::before {
   background-image: url("/overlays/but_fly.jpg");
   background-position: right -5rem bottom;
   rotate: 20deg;
@@ -3384,14 +2879,23 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   background-size: min(75%, 24rem) auto;
   opacity: 0.15;
   filter: contrast(3);
-} 
+}
+
+.footprint-note::before {
+  background-image: url("/overlays/line.jpg");
+  background-position: right -5rem top -5rem;
+  background-repeat: no-repeat;
+  background-size: min(75%, 24rem) auto;
+  opacity: 0.08;
+  filter: contrast(10);
+}
 
 .contact-archive-card:not(:nth-child(3n))::before,
-.project-archive-card:not(:nth-child(3n))::before{
+.project-archive-card:not(:nth-child(3n))::before {
   background-image: none;
-} 
+}
 
-.experience-archive-card-inner::before{
+.experience-archive-card-inner::before {
   background-image: url("/overlays/constellation.png");
   background-position: right bottom;
   background-repeat: no-repeat;

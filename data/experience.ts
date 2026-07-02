@@ -7,7 +7,7 @@ export type Experience = {
   startDate: string;
   endDate?: string;
   location?: string;
-  highlight?: string;
+  // highlight?: string;
   description: string[];
   skills: string[];
   link?: string;
@@ -28,23 +28,22 @@ export const experienceItems: Experience[] = [
     startDate: "Jun 2026",
     endDate: "Present",
     location: "Remote",
-    highlight: "Supporting app development and technical setup for a startup software project.",
+    // highlight: "Supporting app development and technical setup for a startup software project.",
     description: [
-      "Contributed to a startup software project by supporting app development, local setup, and technical exploration.",
-      "Collaborated with teammates to understand frontend, backend, Firebase, and environment configuration workflows.",
+      "Contributed to a startup software project by supporting app development and technical exploration."
     ],
-    skills: ["App Development", "Frontend", "Firebase", "Collaboration"],
+    skills: ["App Development", "Backend", "Firebase"],
   },
   {
     id: "esports-sub-instructor",
     title: "Substitute Instructor",
-    organization: "Esports Class",
+    organization: "Whizara",
     type: "leadership",
     startDate: "Jun 2026",
+    endDate: "Present",
     location: "Miami, FL",
-    highlight: "Supported classroom instruction and student engagement for an esports-focused program.",
+    // highlight: "Supported classroom instruction and student engagement for an esports-focused program.",
     description: [
-      "Supported classroom instruction for an esports-focused program.",
       "Helped guide students through activities while maintaining an engaging and organized learning environment.",
     ],
     skills: ["Teaching", "Communication", "Student Support"],
@@ -57,10 +56,10 @@ export const experienceItems: Experience[] = [
     startDate: "May 2026",
     endDate: "Present",
     location: "Remote",
-    highlight: "Building ML models for IoT network intrusion detection.",
+    // highlight: "Building ML models for IoT network intrusion detection.",
     description: [
-      "Worked on a machine learning project focused on classifying IoT network traffic as benign or malicious.",
-      "Explored the TON_IoT dataset through data cleaning, feature analysis, model evaluation, and technical communication.",
+      "Working on a machine learning project focused on classifying IoT network traffic as benign or malicious.",
+      "Explored the TON_IoT dataset through feature analysis.",
     ],
     skills: ["Data Analysis", "Model Evaluation", "Machine Learning", "Python"],
   },
@@ -70,8 +69,9 @@ export const experienceItems: Experience[] = [
     organization: "BNY",
     type: "program",
     startDate: "May 2026",
+    endDate: "June 2026",
     location: "Remote",
-    highlight: "Participated in an engineering-focused early career development program.",
+    // highlight: "Participated in an engineering-focused early career development program.",
     description: [
       "Participated in engineering-focused programming with exposure to technical career paths, professional development, and early career opportunities.",
       "Engaged with industry professionals to better understand engineering roles in financial technology and large-scale systems.",
@@ -86,7 +86,7 @@ export const experienceItems: Experience[] = [
     startDate: "Jan 2026",
     endDate: "Apr 2026",
     location: "Remote",
-    highlight: "Developed technical skills through software engineering apprenticeship programming.",
+    // highlight: "Developed technical skills through software engineering apprenticeship programming.",
     description: [
       "Participated in software engineering apprenticeship programming focused on technical growth, collaboration, and project-based learning.",
       "Strengthened full-stack development foundations while practicing communication, problem-solving, and software development workflows.",
@@ -100,7 +100,7 @@ export const experienceItems: Experience[] = [
     type: "leadership",
     startDate: "Oct 2025",
     endDate: "Mar 2026",
-    highlight: "Supported judging and awards coordination for a student-led hackathon.",
+    // highlight: "Supported judging and awards coordination for a student-led hackathon.",
     description: [
       "Supported judging and awards coordination for a student-led hackathon.",
       "Helped organize evaluation workflows to keep project judging clear, fair, and efficient.",
@@ -115,7 +115,7 @@ export const experienceItems: Experience[] = [
     startDate: "Apr 2025",
     endDate: "Apr 2026",
     location: "Gainesville, FL",
-    highlight: "Created outreach content for UF's Women in Computer Science & Engineering community.",
+    // highlight: "Created outreach content for UF's Women in Computer Science & Engineering community.",
     description: [
       "Created outreach content and event messaging for UF's Women in Computer Science & Engineering community.",
       "Helped promote events, resources, and opportunities that support women and underrepresented students in computing.",
@@ -130,7 +130,7 @@ export const experienceItems: Experience[] = [
     startDate: "Oct 2024",
     endDate: "Present",
     location: "Gainesville, FL",
-    highlight: "Coordinating volunteer communication and logistics for STEM outreach events.",
+    // highlight: "Coordinating volunteer communication and logistics for STEM outreach events.",
     description: [
       "Coordinated volunteer communication, role assignments, and event-day logistics for a student-run Science Olympiad tournament.",
       "Helped organize resources and processes to support volunteers, event supervisors, and competitors.",

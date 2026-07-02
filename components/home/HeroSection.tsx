@@ -18,17 +18,6 @@ export function HeroSection() {
         <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-700 sm:text-lg">
           I build user-centered software that connects real-world problems with scalable technical solutions.
         </p>
-        {/* <div className="mt-8 flex flex-wrap gap-3">
-          <ButtonLink href="/projects">View Projects</ButtonLink>
-          <ButtonLink href="/resume" variant="secondary">View Resume</ButtonLink>
-          <ButtonLink href="/contact" variant="ghost">Contact Me</ButtonLink>
-        </div> */}
-        {/* <div className="mt-12 grid gap-3 border-t border-blush-100 pt-5 text-xs uppercase tracking-[0.14em] text-zinc-500 sm:grid-cols-4">
-          <span>Software Engineering</span>
-          <span>AI / ML</span>
-          <span>Full-Stack</span>
-          <span>Leadership</span>
-        </div> */}
       </div>
     </section>
   );

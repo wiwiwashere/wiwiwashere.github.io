@@ -1,4 +1,4 @@
-export const homeProjectHighlights = ["meow-cat-detector", "nook-furniture-trading", "iot-network-intrusion-detection"];
+export const homeProjectHighlights = ["iot-network-intrusion-detection", "meow-cat-detector", "system-call-file-manager"];
 
 export const musicPicks = [
   {
@@ -8,20 +8,6 @@ export const musicPicks = [
     note: "A song I want to keep close to this little collection page.",
     embedUrl: "https://open.spotify.com/embed/track/1AZXNAVDD9ZFIEKySgflFz?utm_source=generator&si=498c4d45bd284e95"
   },
-  {
-    title: "BIRDS OF A FEATHER",
-    artist: "Billie Eilish",
-    mood: "soft focus",
-    note: "Remembering the simple things can still feel cinematic.",
-    embedUrl: "https://open.spotify.com/embed/track/6dOtVTDdiauQNBQEDOtlAB?si=81578c162a114ccb"
-  },
-  {
-    title: "Henny in the Hamptons",
-    artist: "Bren Joy",
-    mood: "idk its just good",
-    note: ".",
-    embedUrl: "https://open.spotify.com/embed/track/19NKbRV1zevCIzePp88Wzh?si=f8fe0b95cec34bbe"
-  }, 
   {
     title: "3:00 AM",
     artist: "Bren Joy",

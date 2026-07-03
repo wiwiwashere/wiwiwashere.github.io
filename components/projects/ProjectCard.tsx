@@ -1,5 +1,6 @@
 import { Project } from "@/data/projects";
 import { ButtonLink } from "@/components/ui/ButtonLink";
+import Link from "next/link";
 
 type ProjectCardProps = { project: Project; index?: number };
 
@@ -17,8 +18,11 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
         {project.techStack.slice(0, 5).map((tech) => <span key={tech} className="archive-chip">{tech}</span>)}
       </div>
       <div className="mt-7 flex flex-wrap gap-3">
-        <ButtonLink href={`/projects/${project.slug}`}>Read More</ButtonLink>
-        {project.githubUrl ? <ButtonLink href={project.githubUrl} variant="secondary" external>View Code</ButtonLink> : null}
+        {/* <ButtonLink href={`/projects/${project.slug}`}>Read More</ButtonLink> */}
+        <Link href={`/projects/${project.slug}`} className="home-section-action">
+          read more -&gt;
+        </Link>
+        {/* {project.githubUrl ? <ButtonLink href={project.githubUrl} variant="secondary" external>View Code</ButtonLink> : null} */}
       </div>
     </article>
   );

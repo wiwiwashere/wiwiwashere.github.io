@@ -1,5 +1,13 @@
 export type ProjectStatus = "Completed" | "In Progress" | "Prototype";
 
+export type ProjectMediaItem = {
+  type: "image" | "video" | "youtube" | "drive";
+  src: string;
+  title?: string;
+  caption?: string;
+  poster?: string;
+};
+
 export type Project = {
   id: string;
   slug: string;
@@ -21,6 +29,7 @@ export type Project = {
   githubUrl?: string;
   demoUrl?: string;
   imageUrl?: string;
+  media?: ProjectMediaItem[];
   featured: boolean;
 };
 
@@ -124,6 +133,48 @@ export const projects: Project[] = [
     demoUrl: "",
     imageUrl: "",
     featured: false,
+    media: [
+      {
+        type: "image",
+        src: "/project/DINOv2_+_Adapter.png",
+        title: "DINOv2 + Adapter",
+        caption: "self-supervised"
+      },
+      {
+        type: "image",
+        src: "/project/DOA_Head.png",
+        title: "DOA Head",
+        caption: "From https://ieeexplore.ieee.org/document/9157762"
+      },
+      {
+        type: "image",
+        src: "/project/yolo+sam.png",
+        title: "Yolo + Sam",
+        caption: "Yolo get bounding box + sam get instance mask"
+      },
+      {
+        type: "image",
+        src: "/project/multi_grid_image.png",
+        title: "Multi grid image",
+        caption: "From https://ya.ru/?source=tabbar"
+      },
+      {
+        type: "image",
+        src: "/project/multi_yolo.png",
+        title: "yolo with multi grid image",
+        caption: "train yolo with manual labeled multi grid image"
+      },
+      // {
+      //   type: "youtube",
+      //   src: "https://www.youtube.com/embed/YOUTUBE_ID",
+      //   title: "demo video"
+      // },
+      // {
+      //   type: "drive",
+      //   src: "https://drive.google.com/file/d/FILE_ID/preview",
+      //   title: "walkthrough"
+      // }
+    ]
   },
   {
     id: "meow",

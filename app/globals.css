@@ -1831,8 +1831,20 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   padding: clamp(1.35rem, 3vw, 2rem);
 }
 
+.project-media-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(30, 43, 69, 0.22);
+  background:
+    linear-gradient(135deg, rgba(249, 243, 233, 0.78), rgba(255, 225, 230, 0.16), rgba(200, 217, 230, 0.14)),
+    rgba(249, 243, 233, 0.54);
+  padding: clamp(1.1rem, 2.8vw, 1.7rem);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.26);
+}
+
 .project-detail-hero::before,
-.project-detail-card::before {
+.project-detail-card::before,
+.project-media-card::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -1845,7 +1857,8 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 }
 
 .project-detail-hero::after,
-.project-detail-card::after {
+.project-detail-card::after,
+.project-media-card::after {
   content: "";
   position: absolute;
   right: -4rem;
@@ -1860,7 +1873,8 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 }
 
 .project-detail-hero > *,
-.project-detail-card > * {
+.project-detail-card > *,
+.project-media-card > * {
   position: relative;
   z-index: 1;
 }
@@ -1912,6 +1926,127 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 1.1;
+}
+
+.project-media-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.project-media-header h2 {
+  margin: 0.65rem 0 0;
+  color: #1e2b45;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.project-media-header > p,
+.project-media-footer p,
+.project-media-footer h3,
+.project-media-controls button {
+  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  letter-spacing: 0.1em;
+}
+
+.project-media-header > p {
+  color: rgba(30, 43, 69, 0.62);
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+.project-media-frame {
+  display: grid;
+  min-height: 0;
+  overflow: visible;
+  place-items: center;
+  background:
+    radial-gradient(circle at 52% 44%, rgba(221, 231, 239, 0.42), transparent 46%),
+    rgba(255, 246, 236, 0.46);
+}
+
+.project-media-frame img,
+.project-media-frame video {
+  display: block;
+  width: 100%;
+  max-height: min(72vh, 44rem);
+  height: auto;
+  border: 0;
+  object-fit: contain;
+}
+
+.project-media-frame iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: clamp(15rem, 46vw, 34rem);
+  border: 0;
+}
+
+.project-media-frame-video video {
+  background: rgba(30, 43, 69, 0.08);
+}
+
+.project-media-footer {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.project-media-footer h3 {
+  margin: 0 0 0.35rem;
+  color: #1e2b45;
+  font-size: 0.8rem;
+  text-transform: lowercase;
+}
+
+.project-media-footer p {
+  margin: 0;
+  color: rgba(30, 43, 69, 0.68);
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+
+.project-media-controls {
+  display: flex;
+  gap: 0.55rem;
+}
+
+.project-media-controls button {
+  border: 1px solid rgba(30, 43, 69, 0.28);
+  background:
+    linear-gradient(135deg, rgba(249, 243, 233, 0.94), rgba(255, 225, 230, 0.72), rgba(221, 231, 239, 0.72)),
+    #fff6ec;
+  padding: 0.58rem 0.75rem;
+  color: #1e2b45;
+  font-size: 0.68rem;
+  text-transform: lowercase;
+  cursor: pointer;
+}
+
+.project-media-dots {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.9rem;
+}
+
+.project-media-dots button {
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 1px solid rgba(30, 43, 69, 0.28);
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.project-media-dots button.is-active {
+  background: #1e2b45;
 }
 
 .project-detail-body,

@@ -8,7 +8,7 @@ const featuredProjects = homeProjectHighlights
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter(Boolean);
 
-const cardVisuals = ["signal bloom", "meow bloom", "system bloom"];
+const cardVisuals = ["loT", "meow", "record ai"];
 const currentSong = musicPicks[0];
 
 export default function HomePage() {

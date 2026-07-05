@@ -1,4 +1,4 @@
-export const homeProjectHighlights = ["iot-network-intrusion-detection", "meow-cat-detector", "system-call-file-manager"];
+export const homeProjectHighlights = ["iot-network-intrusion-detection", "meow-cat-detector", "recod-ai-image-forgery-detection"];
 
 export const musicPicks = [
   {

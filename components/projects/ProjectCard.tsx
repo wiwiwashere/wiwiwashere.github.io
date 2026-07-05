@@ -1,5 +1,4 @@
 import { Project } from "@/data/projects";
-import { ButtonLink } from "@/components/ui/ButtonLink";
 import Link from "next/link";
 
 type ProjectCardProps = { project: Project; index?: number };

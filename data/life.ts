@@ -136,8 +136,8 @@ export const lifeEntries: LifeEntry[] = [
     tags: ["HS", "end of a chapter"]
   }, 
   {
-    id: "optic",
-    title: "Optic @UF State Tournament",
+    id: "optics",
+    title: "Optics @UF State Tournament",
     date: "Apr 2024",
     category: "STEM",
     imageUrl: "/life/optics.jpg",

@@ -2227,12 +2227,12 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 }
 
 .experience-org {
-  margin: 0;
+  margin: 0.1rem 0 -0.8em;
   color: #b85f7c;
-  font-size: 0.72rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  /* text-transform: uppercase; */
 }
 
 .experience-archive-card ul {

@@ -37,7 +37,7 @@ export default function ResumePage() {
 
       <footer className="home-poster-footer">
           <span>*</span>
-          <p>(c) 2026 Winnie Lin</p>
+          <p>(©) 2026 Winnie Lin</p>
           <p>building soft things with strong intention.</p>
       </footer>
     </PageContainer>

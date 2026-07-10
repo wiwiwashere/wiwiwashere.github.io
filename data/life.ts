@@ -10,6 +10,15 @@ export type LifeEntry = {
 
 export const lifeEntries: LifeEntry[] = [
   {
+    id: "star_paynes",
+    title: "Stargazing @Paynes Praireie Preserve State Park",
+    date: "July 2026",
+    category: "View",
+    imageUrl: "/life/stars_paynes.jpg",
+    thought: "stargazing.",
+    tags: ["stars", "quiet"]
+  },
+  {
     id: "museum-note",
     title: "Museum afternoon",
     date: "June 2026",
@@ -43,7 +52,7 @@ export const lifeEntries: LifeEntry[] = [
     category: "View",
     imageUrl: "/life/stars.jpg",
     thought: "stars",
-    tags: ["star", "travel"]
+    tags: ["stars", "travel"]
   },
   {
     id: "griffin",
@@ -64,6 +73,15 @@ export const lifeEntries: LifeEntry[] = [
     tags: ["dog", "travel"]
   },
   {
+    id: "wicse eboard social",
+    title: "WiCSE Eboard Social",
+    date: "Mar 2026",
+    category: "People",
+    imageUrl: "/life/wicse.jpg",
+    thought: "WiCSE Eboard Social!",
+    tags: ["college"]
+  },
+  {
     id: "manhatta_winna",
     title: "Dinner with Winna",
     date: "Mar 2026",
@@ -71,6 +89,15 @@ export const lifeEntries: LifeEntry[] = [
     imageUrl: "/life/manhatta_w_winna.jpg",
     thought: "Sis's birthday dinner. Even though she always yell at me as a younger sister, I know she loves me. I love her too.",
     tags: ["family", "life"]
+  },
+  {
+    id: "gbm_jose",
+    title: "WiCSE GBM with my mentee",
+    date: "Mar 2026",
+    category: "People",
+    imageUrl: "/life/gbm_josephine.jpg",
+    thought: "WiCSE GBM with my mentee!",
+    tags: ["college"]
   },
   {
     id: "nook-memory",
@@ -134,6 +161,15 @@ export const lifeEntries: LifeEntry[] = [
     imageUrl: "/life/hs.jpg",
     thought: "graduated! so so grateful for the people who made this journey meaningful and memorable. hope to keep learning and growing in the next chapter of my life.",
     tags: ["HS", "end of a chapter"]
+  },
+  {
+    id: "senior_night",
+    title: "Senior Night",
+    date: "May 2024",
+    category: "People",
+    imageUrl: "/life/honor_night.jpg",
+    thought: "got my cords",
+    tags: ["HS"]
   }, 
   {
     id: "optics",
@@ -145,12 +181,30 @@ export const lifeEntries: LifeEntry[] = [
     tags: ["STEM", "HS"]
   }, 
   {
+    id: "key_club",
+    title: "Volunteering with Key Club",
+    date: "Oct 2023",
+    category: "STEM",
+    imageUrl: "/life/key.jpg",
+    thought: "Kiwanis Pleasure Walk volunteering event with Key Club members", 
+    tags: ["Volunteering", "HS"]
+  }, 
+  {
     id: "col_nano",
     title: "Precollege @Columbia",
     date: "July 2023",
     category: "STEM",
     imageUrl: "/life/col.jpg",
     thought: "Really enjoyed the precollege program at Columbia. During my time there, I took a course called Introduction to nanotechnology and material science, met a lot of amazing people, and learned more about myself and my interests.",
+    tags: ["STEM", "HS"]
+  }, 
+  {
+    id: "uf_state1",
+    title: "UF State Tournament",
+    date: "Apr 2023",
+    category: "STEM",
+    imageUrl: "/life/uf_state1.jpg",
+    thought: "1st year of science olympiad, made it to state!", 
     tags: ["STEM", "HS"]
   }, 
   {
@@ -176,5 +230,7 @@ export const lifeEntries: LifeEntry[] = [
 export const diaryNotes = [
   "I want this space to feel like a portfolio, but also like a small room where my personality can breathe.",
   "This page is intentionally unfinished in the best way: it can grow whenever I have a photo, a thought, or a small moment worth keeping.",
-  "I really like hippop & edm music. But yes it doesn't go well with the overall vibe of this page... :("
+  "I really like hippop & edm music. But yes it doesn't go well with the overall vibe of this page... :(",
+  "Where there's a will, there is a way.",
+  "Avoiding the things that make you uncomfortable is a temporary solution. Facing them is a long-term solution.",
 ];

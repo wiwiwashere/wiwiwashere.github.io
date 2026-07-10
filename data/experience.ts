@@ -61,7 +61,7 @@ export const experienceItems: Experience[] = [
       "Working on a machine learning project focused on classifying IoT network traffic as benign or malicious.",
       "Explored the TON_IoT dataset through feature analysis.",
     ],
-    skills: ["Data Analysis", "Model Evaluation", "Machine Learning", "Python"],
+    skills: ["Data Analysis", "Machine Learning", "Python"],
   },
   {
     id: "bny",
@@ -90,7 +90,7 @@ export const experienceItems: Experience[] = [
       "Participated in software engineering apprenticeship focused on technical growth and project-based learning.",
       // "Strengthened full-stack development foundations while practicing communication, problem-solving, and software development workflows.",
     ],
-    skills: ["Software Engineering", "Collaboration", "Machine Learning"],
+    skills: ["Software Engineering", "Machine Learning", "Mentorship"],
   },
   {
     id: "sasehacks",
@@ -104,7 +104,7 @@ export const experienceItems: Experience[] = [
     description: [
       "Supported judging and awards coordination for a student-led hackathon."
     ],
-    skills: ["Event Management", "Judging Operations", "Collaboration"],
+    skills: ["Event Management", "Collaboration"],
   },
   {
     id: "wicse",
@@ -118,7 +118,7 @@ export const experienceItems: Experience[] = [
     description: [
       "Collaborate with co-director to publish 120+ posts, expanding reach and driving awareness for WiCSE events and initiatives",
     ],
-    skills: ["Public Relations", "Content Strategy", "Community Outreach"],
+    skills: ["Content Strategy", "Community Outreach"],
   },
   {
     id: "gso",
@@ -130,9 +130,9 @@ export const experienceItems: Experience[] = [
     location: "Gainesville, FL",
     // highlight: "Coordinating volunteer communication and logistics for STEM outreach events.",
     description: [
-      "Coordinated volunteer communication, role assignments, and event-day logistics for a student-run Science Olympiad tournament.",
-      "Helped organize resources and processes to support volunteers, event supervisors, and competitors.",
+      "Coordinated supervisor and volunteer communication, role assignments, and event-day logistics for a student-run Science Olympiad tournament.",
+      // "Helped organize resources and processes to support volunteers, event supervisors, and competitors.",
     ],
-    skills: ["Volunteer Coordination", "Operations", "STEM Outreach"],
+    skills: ["Coordination", "Operations", "STEM Outreach"],
   }
 ];

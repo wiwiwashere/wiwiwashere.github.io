@@ -3,6 +3,7 @@ import "./globals.css";
 import { CelestialParticles } from "@/components/home/ButterflyParticles";
 import { Navbar } from "@/components/layout/Navbar";
 import { FloatingMusicPlayer } from "@/components/music/FloatingMusicPlayer";
+import { ButterflyCursor } from "@/components/layout/ButterflyCursor";
 
 export const metadata: Metadata = {
   title: "Winnie Lin | Portfolio",
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </div>
         <Navbar />
         <FloatingMusicPlayer />
+        <ButterflyCursor />
         <main className="relative z-10 pt-24">{children}</main>
       </body>
     </html>

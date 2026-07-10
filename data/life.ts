@@ -20,7 +20,7 @@ export const lifeEntries: LifeEntry[] = [
   },
   {
     id: "museum-note",
-    title: "Museum afternoon",
+    title: "The Met Museum",
     date: "June 2026",
     category: "View",
     imageUrl: "/life/met.jpg",
@@ -29,7 +29,7 @@ export const lifeEntries: LifeEntry[] = [
   },
   {
     id: "bun_cat",
-    title: "She's a little softie",
+    title: "a little softie",
     date: "June 2026",
     category: "Animals",
     imageUrl: "/life/bun_cafe.jpg",
@@ -228,8 +228,8 @@ export const lifeEntries: LifeEntry[] = [
 ];
 
 export const diaryNotes = [
-  "I want this space to feel like a portfolio, but also like a small room where my personality can breathe.",
-  "This page is intentionally unfinished in the best way: it can grow whenever I have a photo, a thought, or a small moment worth keeping.",
+  "This space = portfolio + small room for my personality",
+  "This page is intentionally unfinished in the best way :D",
   "I really like hippop & edm music. But yes it doesn't go well with the overall vibe of this page... :(",
   "Where there's a will, there is a way.",
   "Avoiding the things that make you uncomfortable is a temporary solution. Facing them is a long-term solution.",

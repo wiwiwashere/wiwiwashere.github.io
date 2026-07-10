@@ -43,6 +43,7 @@ export const projectTags = [
   "Systems",
   "Mobile",
   "Cybersecurity",
+  "Team Project",
 ];
 
 export const projects: Project[] = [
@@ -55,14 +56,14 @@ export const projects: Project[] = [
       "Building and evaluating machine learning models for classifying IoT network traffic as benign or malicious.",
     description:
       "A machine learning project for classifying IoT network traffic and exploring cybersecurity patterns in structured data.",
-    // problem:
-    //   "IoT environments can generate complex traffic patterns, making it difficult to identify potentially malicious behavior at scale.",
+    problem:
+      "IoT environments can generate complex traffic patterns, making it difficult to identify potentially malicious behavior at scale.",
     // solution:
     //   "The project uses preprocessing, feature exploration, and classification models to distinguish traffic categories in the TON_IoT dataset.",
     role:
       "Cleaned and explored the TON_IoT dataset.",
     techStack: ["Python", "Pandas", "Scikit-learn", "ML Classification"],
-    tags: ["AI / ML", "Data", "Cybersecurity"],
+    tags: ["AI / ML", "Data", "Cybersecurity", "Team Project",],
     features: [
       "TON_IoT dataset analysis",
       "Preprocessing and feature selection",
@@ -107,7 +108,7 @@ export const projects: Project[] = [
       // "Computer Vision",
       // "Deep Learning"
     ],
-    tags: ["AI / ML", "Data"],
+    tags: ["AI / ML", "Data", "Team Project"],
     features: [
       "Detects potential manipulation in scientific and biomedical images",
       "Uses DINOv2 for visual representation learning",
@@ -372,19 +373,19 @@ export const projects: Project[] = [
       "Built a student-focused marketplace for buying and selling furniture around the UF community.",
     description:
       "A student-centered marketplace for buying, selling, and discovering furniture around the University of Florida community.",
-    // problem:
-    //   "UF students moving in and out of apartments often need affordable furniture quickly, but general marketplaces can feel cluttered, unsafe, or too broad.",
-    // solution:
-    //   "Nook creates a focused furniture marketplace with listings, search-friendly information, and a familiar full-stack product structure.",
+    problem:
+      "Many students have only a few choices when it comes to their furniture when move out time rolls around. They either have to donate it, trash it, or lug it back home, which can be an issue for many students, especially those who live farther away.Many students will try to resell items, especially electronics, on social media platforms, but there are many scams and fake sellers on these apps, which leads to distrust amongst the students. ",
+    solution:
+      "Nook provided a platform for college students to connect with each other to trade items/services. We chose to focus specifically on dorm furniture as this is an issue that we have noticed many students at UF facing.",
     role:
       "Helped shape the product flow, implemented full-stack features, and organized user-centered listing data for a student audience.",
     techStack: ["MongoDB", "Express", "React", "Node.js"],
-    tags: ["Full-Stack"],
+    tags: ["Full-Stack", "Team Project"],
     features: [
-      "Furniture listing cards",
-      "Student-oriented product details",
-      "MERN-style frontend and backend separation",
-      "Marketplace flow for browsing items",
+      "Rating and review system",
+      "Chat system",
+      "Search and filter functionality",
+      "User authentication and profile management",
     ],
     challenges: [
       "Designing a marketplace that feels simple instead of overloaded",
@@ -413,12 +414,9 @@ export const projects: Project[] = [
     role:
       "Contributed to the project concept, user flow, feature planning, and implementation of application functionality. Focused on making the experience intuitive and aligned with real user needs.",
     techStack: ["React", "JavaScript", "HTML", "CSS"],
-    tags: ["Full-Stack"],
+    tags: ["Full-Stack", "Team project"],
     features: [
-      "Allows users to view or compare ride-related options",
-      "Organizes ride information around user preferences",
-      "Provides a clean interface for planning or selecting rides",
-      "Focuses on usability and decision-making support",
+      "Organizes ride information around user preferences"
     ],
     challenges: [
       "Defining what makes a ride ideal from a user perspective",
@@ -451,7 +449,7 @@ export const projects: Project[] = [
     role:
       "Designed UI/UX for the mobile flow.",
     techStack: ["React Native", "Google Vision", "Gemini API"],
-    tags: ["AI / ML", "Mobile"],
+    tags: ["Mobile", "AI / ML", "Team project"],
     features: [
       "Mobile-first scan experience",
       "OCR-powered label extraction",

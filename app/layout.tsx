@@ -7,7 +7,22 @@ import { ButterflyCursor } from "@/components/layout/ButterflyCursor";
 
 export const metadata: Metadata = {
   title: "Winnie Lin | Portfolio",
-  description: "Personal portfolio for Winnie Lin"
+  description: "Personal portfolio for Winnie Lin",
+  openGraph: {
+    title: "Winnie Lin | Portfolio",
+    description: "A personal archive of software, AI projects, experiences, and life outside of tech.",
+    url: "https://wiwiwashere.github.io/",
+    siteName: "Winnie Lin",
+    images: [
+      {
+        url: "https://wiwiwashere.github.io/home.png",
+        width: 1200,
+        height: 630,
+        alt: "Winnie Lin Portfolio"
+      }
+    ],
+    type: "website"
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

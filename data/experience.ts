@@ -32,7 +32,7 @@ export const experienceItems: Experience[] = [
     description: [
       "Contributed to a startup software project by supporting app development and technical exploration."
     ],
-    skills: ["App Development", "Backend", "Firebase"],
+    skills: ["App Development", "Backend"],
   },
   {
     id: "esports-sub-instructor",
@@ -44,7 +44,7 @@ export const experienceItems: Experience[] = [
     location: "Miami, FL",
     // highlight: "Supported classroom instruction and student engagement for an esports-focused program.",
     description: [
-      "Helped guide students through activities while maintaining an engaging and organized learning environment.",
+      "Guided students through activities while maintaining an engaging and organized learning environment.",
     ],
     skills: ["Teaching", "Communication", "Student Support"],
   },
@@ -73,8 +73,7 @@ export const experienceItems: Experience[] = [
     location: "Remote",
     // highlight: "Participated in an engineering-focused early career development program.",
     description: [
-      "Participated in engineering-focused programming with exposure to technical career paths, professional development, and early career opportunities.",
-      "Engaged with industry professionals to better understand engineering roles in financial technology and large-scale systems.",
+      "Selected for a six-week pre-internship program, engaging directly with senior executives and industry leaders to gain insights into BNY's operations and competing in a coding business case challenge.",
     ],
     skills: ["Career Development", "Technical Communication", "Networking"],
   },
@@ -88,8 +87,8 @@ export const experienceItems: Experience[] = [
     location: "Remote",
     // highlight: "Developed technical skills through software engineering apprenticeship programming.",
     description: [
-      "Participated in software engineering apprenticeship programming focused on technical growth, collaboration, and project-based learning.",
-      "Strengthened full-stack development foundations while practicing communication, problem-solving, and software development workflows.",
+      "Participated in software engineering apprenticeship focused on technical growth and project-based learning.",
+      // "Strengthened full-stack development foundations while practicing communication, problem-solving, and software development workflows.",
     ],
     skills: ["Software Engineering", "Collaboration", "Machine Learning"],
   },
@@ -117,8 +116,7 @@ export const experienceItems: Experience[] = [
     location: "Gainesville, FL",
     // highlight: "Created outreach content for UF's Women in Computer Science & Engineering community.",
     description: [
-      "Created outreach content and event messaging for UF's Women in Computer Science & Engineering community.",
-      "Helped promote events, resources, and opportunities that support women and underrepresented students in computing.",
+      "Collaborate with co-director to publish 120+ posts, expanding reach and driving awareness for WiCSE events and initiatives",
     ],
     skills: ["Public Relations", "Content Strategy", "Community Outreach"],
   },

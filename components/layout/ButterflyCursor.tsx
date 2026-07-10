@@ -31,11 +31,15 @@ export function ButterflyCursor() {
     }
 
     function animate() {
+      if (!cursorRef.current) return;
+
+      const cursor = cursorRef.current;
       const position = positionRef.current;
       const target = targetRef.current;
 
-      position.x += (target.x - position.x) * 0.08;
-      position.y += (target.y - position.y) * 0.08;
+      const followSpeed = 0.08
+      position.x += (target.x - position.x) * followSpeed;
+      position.y += (target.y - position.y) * followSpeed;
 
       const offsetX = 18;
       const offsetY = 14;

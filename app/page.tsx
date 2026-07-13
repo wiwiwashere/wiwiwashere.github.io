@@ -28,8 +28,8 @@ export default function HomePage() {
               <p className="home-script">software / ai</p>
               <p className="home-intro">
                 Hi, I&apos;m Winnie Lin! I&apos;m currently a student at the University of Florida, trying to figure out what kind of impact I want to make.
-                Outside of school, I enjoy spending time with friends and family, 
-                trying new things, and finding ideas that shape how I see the world.
+                In my free time, I like to hangout with friends and family, 
+                trying new things, and constantly expand my understanding of the world.
               </p>
               <div className="home-rule" aria-hidden="true">
                 <span />
@@ -73,7 +73,7 @@ export default function HomePage() {
                 <div className="home-player-line" aria-hidden="true">
                   <span />
                 </div>
-                <p className="home-playlist-note">tap the floating music tab to keep it playing while you browse.</p>
+                <p className="home-playlist-note">tap the floating music tab to keep the background music playing while you browse.</p>
                 <a href={currentSong.embedUrl.replace("/embed/playlist/", "/playlist/").split("?")[0]} target="_blank" rel="noreferrer" className="home-card-link">
                   open playlist -&gt;
                 </a>
@@ -92,9 +92,6 @@ export default function HomePage() {
                   <span className="home-life-paper home-life-paper-blue" />
                   <span className="home-life-label">archive<br />no. 2026</span>
                 </div>
-                <p>
-                  moments, places, books, and little things that keep life feeling full.
-                </p>
                 <span className="home-card-link">explore more -&gt;</span>
               </Link>
             </aside>
@@ -102,7 +99,7 @@ export default function HomePage() {
 
           <footer className="home-poster-footer">
             <span>*</span>
-            <p>(©) 2026 Winnie Lin</p>
+            <p>© 2026 Winnie Lin</p>
             <p>building soft things with strong intention.</p>
           </footer>
         </section>

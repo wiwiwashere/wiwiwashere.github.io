@@ -11,7 +11,7 @@ export default function ProjectsPage() {
           <p className="archive-kicker"></p>
           <h1>Projects</h1>
           <p>
-            The Home page only holds a few selected pieces. This is the full project shelf.
+            The Home page only holds a few selected oroject. This is the full collection.
           </p>
         </div>
         <div className="archive-side-note">
@@ -24,14 +24,14 @@ export default function ProjectsPage() {
       <section className="archive-section">
         <div className="archive-section-heading">
           <span>*</span>
-          <h2>browse the full collection</h2>
+          <h2>all projects</h2>
         </div>
         <ProjectFilter projects={projects} />
       </section>
 
       <footer className="home-poster-footer">
           <span>*</span>
-          <p>(©) 2026 Winnie Lin</p>
+          <p>© 2026 Winnie Lin</p>
           <p>building soft things with strong intention.</p>
         </footer>
     </PageContainer>

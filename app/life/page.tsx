@@ -9,10 +9,6 @@ export default function LifePage() {
         <div>
           <p className="archive-kicker"></p>
           <h1>Moments in Life</h1>
-          <p>
-            A fuller archive for photos, diary scraps, moodboards, and the 
-            little things that do not fit inside the selected Home preview.
-          </p>
         </div>
         <div className="archive-side-note">
           <span>life fragments</span>
@@ -24,7 +20,7 @@ export default function LifePage() {
       <section className="archive-section diary-archive-section">
         <div className="archive-section-heading">
           <span>*</span>
-          <h2>diary scraps</h2>
+          <h2>something i wanted to say</h2>
         </div>
         <div className="diary-fragment-grid">
           {diaryNotes.map((note, index) => (
@@ -39,7 +35,7 @@ export default function LifePage() {
       <section className="archive-section">
         <div className="archive-section-heading">
           <span>*</span>
-          <h2>photo scraps</h2>
+          <h2>photo</h2>
         </div>
         <div className="life-archive-grid">
           {lifeEntries.map((entry, index) => (
@@ -48,7 +44,6 @@ export default function LifePage() {
                 <img src={entry.imageUrl} alt={entry.title} />
               </div>
               <div className="life-archive-copy">
-                <p className="archive-kicker">{String(index + 1).padStart(2, "0")} / {entry.category}</p>
                 <h2>{entry.title}</h2>
                 <p className="life-archive-date">{entry.date}</p>
                 <p>{entry.thought}</p>
@@ -63,7 +58,7 @@ export default function LifePage() {
 
       <footer className="home-poster-footer">
           <span>*</span>
-          <p>(©) 2026 Winnie Lin</p>
+          <p>© 2026 Winnie Lin</p>
           <p>building soft things with strong intention.</p>
         </footer>
     </PageContainer>

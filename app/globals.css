@@ -18,6 +18,7 @@
    08. Growth, about, and resume support
    09. Final responsive/navbar overrides
    10. Footprint guestbook
+   11. 
    ========================================================================== */
 
 /* ==========================================================================
@@ -26,6 +27,18 @@
 
 :root {
   color-scheme: light;
+
+  /* -----------------------------------------------------------------------
+     Font control center
+     ----------------------------------------------------------------------- */
+  --font-display: "Playfair Display", Georgia;
+  /* --font-display-style: italic; */
+  --font-display-weight: 500;
+  --font-body: "Lato", sans-serif;
+  --font-body-weight: 300;
+  --font-label: var(--font-body);
+  --font-code: "Lato", sans-serif;
+
   --paper: #fffafc;
   --paper-strong: #ffffff;
   --ink: #17141f;
@@ -45,7 +58,8 @@ body {
     radial-gradient(circle at 82% 12%, rgba(245, 169, 199, 0.2), transparent 28rem),
     radial-gradient(circle at 12% 72%, rgba(255, 232, 240, 0.815), transparent 24rem),
     linear-gradient(180deg, #fffafc 0%, #ffffff 46%, #fff7fa 100%);
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-family: var(--font-body);
+  font-weight: var(--font-body-weight);
   letter-spacing: 0;
 }
 
@@ -83,8 +97,9 @@ button { font: inherit; }
 }
 
 .display-serif {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-style: var(--font-display-style);
+  font-weight: var(--font-display-weight);
   letter-spacing: 0;
 }
 
@@ -622,7 +637,8 @@ body {
     radial-gradient(circle at 86% 8%, rgba(200, 217, 230, 0.5), transparent 28rem),
     radial-gradient(circle at 8% 64%, rgba(255, 225, 230, 0.62), transparent 25rem),
     linear-gradient(180deg, #fffdf8 0%, #fffaf8 42%, #fff6f8 100%);
-  font-family: "Inter", "Avenir Next", "Segoe UI", Arial, sans-serif;
+  font-family: var(--font-body);
+  font-weight: var(--font-body-weight);
 }
 
 .site-bg {
@@ -651,15 +667,16 @@ body {
 }
 
 .display-serif {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-style: var(--font-display-style);
+  font-weight: var(--font-display-weight);
   letter-spacing: -0.01em;
 }
 
 .eyebrow-line,
 .number-tag {
   color: var(--navy);
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-label);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -705,7 +722,7 @@ footer a:hover {
   gap: 1rem;
   padding: 0 1.35rem 1.25rem;
   color: #1e2b45;
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-label);
   font-size: 0.84rem;
   letter-spacing: 0.18em;
   text-transform: lowercase;
@@ -837,7 +854,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   overflow: hidden;
   padding: clamp(1.75rem, 4vw, 3rem) 0 1.6rem;
   color: #1e2b45;
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-label);
 }
 
 .home-poster::before {
@@ -897,7 +914,8 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 
 .home-title {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
+  font-style: var(--font-display-style);
   font-size: clamp(4.7rem, 8.1vw, 9.4rem);
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -908,7 +926,8 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 .home-script {
   margin: 1.45rem 0 0;
   color: #c17694;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
+  font-style: var(--font-display-style);
   font-size: clamp(1.6rem, 2.8vw, 3rem);
   font-style: italic;
   line-height: 1;
@@ -1181,7 +1200,8 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 .home-music-card h2 {
   margin: 0.95rem 0 0.28rem;
   color: #1e2b45;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
+  font-style: var(--font-display-style);
   font-size: 1.08rem;
   font-weight: 500;
   letter-spacing: 0.06em;
@@ -1239,7 +1259,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   bottom: clamp(0.9rem, 2vw, 1.5rem);
   z-index: 60;
   color: #1e2b45;
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-label);
   letter-spacing: 0.12em;
   text-transform: lowercase;
 }
@@ -1565,7 +1585,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 /* Shared archive pages: projects, life, contact */
 .archive-page {
   color: #1e2b45;
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-label);
 }
 
 .archive-hero {
@@ -1627,6 +1647,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   color: #2f445a;
   font-size: 0.72rem;
   font-weight: 700;
+  font-style: italic;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -1635,7 +1656,8 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   margin: 1rem 0 0;
   max-width: 56rem;
   color: #1e2b45;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
+  font-style: italic;
   font-size: clamp(3.5rem, 7vw, 7.8rem);
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -1671,7 +1693,8 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   display: block;
   margin: 1rem 0;
   color: #1e2b45;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
+  font-style: var(--font-display-style);
   font-size: 3.5rem;
   font-weight: 500;
   line-height: 1;
@@ -1883,7 +1906,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 .project-detail-number,
 .project-detail-split h3 {
   color: #1e2b45;
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-label);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -1893,7 +1916,8 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 .project-detail-hero h1 {
   margin-top: clamp(2.2rem, 5vw, 4rem);
   color: #1e2b45;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
+  font-style: var(--font-display-style);
   font-size: clamp(2rem, 8vw, 4rem);
   font-weight: 500;
   line-height: 0.92;
@@ -1922,7 +1946,8 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 .project-detail-card h2 {
   margin: 1.8rem 0 0.7rem;
   color: #1e2b45;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
+  font-style: var(--font-display-style);
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 1.1;
@@ -1939,7 +1964,8 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 .project-media-header h2 {
   margin: 0.65rem 0 0;
   color: #1e2b45;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
+  font-style: var(--font-display-style);
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 1;
@@ -1949,7 +1975,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 .project-media-footer p,
 .project-media-footer h3,
 .project-media-controls button {
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-label);
   letter-spacing: 0.1em;
 }
 
@@ -2083,7 +2109,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   background: rgba(249, 243, 233, 0.62);
   padding: 0.28rem 0.7rem;
   color: #1e2b45;
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-label);
   font-size: 0.78rem;
   letter-spacing: 0.08em;
 }
@@ -2114,7 +2140,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   background: rgba(255, 225, 230, 0.58);
   padding: 0.28rem 0.7rem;
   color: #b85f7c;
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-label);
   font-size: 0.68rem;
   letter-spacing: 0.12em;
   text-transform: lowercase;
@@ -2126,7 +2152,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   background: rgba(249, 243, 233, 0.62);
   padding: 0.28rem 0.62rem;
   color: rgba(30, 43, 69, 0.72);
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-label);
   font-size: 0.78rem;
   letter-spacing: 0.05em;
 }
@@ -2173,7 +2199,8 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 .contact-archive-card h2 {
   margin: 0.8rem 0 0.2rem;
   color: #1e2b45;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
+  font-style: var(--font-display-style);
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 1.1;
@@ -2184,6 +2211,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 .contact-archive-card p {
   color: rgba(30, 43, 69, 0.78);
   font-size: 0.88rem;
+  font-family: var(--font-body);
   /* letter-spacing: 0.06em; */
   line-height: 1.6;
 }
@@ -2371,7 +2399,8 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 .experience-archive-card h2 {
   margin: 1.8rem 0 0.4rem;
   color: #1e2b45;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
+  font-style: var(--font-display-style);
   font-size: clamp(1.9rem, 3.4vw, 3rem);
   font-weight: 500;
   line-height: 1.06;
@@ -2541,7 +2570,8 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 .skills-archive-card h2 {
   margin: 2.4rem 0 0.9rem;
   color: #1e2b45;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
+  font-style: var(--font-display-style);
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 500;
   line-height: 1.02;
@@ -2605,7 +2635,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   gap: 1rem;
   padding: 1.7rem 0 0;
   color: rgba(30, 43, 69, 0.5);
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-label);
   font-size: 0.68rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -2645,7 +2675,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 .footprint-preview h2 {
   margin: 0.8rem 0 0.2rem;
   color: #1e2b45;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 1.1;
@@ -2785,7 +2815,8 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   max-width: 18rem;
   margin: 1rem 0 0;
   color: #1e2b45;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
+  font-style: var(--font-display-style);
   font-size: clamp(2rem, 3.4vw, 3.4rem);
   font-weight: 500;
   line-height: 1.02;
@@ -2805,7 +2836,8 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   padding: 0;
   transform: translate(-50%, -50%);
   color: #6f96be;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
+  font-style: var(--font-display-style);
   font-size: clamp(1rem, 2vw, 1.7rem);
   text-shadow: 0 0 18px rgba(111, 150, 190, 0.32);
   animation: footprint-twinkle 3.4s ease-in-out infinite;
@@ -2848,14 +2880,15 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 
 .footprint-preview span {
   color: #c17694;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
+  font-style: var(--font-display-style);
   font-size: 1.35rem;
 }
 
 .footprint-preview p {
   margin: 0.75rem 0 0.55rem;
   color: #1e2b45;
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-label);
   font-size: 0.78rem;
   letter-spacing: 0.08em;
   line-height: 1.8;
@@ -2863,7 +2896,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 
 .footprint-preview small {
   color: rgba(30, 43, 69, 0.7);
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-label);
   font-size: 0.7rem;
   letter-spacing: 0.12em;
   text-transform: lowercase;
@@ -2875,7 +2908,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   background: transparent;
   color: #c17694;
   cursor: pointer;
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-label);
   font-size: 0.72rem;
   letter-spacing: 0.14em;
   text-transform: lowercase;
@@ -2888,7 +2921,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   margin: 0;
   transform: translate(-50%, -50%);
   color: rgba(30, 43, 69, 0.62);
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-label);
   font-size: 0.78rem;
   letter-spacing: 0.12em;
 }
@@ -2919,7 +2952,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   gap: 0.45rem;
   /* color: #1e2b45; */
   color: rgba(30, 43, 69, 0.7);
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-label);
   font-size: 0.72rem;
   letter-spacing: 0.14em;
   text-transform: lowercase;
@@ -2969,7 +3002,8 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   background: rgba(249, 243, 233, 0.72);
   color: #1e2b45;
   cursor: pointer;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
+  font-style: var(--font-display-style);
   font-size: 1.05rem;
 }
 
@@ -2985,7 +3019,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   justify-content: space-between;
   gap: 1rem;
   color: rgba(30, 43, 69, 0.58);
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-label);
   font-size: 0.72rem;
   letter-spacing: 0.12em;
 }
@@ -3007,7 +3041,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 .footprint-status {
   margin: 0;
   color: rgba(30, 43, 69, 0.66);
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-label);
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   line-height: 1.8;
@@ -3048,14 +3082,15 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 
 .footprint-note-stamp {
   color: #c17694;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
+  font-style: var(--font-display-style);
   font-size: 1.35rem;
 }
 
 .footprint-note p {
   margin: 1.1rem 0;
   color: #1e2b45;
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-label);
   font-size: 0.82rem;
   letter-spacing: 0.08em;
   line-height: 1.9;
@@ -3069,7 +3104,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   justify-content: space-between;
   gap: 1rem;
   color: rgba(30, 43, 69, 0.58);
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-label);
   font-size: 0.68rem;
   letter-spacing: 0.1em;
   text-transform: lowercase;
@@ -3105,7 +3140,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   line-height: 1.6;
 }
 
-/* Final card overlay only: use uploaded assets without changing card formats. */
+/* Final card overlay */
 .contact-archive-card::before,
 .diary-fragment-card::before {
   background-image: url("/overlays/ribbon-stars.png");
@@ -3219,7 +3254,8 @@ body:has(.home-reference-page) .global-celestial {
   z-index: 9999;
   pointer-events: none;
   color: #c17694;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
+  font-style: var(--font-display-style);
   font-size: 1.35rem;
   line-height: 1;
   opacity: 0.82;

@@ -203,7 +203,7 @@ export function FootprintGuestbook() {
         </div>
         <div className="footprint-star-field">
           {isLoading ? (
-            <p className="footprint-empty">loading tiny lights...</p>
+            <p className="footprint-empty">loading...</p>
           ) : constellation.length > 0 ? (
             <>
               <svg className="footprint-constellation-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">

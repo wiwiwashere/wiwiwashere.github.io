@@ -50,7 +50,7 @@ export const projects: Project[] = [
   {
     id: "iot",
     slug: "iot-network-intrusion-detection",
-    title: "IoT Network Intrusion Detection",
+    title: "IoT Network Intrusion Detection [in:progress]",
     subtitle: "ML-Based Traffic Classification Using TON_IoT",
     cardSummary:
       "Building and evaluating machine learning models for classifying IoT network traffic as benign or malicious.",

@@ -36,7 +36,7 @@
   --font-display-weight: 500;
   --font-body: "Lato", sans-serif;
   --font-body-weight: 300;
-  --font-label: var(--font-body);
+  --font-label: var(--font-code);
   --font-code: "Lato", sans-serif;
 
   --paper: #fffafc;
@@ -1646,9 +1646,8 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 .archive-kicker {
   color: #2f445a;
   font-size: 0.72rem;
-  font-weight: 700;
-  font-style: italic;
-  letter-spacing: 0.16em;
+  font-weight: 400;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 

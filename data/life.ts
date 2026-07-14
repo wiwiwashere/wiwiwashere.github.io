@@ -233,4 +233,5 @@ export const diaryNotes = [
   "I really like hippop & edm music. But yes it doesn't go well with the overall vibe of this page... :(",
   "Where there's a will, there is a way.",
   "Avoiding the things that make you uncomfortable is a temporary solution. Facing them is a long-term solution.",
+  "Live Laugh Love LeetCode... 🫠"
 ];

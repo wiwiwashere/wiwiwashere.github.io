@@ -25,7 +25,9 @@ export default function LifePage() {
         <div className="diary-fragment-grid">
           {diaryNotes.map((note, index) => (
             <article key={note} className="diary-fragment-card">
-              <p className="archive-kicker">note {String(index + 1).padStart(2, "0")}</p>
+              <p className="archive-kicker" style={{fontWeight: 700}}>
+                {String(index + 1).padStart(2, "0")}
+              </p>
               <p>{note}</p>
             </article>
           ))}

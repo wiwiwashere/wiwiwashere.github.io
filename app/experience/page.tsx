@@ -35,7 +35,7 @@ export default function ExperiencePage() {
         <div className="skills-archive-grid">
           {skills.map((group, index) => (
             <article key={group.category} className="skills-archive-card">
-              <p className="archive-kicker">{String(index + 1).padStart(2, "0")} / stack</p>
+              <p className="archive-kicker">{String(index + 1).padStart(2, "0")}</p>
               <h2>{group.category}</h2>
               <div>
                 {group.items.map((item) => <span key={item}>{item}</span>)}

@@ -42,6 +42,9 @@ export default function LifePage() {
         <div className="life-archive-grid">
           {lifeEntries.map((entry, index) => (
             <article key={entry.id} className={`life-archive-card ${index === 0 ? "life-archive-card-large" : ""}`}>
+              <p className="archive-kicker">
+                  {String(lifeEntries.length - index).padStart(2, "0")}
+                </p>
               <div className="life-archive-image">
                 <img src={entry.imageUrl} alt={entry.title} />
               </div>

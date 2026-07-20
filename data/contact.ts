@@ -2,7 +2,7 @@ export const contact = {
   email: "winnielin56@gmail.com",
   github: "https://github.com/wiwiwashere",
   linkedin: "https://www.linkedin.com/in/winniellin",
-  resumeUrl: "https://drive.google.com/file/d/1Bajhm6NFOTy6W2vxtcBDk7hVbAEUEC1p/view?usp=sharing"
+  resumeUrl: "https://drive.google.com/file/d/1wxjK_EoXu1aBO2prEqnSfmGFkNgRJ1Jv/view",
 };
 
 export const skills = [

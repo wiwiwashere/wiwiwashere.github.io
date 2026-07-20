@@ -10,9 +10,9 @@ export default function ProjectsPage() {
         <div>
           <p className="archive-kicker"></p>
           <h1>Projects</h1>
-          <p>
+          {/* <p>
             The Home page only holds a few selected oroject. This is the full collection.
-          </p>
+          </p> */}
         </div>
         <div className="archive-side-note">
           <span>project count</span>

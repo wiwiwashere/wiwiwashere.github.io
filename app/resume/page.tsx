@@ -11,26 +11,20 @@ export default function ResumePage() {
           <p className="archive-kicker"></p>
           <h1>Resume</h1>
           <p>
-            A more formal snapshot of the same work: projects, tools, experience,
-            and technical interests collected into one document.
+            A more formal snapshot of the my work
           </p>
         </div>
         <div className="archive-side-note">
           <span>document</span>
           <strong>PDF</strong>
-          <a href={contact.resumeUrl} target="_blank" rel="noreferrer">open pdf -&gt;</a>
+          <a href={contact.resumeUrl} target="_blank" rel="noopener noreferrer">open pdf -&gt;</a>
         </div>
       </section>
 
       {/* <section className="archive-section resume-archive-card">
         <div className="archive-section-heading">
           <span>*</span>
-          <h2>review copy</h2>
-        </div>
-        <div className="resume-actions">
-          <a href={contact.resumeUrl} target="_blank" rel="noreferrer">open pdf -&gt;</a>
-          <a href={contact.resumeUrl} target="_blank" rel="noreferrer">download -&gt;</a>
-          <Link href="/contact">contact -&gt;</Link>
+          <h2>preview</h2>
         </div>
         <ResumeViewer />
       </section> */}

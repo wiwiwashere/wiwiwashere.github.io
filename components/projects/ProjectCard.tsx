@@ -4,8 +4,15 @@ import Link from "next/link";
 type ProjectCardProps = { project: Project; index?: number };
 
 export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
+  const cardMedia = getProjectCardMedia(project);
+
   return (
-    <article className="project-archive-card group flex h-full flex-col p-5 transition hover:-translate-y-1">
+    <article className={`project-archive-card group flex h-full flex-col p-5 transition hover:-translate-y-1 ${cardMedia ? "project-archive-card-with-media" : ""}`}>
+      {cardMedia ? (
+        <div className="project-card-media">
+          <img src={cardMedia.src} alt={cardMedia.alt} />
+        </div>
+      ) : null}
       <div className="flex items-center justify-between gap-4">
         <p className="archive-kicker">{String(index + 1).padStart(2, "0")} / 10</p>
         <p className="project-archive-tag">{project.tags[0]}</p>
@@ -25,4 +32,31 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
       </div>
     </article>
   );
+}
+
+function getProjectCardMedia(project: Project) {
+  const imageMedia = project.media?.find((item) => item.type === "image");
+  if (imageMedia) {
+    return {
+      src: imageMedia.src,
+      alt: imageMedia.title ?? imageMedia.caption ?? `${project.title} screenshot`,
+    };
+  }
+
+  const videoMedia = project.media?.find((item) => item.type === "video" && item.poster);
+  if (videoMedia?.poster) {
+    return {
+      src: videoMedia.poster,
+      alt: videoMedia.title ?? videoMedia.caption ?? `${project.title} video preview`,
+    };
+  }
+
+  if (project.imageUrl) {
+    return {
+      src: project.imageUrl,
+      alt: `${project.title} preview`,
+    };
+  }
+
+  return null;
 }

@@ -5,18 +5,18 @@
 /* ==========================================================================
    Global stylesheet map
 
-   The order: later sections intentionally refine earlier experiments.
+   The order: later sections refine earlier design.
    Keep new page-specific styles near the matching section below.
 
    01. Theme tokens and base document styles
    02. Shared utilities and early collage components
    03. Particle butterfly background
-   04. Paper texture and editorial palette overrides
+   04. Paper texture and editorial palette
    05. Shared layout, header, and navigation
    06. Home page poster and selected archive cards
    07. Shared archive pages
    08. Growth, about, and resume support
-   09. Final responsive/navbar overrides
+   09. Final responsive/navbar
    10. Footprint guestbook
    11. 
    ========================================================================== */
@@ -1828,6 +1828,29 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
     repeating-radial-gradient(circle at 50% 50%, rgba(193, 118, 148, 0.32) 0 1px, transparent 1px 5px),
     radial-gradient(circle at 54% 48%, rgba(247, 201, 212, 0.62), transparent 5.8rem),
     rgba(255, 225, 230, 0.52);
+}
+
+.project-archive-card-with-media::after {
+  display: none;
+}
+
+.project-card-media {
+  position: relative;
+  order: -1;
+  height: clamp(10rem, 14vw, 13.5rem);
+  margin-bottom: 1.7rem;
+  overflow: hidden;
+  border: 1px solid rgba(30, 43, 69, 0.18);
+  background:
+    radial-gradient(circle at 52% 44%, rgba(221, 231, 239, 0.42), transparent 46%),
+    rgba(255, 246, 236, 0.46);
+}
+
+.project-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .project-detail-page {

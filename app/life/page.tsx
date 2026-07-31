@@ -20,7 +20,7 @@ export default function LifePage() {
       <section className="archive-section diary-archive-section">
         <div className="archive-section-heading">
           <span>*</span>
-          <h2>something i wanted to say</h2>
+          <h2>something on my mind..</h2>
         </div>
         <div className="diary-fragment-grid">
           {diaryNotes.map((note, index) => (

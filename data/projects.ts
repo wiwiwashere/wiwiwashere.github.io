@@ -221,7 +221,7 @@ export const projects: Project[] = [
     status: "Completed",
     // Replace with your real repo when ready.
     // githubUrl: "https://github.com/wiwiwashere/meow-cat-detector",
-    imageUrl: "/project/meow_ui.png",
+    imageUrl: "project/meow_ui.png",
     featured: true,
     media: [
       {
@@ -467,7 +467,7 @@ export const projects: Project[] = [
       "Mobile workflows should minimize user effort at each step",
     ],
     status: "Completed",
-    imageUrl: "/project/luna_home.png",
+    imageUrl: "project/luna_home.png",
     featured: false,
     media: [
       {
@@ -515,7 +515,7 @@ export const projects: Project[] = [
     media: [
       {
         type: "image",
-        src: "/project/mine.png",
+        src: "project/mine.png",
         title: "minesweeper sample game"
       }
     ]

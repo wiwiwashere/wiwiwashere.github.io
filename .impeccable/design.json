@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-05T00:00:00-04:00",
+  "title": "Design System: Winnie Lin Personal Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "primary",
+        "displayName": "Ink Navy",
+        "canonical": "#1f2230",
+        "tonalRamp": ["#0b0c12", "#141721", "#1f2230", "#343951", "#515878", "#737a99", "#a8aec2", "#edf0f6"]
+      },
+      "navy": {
+        "role": "primary",
+        "displayName": "Soft Archive Navy",
+        "canonical": "#2f445a",
+        "tonalRamp": ["#0d141b", "#1d2c3a", "#2f445a", "#49657f", "#6f8ba4", "#9ab0c2", "#c8d6e1", "#f1f6f9"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "#f9f3e9",
+        "tonalRamp": ["#31281d", "#574a38", "#7d6d57", "#a5957d", "#c9bda8", "#e6dccb", "#f9f3e9", "#fffdf8"]
+      },
+      "blush": {
+        "role": "secondary",
+        "displayName": "Archive Blush",
+        "canonical": "#b85f7c",
+        "tonalRamp": ["#2c101b", "#552237", "#843c59", "#b85f7c", "#d88aa3", "#edb7c8", "#f8dce5", "#fff4f8"]
+      },
+      "sky-blue": {
+        "role": "tertiary",
+        "displayName": "Sky Blue Wash",
+        "canonical": "#c8d9e6",
+        "tonalRamp": ["#12202a", "#2b4354", "#506d82", "#7899af", "#a6c0d1", "#c8d9e6", "#e2edf4", "#f6fbfd"]
+      },
+      "azalea": {
+        "role": "secondary",
+        "displayName": "Azalea Paper Pink",
+        "canonical": "#f7c9d4",
+        "tonalRamp": ["#35131d", "#673044", "#9a526b", "#c97a94", "#e7a8ba", "#f7c9d4", "#fbe3e9", "#fff6f8"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Editorial Display",
+        "purpose": "Hero headlines, page titles, card titles, emotional stamps."
+      },
+      "body": {
+        "displayName": "Light Body Sans",
+        "purpose": "Readable descriptions, project copy, diary fragments, form content."
+      },
+      "label": {
+        "displayName": "Archive Label",
+        "purpose": "Counters, nav, metadata, chips, and compact controls."
+      }
+    },
+    "shadows": [
+      {
+        "name": "soft-ambient-lift",
+        "value": "0 12px 28px rgba(30,43,69,0.12)",
+        "purpose": "Small floating controls and soft paper buttons."
+      },
+      {
+        "name": "card-hover-lift",
+        "value": "0 16px 34px rgba(47,68,90,0.08)",
+        "purpose": "Hover state for paper notes and interactive cards."
+      },
+      {
+        "name": "vellum-inset",
+        "value": "inset 0 0 0 1px rgba(255,255,255,0.26)",
+        "purpose": "Defines translucent paper edges without heavy elevation."
+      }
+    ],
+    "motion": [
+      {
+        "name": "soft-hover",
+        "value": "180ms ease",
+        "purpose": "Default hover transition for cards and controls."
+      },
+      {
+        "name": "butterfly-drift",
+        "value": "16s ease-in-out infinite alternate",
+        "purpose": "Slow ambient motion for the homepage particle butterfly."
+      },
+      {
+        "name": "footprint-twinkle",
+        "value": "3.4s ease-in-out infinite",
+        "purpose": "Gentle visitor-star emphasis in the footprint constellation."
+      }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "700px" },
+      { "name": "nav-collapse", "value": "900px" },
+      { "name": "tablet", "value": "1024px" },
+      { "name": "wide-card-adjust", "value": "1180px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Vellum Card",
+      "kind": "card",
+      "refersTo": "card-vellum",
+      "description": "The default archive surface for projects, contact cards, experience cards, and supporting panels.",
+      "html": "<article class=\"ds-vellum-card\"><p class=\"ds-kicker\">01 / archive</p><h3>Project Title</h3><p>A soft paper card with a translucent gradient, thin border, and quiet overlay room.</p></article>",
+      "css": ".ds-vellum-card{position:relative;overflow:hidden;border:1px solid rgba(30,43,69,.22);background:linear-gradient(135deg,rgba(249,243,233,.78),rgba(255,225,230,.16),rgba(200,217,230,.14)),rgba(249,243,233,.54);box-shadow:inset 0 0 0 1px rgba(255,255,255,.26);padding:1.35rem;color:#1f2230}.ds-vellum-card h3{margin:.8rem 0 .2rem;font-family:Playfair Display,Georgia,serif;font-size:1.8rem;font-weight:500;line-height:1.1}.ds-vellum-card p{font-family:Lato,sans-serif;font-size:.88rem;line-height:1.6;color:rgba(30,43,69,.78)}.ds-kicker{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#2f445a}"
+    },
+    {
+      "name": "Archive Link Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "A quiet paper action for primary links and floating controls.",
+      "html": "<button class=\"ds-button-primary\">read more -></button>",
+      "css": ".ds-button-primary{border:1px solid rgba(30,43,69,.28);background:linear-gradient(135deg,rgba(249,243,233,.94),rgba(255,225,230,.72),rgba(221,231,239,.72));color:#1f2230;padding:.72rem .9rem;font-family:Lato,sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:lowercase;box-shadow:0 12px 28px rgba(30,43,69,.12);transition:border-color 180ms ease,transform 180ms ease}.ds-button-primary:hover{border-color:#b85f7c;transform:translateY(-2px)}.ds-button-primary:focus-visible{outline:1px solid #b85f7c;outline-offset:3px}"
+    },
+    {
+      "name": "Archive Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Compact metadata for technologies, filters, and status tags.",
+      "html": "<span class=\"ds-chip\">TypeScript</span>",
+      "css": ".ds-chip{display:inline-flex;border:1px solid rgba(30,43,69,.16);background:rgba(249,243,233,.62);padding:.28rem .62rem;color:rgba(30,43,69,.72);font-family:Lato,sans-serif;font-size:.78rem;letter-spacing:.05em}.ds-chip:hover{border-color:rgba(193,118,148,.42);color:#b85f7c}"
+    },
+    {
+      "name": "Fixed Poster Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "A fixed paper strip with lowercase archive navigation and mobile menu collapse.",
+      "html": "<nav class=\"ds-nav\"><a>WL</a><div><a>projects</a><a>growth</a><a>life</a><a>footprints</a></div><a>resume</a></nav>",
+      "css": ".ds-nav{display:grid;grid-template-columns:minmax(8rem,.65fr) minmax(22rem,1fr) minmax(12rem,.65fr);align-items:center;gap:1rem;padding:0 1.35rem 1.25rem;border-bottom:1px solid rgba(30,43,69,.52);background:linear-gradient(180deg,rgba(250,244,235,.92),rgba(250,244,235,.78));color:#1e2b45;font-family:Lato,sans-serif;font-size:.84rem;letter-spacing:.18em;text-transform:lowercase}.ds-nav div{display:flex;justify-content:center;gap:2.2rem}.ds-nav a:hover{color:#b85f7c}"
+    },
+    {
+      "name": "Footprint Note",
+      "kind": "custom",
+      "refersTo": "footprint-note",
+      "description": "A visitor guestbook note with stamp, message, name, and date.",
+      "html": "<article class=\"ds-footprint-note\"><span>ʚїɞ</span><p>welcome to my space >~<</p><footer><small>winnie</small><small>aug 05, 2026</small></footer></article>",
+      "css": ".ds-footprint-note{min-height:13rem;display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(30,43,69,.22);background:linear-gradient(135deg,rgba(249,243,233,.78),rgba(255,225,230,.16),rgba(200,217,230,.14));padding:1rem;transition:border-color 180ms ease,box-shadow 180ms ease,transform 180ms ease}.ds-footprint-note:hover{border-color:rgba(193,118,148,.52);box-shadow:0 16px 34px rgba(47,68,90,.08);transform:translateY(-2px)}.ds-footprint-note span{color:#c17694;font-family:Playfair Display,Georgia,serif;font-size:1.35rem}.ds-footprint-note p{font-family:Lato,sans-serif;color:#1e2b45;font-size:.82rem;line-height:1.9}.ds-footprint-note footer{display:flex;justify-content:space-between;color:rgba(30,43,69,.58);font-family:Lato,sans-serif;font-size:.68rem;letter-spacing:.1em}"
+    },
+    {
+      "name": "Project Media Carousel",
+      "kind": "custom",
+      "refersTo": "project-media-carousel",
+      "description": "A bottom-of-case-study media archive for screenshots, local videos, YouTube, and Drive embeds.",
+      "html": "<section class=\"ds-media-card\"><header><p>08</p><h3>Demo / Gallery</h3><span>01 / 03</span></header><div class=\"ds-media-frame\"></div><footer><button>prev</button><button>next</button></footer></section>",
+      "css": ".ds-media-card{border:1px solid rgba(30,43,69,.22);background:linear-gradient(135deg,rgba(249,243,233,.78),rgba(255,225,230,.16),rgba(200,217,230,.14));padding:1.35rem;color:#1f2230}.ds-media-card header{display:flex;justify-content:space-between;gap:1rem}.ds-media-card h3{font-family:Playfair Display,Georgia,serif;font-size:1.8rem;font-weight:500}.ds-media-card p,.ds-media-card span,.ds-media-card button{font-family:Lato,sans-serif;font-size:.72rem;letter-spacing:.1em}.ds-media-frame{min-height:18rem;border:1px solid rgba(30,43,69,.18);background:radial-gradient(circle at 52% 44%,rgba(221,231,239,.42),transparent 46%),rgba(255,246,236,.46)}.ds-media-card button{border:1px solid rgba(30,43,69,.28);background:#f9f3e9;padding:.58rem .75rem;color:#1e2b45}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Celestial Scrapbook Archive",
+    "overview": "The portfolio should feel like a personal archive made from paper, starlight, soft blue ink, and small collected fragments. It is not a corporate resume shell. It is a calm, tactile, slightly dreamy interface where software projects, experience, life notes, music, and visitor footprints all belong to the same handmade system.",
+    "keyCharacteristics": [
+      "Soft paper base with blue, pale pink, beige, and ink accents.",
+      "Editorial serif display type paired with light sans-serif body text.",
+      "Thin ruled borders, rectangular cards, and translucent vellum surfaces.",
+      "Archive language: counters, section markers, tiny labels, and paper-note side cards.",
+      "Celestial motion used sparingly: stars, particles, butterfly cursor, meteor-like details."
+    ],
+    "rules": [
+      {
+        "name": "The Ink First Rule",
+        "body": "Text stays ink/navy before it becomes decorative. Pink and blue support the archive; they do not carry primary readability.",
+        "section": "colors"
+      },
+      {
+        "name": "The Soft Accent Rule",
+        "body": "Pink should appear as a signal, not a flood. It is strongest on links, stamps, selected states, and small marks.",
+        "section": "colors"
+      },
+      {
+        "name": "The Label Is Evidence Rule",
+        "body": "Small uppercase labels should feel like catalog metadata, not button shouting. Keep them tiny, spaced, and restrained.",
+        "section": "typography"
+      },
+      {
+        "name": "The Serif Ceremony Rule",
+        "body": "Use display serif for names, titles, and emotional moments. Avoid using it for dense technical paragraphs.",
+        "section": "typography"
+      },
+      {
+        "name": "The Vellum Before Shadow Rule",
+        "body": "Prefer transparent paper, fine borders, overlays, and inset edges before adding drop shadows.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep the site feeling like an archive: numbered labels, small section stars, paper cards, and restrained metadata.",
+      "Do use real project media when available; fallback placeholders should look intentional, not empty.",
+      "Do keep major page headers unboxed and spacious.",
+      "Do use overlays at low opacity so they add atmosphere without hurting readability.",
+      "Do preserve mobile simplification: hide heavy particles, collapse nav, and avoid crowded grids."
+    ],
+    "donts": [
+      "Don't make cards heavily rounded or glossy.",
+      "Don't turn the palette into one dominant hue; keep navy, paper, pink, and blue in balance.",
+      "Don't use decorative particles or overlays where they compete with text.",
+      "Don't put visible how-to explanations in the UI. The interface should feel discoverable, not instructional.",
+      "Don't add heavy animation on mobile; motion should be graceful and lightweight."
+    ]
+  }
+}

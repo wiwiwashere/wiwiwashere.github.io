@@ -50,42 +50,55 @@ export const projects: Project[] = [
   {
     id: "iot",
     slug: "iot-network-intrusion-detection",
-    title: "IoT Network Intrusion Detection [in:progress]",
+    title: "IoT Network Intrusion Detection",
     subtitle: "ML-Based Traffic Classification Using TON_IoT",
     cardSummary:
-      "Building and evaluating machine learning models for classifying IoT network traffic as benign or malicious.",
+      "An AI4ALL machine learning project exploring how IoT network traffic can be classified to detect suspicious or malicious activity.",
     description:
-      "A machine learning project for classifying IoT network traffic and exploring cybersecurity patterns in structured data.",
+      "A cybersecurity-focused machine learning project that uses the TON_IoT dataset to analyze IoT network traffic patterns and classify activity as normal or potentially malicious.",
     problem:
-      "IoT environments can generate complex traffic patterns, making it difficult to identify potentially malicious behavior at scale.",
-    // solution:
-    //   "The project uses preprocessing, feature exploration, and classification models to distinguish traffic categories in the TON_IoT dataset.",
+      "IoT devices generate large amounts of network traffic, and malicious activity can be difficult to detect because attacks may appear as subtle changes in traffic behavior. Building a useful detection model requires more than training for high accuracy; it also requires understanding the dataset, handling imbalance, and interpreting false positives and false negatives carefully.",
+    solution:
+      "The project uses a machine learning workflow to clean and explore the TON_IoT dataset, prepare traffic features for modeling, and evaluate classification approaches for identifying normal and malicious network behavior. The goal is to connect technical model results with cybersecurity interpretation, especially around which traffic patterns may indicate higher-risk activity.",
     role:
-      "Cleaned and explored the TON_IoT dataset.",
-    techStack: ["Python", "Pandas", "Scikit-learn", "ML Classification"],
-    tags: ["AI / ML", "Data", "Cybersecurity", "Team Project",],
+      "Worked on dataset cleaning and exploratory analysis for the TON_IoT dataset. Developed the Random Forest classification model",
+    techStack: [
+      "Python",
+      "Pandas",
+      "Scikit-learn",
+      "NumPy",
+      "Matplotlib",
+    ],
+    tags: [
+      "AI / ML",
+      "Data",
+      "Cybersecurity",
+      "Team Project"
+    ],
     features: [
-      "TON_IoT dataset analysis",
-      "Preprocessing and feature selection",
-      // "Train/test modeling workflow",
-      // "Classification model comparison",
-      // "Cybersecurity-focused interpretation",
+      "Cleaned and explored structured IoT network traffic data",
+      "Analyzed TON_IoT features to understand traffic patterns",
+      "Prepared data for machine learning classification",
+      "Investigated class imbalance across normal and attack traffic",
+      "Evaluated model behavior with cybersecurity context in mind",
+      "Connected model outputs to practical security interpretation"
     ],
     challenges: [
-      "Class imbalance in the dataset",
-      "Understanding feature meaning in a security dataset",
-      // "Evaluating models beyond surface-level accuracy",
-      // "Interpreting false positives and false negatives in a security context",
+      "Understanding feature meaning in a cybersecurity dataset",
+      "Handling class imbalance between normal and malicious traffic categories",
+      "Avoiding overreliance on surface-level accuracy",
+      "Thinking through the impact of false positives and false negatives in intrusion detection",
+      "Connecting dataset-level analysis with real-world IoT security concerns"
     ],
     insights: [
-      // "Data cleaning shapes model quality early",
-      // "Security projects require careful interpretation of false positives and false negatives",
+      "Data cleaning and feature understanding shape model quality before training begins",
+      "Cybersecurity models need careful evaluation because false negatives can miss real threats and false positives can create alert fatigue",
+      "Class imbalance can make a model appear strong while still performing poorly on important attack categories",
+      "Machine learning results are more useful when paired with domain-specific interpretation"
     ],
     startDate: "June 2026",
     status: "In Progress",
-    // Replace with your real repo when ready.
-    // githubUrl: "https://github.com/wiwiwashere/TON_loT_network",
-    featured: true,
+    featured: true
   },
   {
     id: "recod-ai",

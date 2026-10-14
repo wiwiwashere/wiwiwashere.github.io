@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import { Footprint, supabase } from "../../lib/supabase";
+import { AsciiSpecimen } from "@/components/motion/AsciiSpecimen";
 
 const stamps = {
   starSolid: "\u2726",
@@ -64,6 +65,7 @@ export function FootprintGuestbook() {
   const [isLoading, setIsLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState("");
+  const [justAddedId, setJustAddedId] = useState<string | null>(null);
 
   const constellation = useMemo(
     () => footprints.map((footprint, index) => ({
@@ -120,6 +122,12 @@ export function FootprintGuestbook() {
     void loadFootprints();
   }, []);
 
+  useEffect(() => {
+    if (!justAddedId) return;
+    const timer = window.setTimeout(() => setJustAddedId(null), 1400);
+    return () => window.clearTimeout(timer);
+  }, [justAddedId]);
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
@@ -166,6 +174,7 @@ export function FootprintGuestbook() {
     } else if (data) {
       setFootprints((current) => [data, ...current]);
       setActiveId(data.id);
+      setJustAddedId(data.id);
       setName("");
       setMessage("");
       setMood(stamps.starSolid);
@@ -203,7 +212,10 @@ export function FootprintGuestbook() {
         </div>
         <div className="footprint-star-field">
           {isLoading ? (
-            <p className="footprint-empty">loading...</p>
+            <div className="footprint-ascii-loading" role="status">
+              <AsciiSpecimen variant="babys-breath-constellation" state="shimmer" />
+              <span>gathering the sky...</span>
+            </div>
           ) : constellation.length > 0 ? (
             <>
               <svg className="footprint-constellation-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
@@ -221,7 +233,7 @@ export function FootprintGuestbook() {
                 <button
                   key={footprint.id}
                   type="button"
-                  className={`footprint-star ${getSafeMood(footprint.mood) === stamps.butterfly ? "footprint-butterfly-stamp" : ""} ${activeId === footprint.id ? "is-active" : ""}`}
+                  className={`footprint-star ${getSafeMood(footprint.mood) === stamps.butterfly ? "footprint-butterfly-stamp" : ""} ${activeId === footprint.id ? "is-active" : ""} ${justAddedId === footprint.id ? "is-just-added" : ""}`}
                   style={{
                     left: `${footprint.position.x}%`,
                     top: `${footprint.position.y}%`
@@ -298,7 +310,7 @@ export function FootprintGuestbook() {
           {footprints.map((footprint, index) => (
             <article
               key={footprint.id}
-              className={`footprint-note ${activeId === footprint.id ? "is-active" : ""} ${index === 0 ? "is-newest" : ""}`}
+              className={`footprint-note ${activeId === footprint.id ? "is-active" : ""} ${justAddedId === footprint.id ? "is-newest" : ""}`}
               style={{ "--tilt": `${(index % 5) - 2}deg` } as React.CSSProperties}
               tabIndex={0}
               onClick={() => setActiveId(footprint.id)}

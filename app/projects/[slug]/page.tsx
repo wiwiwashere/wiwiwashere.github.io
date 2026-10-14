@@ -89,23 +89,20 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
           ) : null}
 
           {challenges.length > 0 || lessons.length > 0 ? (
-            <section className="project-reflection-section" id="reflections">
-              <h2>Challenges &amp; Insights</h2>
-              <div>
-                {challenges.length > 0 ? (
-                  <section>
-                    <h3>Challenges</h3>
-                    <ul>{challenges.map((challenge) => <li key={challenge}>{challenge}</li>)}</ul>
-                  </section>
-                ) : null}
-                {lessons.length > 0 ? (
-                  <section>
-                    <h3>Insights</h3>
-                    <ul>{lessons.map((lesson) => <li key={lesson}>{lesson}</li>)}</ul>
-                  </section>
-                ) : null}
-              </div>
-            </section>
+            <div className="project-story-pair project-reflection-pair" id="reflections">
+              {challenges.length > 0 ? (
+                <section>
+                  <h2>Challenges</h2>
+                  <ul>{challenges.map((challenge) => <li key={challenge}>{challenge}</li>)}</ul>
+                </section>
+              ) : null}
+              {lessons.length > 0 ? (
+                <section>
+                  <h2>Insights</h2>
+                  <ul>{lessons.map((lesson) => <li key={lesson}>{lesson}</li>)}</ul>
+                </section>
+              ) : null}
+            </div>
           ) : null}
         </article>
       </div>

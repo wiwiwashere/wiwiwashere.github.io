@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { diaryNotes, lifeEntries } from "@/data/life";
+import { InViewGroup } from "@/components/motion/InViewGroup";
 
 export default function LifePage() {
   const photoColumns = Array.from({ length: 4 }, (_, columnIndex) =>
@@ -45,14 +46,14 @@ export default function LifePage() {
           <span>*</span>
           <h2>photo</h2>
         </div>
-        <div className="life-photo-mosaic">
+        <InViewGroup className="life-photo-mosaic">
           {photoColumns.map((column, columnIndex) => (
             <div className="life-photo-column" key={`photo-column-${columnIndex}`}>
               {column.map(({ entry, index }) => (
                 <article
                   key={entry.id}
-                  className={`life-photo-entry life-archive-card ${index % 2 === 1 ? "life-photo-entry-offset" : ""}`}
-                  style={{ order: index }}
+                  className={`life-photo-entry life-archive-card ${index % 2 === 1 ? "life-photo-entry-offset" : ""} ${index < 4 ? "life-photo-entry-intro" : ""}`}
+                  style={{ order: index, "--life-entry-index": index } as React.CSSProperties}
                 >
                   <figure>
                     <div className="life-photo-image">
@@ -78,7 +79,7 @@ export default function LifePage() {
               ))}
             </div>
           ))}
-        </div>
+        </InViewGroup>
       </section>
 
       <footer className="home-poster-footer">

@@ -7,7 +7,10 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
   const cardMedia = getProjectCardMedia(project);
 
   return (
-    <article className={`project-archive-card group flex h-full flex-col p-5 transition hover:-translate-y-1 ${cardMedia ? "project-archive-card-with-media" : ""}`}>
+    <article
+      className={`project-archive-card group flex h-full flex-col p-5 ${cardMedia ? "project-archive-card-with-media" : ""}`}
+      style={{ viewTransitionName: `project-${project.id}` }}
+    >
       {cardMedia ? (
         <div className="project-card-media">
           <img src={cardMedia.src} alt={cardMedia.alt} />

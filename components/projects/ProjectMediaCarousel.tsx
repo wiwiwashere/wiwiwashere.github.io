@@ -9,6 +9,7 @@ type ProjectMediaCarouselProps = {
 
 export function ProjectMediaCarousel({ media = [] }: ProjectMediaCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [direction, setDirection] = useState<"next" | "previous">("next");
 
   if (media.length === 0) return null;
 
@@ -16,11 +17,19 @@ export function ProjectMediaCarousel({ media = [] }: ProjectMediaCarouselProps) 
   const count = media.length;
 
   function showPrevious() {
+    setDirection("previous");
     setActiveIndex((current) => (current - 1 + count) % count);
   }
 
   function showNext() {
+    setDirection("next");
     setActiveIndex((current) => (current + 1) % count);
+  }
+
+  function showIndex(index: number) {
+    if (index === activeIndex) return;
+    setDirection(index > activeIndex ? "next" : "previous");
+    setActiveIndex(index);
   }
 
   return (
@@ -32,12 +41,15 @@ export function ProjectMediaCarousel({ media = [] }: ProjectMediaCarouselProps) 
         <p>{String(activeIndex + 1).padStart(2, "0")} / {String(count).padStart(2, "0")}</p>
       </div>
 
-      <div className={`project-media-frame project-media-frame-${activeItem.type}`}>
+      <div
+        key={`${activeItem.src}-${activeIndex}`}
+        className={`project-media-frame project-media-frame-${activeItem.type} project-media-enter-${direction}`}
+      >
         <ProjectMediaFrame item={activeItem} />
       </div>
 
       <div className="project-media-footer">
-        <div>
+        <div key={`caption-${activeIndex}`} className="project-media-caption-transition">
           {/* {activeItem.title ? <h3>{activeItem.title}</h3> : null} */}
           {activeItem.caption ? <p>{activeItem.caption}</p> : null}
         </div>
@@ -52,16 +64,22 @@ export function ProjectMediaCarousel({ media = [] }: ProjectMediaCarouselProps) 
       </div>
 
       {count > 1 ? (
-        <div className="project-media-dots" aria-label="Choose media item">
-          {media.map((item, index) => (
-            <button
-              key={`${item.src}-${index}`}
-              type="button"
-              className={index === activeIndex ? "is-active" : ""}
-              onClick={() => setActiveIndex(index)}
-              aria-label={`Show media ${index + 1}`}
-            />
-          ))}
+        <div className="project-media-progress-wrap">
+          <div className="project-media-progress" aria-hidden="true">
+            <span style={{ transform: `scaleX(${(activeIndex + 1) / count})` }} />
+          </div>
+          <div className="project-media-dots" aria-label="Choose media item">
+            {media.map((item, index) => (
+              <button
+                key={`${item.src}-${index}`}
+                type="button"
+                className={index === activeIndex ? "is-active" : ""}
+                onClick={() => showIndex(index)}
+                aria-label={`Show media ${index + 1}`}
+                aria-pressed={index === activeIndex}
+              />
+            ))}
+          </div>
         </div>
       ) : null}
     </section>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ButterflyParticles } from "@/components/home/ButterflyParticles";
+import { HomeEntrance } from "@/components/home/HomeEntrance";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { homeProjectHighlights, musicPicks } from "@/data/home";
 import { projects } from "@/data/projects";
@@ -19,7 +20,7 @@ export default function HomePage() {
       </div>
       <PageContainer className="home-reference-page">
         <section className="home-poster">
-          <section className="home-hero" aria-labelledby="home-title">
+          <HomeEntrance>
             <div className="home-botanical home-botanical-left" aria-hidden="true" />
             <div className="home-botanical home-botanical-right" aria-hidden="true" />
 
@@ -37,7 +38,7 @@ export default function HomePage() {
                 <span />
               </div>
             </div>
-          </section>
+          </HomeEntrance>
 
           <section className="home-archive-layout">
             <div id="project-highlights" className="home-project-panel">

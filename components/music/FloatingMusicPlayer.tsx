@@ -20,7 +20,7 @@ export function FloatingMusicPlayer() {
         {/* <span aria-hidden="true"></span> */}
         <span>⇄ ◃◃   ⅠⅠ   ▹▹ ↻</span>
       </button>
-      <div id="floating-music-panel" className="floating-music-panel">
+      <div id="floating-music-panel" className="floating-music-panel" aria-hidden={!isOpen} inert={!isOpen}>
         <div className="floating-music-heading">
           <span>background music</span>
           <button type="button" onClick={() => setIsOpen(false)} aria-label="Close music player">

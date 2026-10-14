@@ -3,6 +3,12 @@ import { PageContainer } from "@/components/layout/PageContainer";
 import { diaryNotes, lifeEntries } from "@/data/life";
 
 export default function LifePage() {
+  const photoColumns = Array.from({ length: 4 }, (_, columnIndex) =>
+    lifeEntries
+      .map((entry, index) => ({ entry, index }))
+      .filter(({ index }) => index % 4 === columnIndex),
+  );
+
   return (
     <PageContainer className="archive-page py-12">
       <section className="archive-hero archive-hero-pink">
@@ -39,24 +45,38 @@ export default function LifePage() {
           <span>*</span>
           <h2>photo</h2>
         </div>
-        <div className="life-archive-grid">
-          {lifeEntries.map((entry, index) => (
-            <article key={entry.id} className={`life-archive-card ${index === 0 ? "life-archive-card-large" : ""}`}>
-              <p className="archive-kicker">
-                  {String(lifeEntries.length - index).padStart(2, "0")}
-                </p>
-              <div className="life-archive-image">
-                <img src={entry.imageUrl} alt={entry.title} />
-              </div>
-              <div className="life-archive-copy">
-                <h2>{entry.title}</h2>
-                <p className="life-archive-date">{entry.date}</p>
-                <p>{entry.thought}</p>
-                <div>
-                  {entry.tags.map((tag) => <span key={tag}>{tag}</span>)}
-                </div>
-              </div>
-            </article>
+        <div className="life-photo-mosaic">
+          {photoColumns.map((column, columnIndex) => (
+            <div className="life-photo-column" key={`photo-column-${columnIndex}`}>
+              {column.map(({ entry, index }) => (
+                <article
+                  key={entry.id}
+                  className={`life-photo-entry life-archive-card ${index % 2 === 1 ? "life-photo-entry-offset" : ""}`}
+                  style={{ order: index }}
+                >
+                  <figure>
+                    <div className="life-photo-image">
+                      <img
+                        src={entry.imageUrl}
+                        alt={entry.title}
+                        loading={index < 4 ? "eager" : "lazy"}
+                        decoding="async"
+                      />
+                    </div>
+                    <figcaption className="life-photo-caption">
+                      <div className="life-photo-title-row">
+                        <h3>{entry.title}</h3>
+                        <p>{entry.date}</p>
+                      </div>
+                      <p>{entry.thought}</p>
+                      <ul aria-label="Tags">
+                        {entry.tags.map((tag) => <li key={tag}>{tag}</li>)}
+                      </ul>
+                    </figcaption>
+                  </figure>
+                </article>
+              ))}
+            </div>
           ))}
         </div>
       </section>

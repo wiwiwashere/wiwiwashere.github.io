@@ -7,9 +7,6 @@ import { getProjectBySlug, projects } from "@/data/projects";
 
 type ProjectDetailPageProps = { params: Promise<{ slug: string }> };
 export function generateStaticParams() { return projects.map((project) => ({ slug: project.slug })); }
-function DetailSection({ title, children, index }: { title: string; children: React.ReactNode; index: number }) {
-  return <section className="project-detail-card"><p className="project-detail-number">{String(index).padStart(2, "0")}</p><h2>{title}</h2><div className="project-detail-body">{children}</div></section>;
-}
 
 export default async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
   const { slug } = await params;
@@ -21,15 +18,96 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
   return (
     <PageContainer className="project-detail-page py-14">
       <ProjectDetailHeader project={project} />
-      <div className="project-detail-grid">
-        <DetailSection title="Project Overview" index={1}><p>{project.description}</p></DetailSection>
-        <DetailSection title="Problem" index={2}><p>{project.problem}</p></DetailSection>
-        <DetailSection title="Solution" index={3}><p>{project.solution}</p></DetailSection>
-        <DetailSection title="My Role" index={4}><p>{project.role}</p></DetailSection>
-        <DetailSection title="Tech Stack" index={5}><TechStackList techStack={project.techStack} /></DetailSection>
-        <DetailSection title="Key Features" index={6}><ul className="space-y-3">{features.map((feature) => <li key={feature} className="flex gap-3"><span className="mt-3 size-1.5 rounded-full bg-blush-500" /><span>{feature}</span></li>)}</ul></DetailSection>
-        <section className="project-detail-card project-detail-wide"><p className="project-detail-number">07</p><h2>Challenges & Insights</h2><div className="project-detail-split"><div><h3>Challenges</h3><ul>{challenges.map((challenge) => <li key={challenge} className="flex gap-3"><span className="mt-3 size-1.5 rounded-full bg-blush-500" /><span>{challenge}</span></li>)}</ul></div><div><h3>Insights</h3><ul>{lessons.map((lesson) => <li key={lesson} className="flex gap-3"><span className="mt-3 size-1.5 rounded-full bg-blush-500" /><span>{lesson}</span></li>)}</ul></div></div></section>
-        <ProjectMediaCarousel media={project.media} />
+      <div className="project-case-study">
+        <nav className="project-case-study-rail" aria-label="Case study sections">
+          <p>Case study</p>
+          <a href="#overview">Overview</a>
+          {project.problem ? <a href="#problem">Problem</a> : null}
+          {project.solution ? <a href="#solution">Solution</a> : null}
+          {features.length > 0 ? <a href="#features">Features</a> : null}
+          {challenges.length > 0 || lessons.length > 0 ? <a href="#reflections">Reflections</a> : null}
+        </nav>
+
+        <article className="project-case-study-content">
+          <section className="project-story-intro" id="overview">
+            <div>
+              <h2>Project Overview</h2>
+              <p>{project.description}</p>
+            </div>
+            <dl className="project-story-meta">
+              {project.role ? (
+                <div>
+                  <dt>My role</dt>
+                  <dd>{project.role}</dd>
+                </div>
+              ) : null}
+              <div>
+                <dt>Tech stack</dt>
+                <dd><TechStackList techStack={project.techStack} /></dd>
+              </div>
+              {project.startDate ? (
+                <div>
+                  <dt>Timeline</dt>
+                  <dd>{project.startDate}{project.endDate ? ` — ${project.endDate}` : ""}</dd>
+                </div>
+              ) : null}
+              {project.status ? (
+                <div>
+                  <dt>Status</dt>
+                  <dd>{project.status}</dd>
+                </div>
+              ) : null}
+            </dl>
+          </section>
+
+          <ProjectMediaCarousel media={project.media} />
+
+          {project.problem || project.solution ? (
+            <div className="project-story-pair">
+              {project.problem ? (
+                <section id="problem">
+                  <h2>Problem</h2>
+                  <p>{project.problem}</p>
+                </section>
+              ) : null}
+              {project.solution ? (
+                <section id="solution">
+                  <h2>Solution</h2>
+                  <p>{project.solution}</p>
+                </section>
+              ) : null}
+            </div>
+          ) : null}
+
+          {features.length > 0 ? (
+            <section className="project-feature-section" id="features">
+              <h2>Key Features</h2>
+              <ul>
+                {features.map((feature) => <li key={feature}>{feature}</li>)}
+              </ul>
+            </section>
+          ) : null}
+
+          {challenges.length > 0 || lessons.length > 0 ? (
+            <section className="project-reflection-section" id="reflections">
+              <h2>Challenges &amp; Insights</h2>
+              <div>
+                {challenges.length > 0 ? (
+                  <section>
+                    <h3>Challenges</h3>
+                    <ul>{challenges.map((challenge) => <li key={challenge}>{challenge}</li>)}</ul>
+                  </section>
+                ) : null}
+                {lessons.length > 0 ? (
+                  <section>
+                    <h3>Insights</h3>
+                    <ul>{lessons.map((lesson) => <li key={lesson}>{lesson}</li>)}</ul>
+                  </section>
+                ) : null}
+              </div>
+            </section>
+          ) : null}
+        </article>
       </div>
     </PageContainer>
   );

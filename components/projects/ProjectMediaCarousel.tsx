@@ -27,7 +27,6 @@ export function ProjectMediaCarousel({ media = [] }: ProjectMediaCarouselProps) 
     <section className="project-media-card project-detail-wide" aria-labelledby="project-media-title">
       <div className="project-media-header">
         <div>
-          <p className="project-detail-number">08</p>
           <h2 id="project-media-title">Demo / Gallery</h2>
         </div>
         <p>{String(activeIndex + 1).padStart(2, "0")} / {String(count).padStart(2, "0")}</p>

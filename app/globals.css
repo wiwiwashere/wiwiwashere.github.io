@@ -3779,6 +3779,7 @@ body:has(.home-reference-page) .global-celestial {
   --motion-page: 420ms;
   --motion-focal: 780ms;
   --ease-arrive: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-home: cubic-bezier(0.22, 0.61, 0.36, 1);
   --ease-leave: cubic-bezier(0.4, 0, 1, 1);
   --home-butterfly-scroll-y: 0px;
   --home-butterfly-scroll-scale: 1;
@@ -3832,18 +3833,39 @@ html[data-motion-paused="true"] .footprint-star {
   isolation: isolate;
 }
 
-.home-entrance-full .home-title {
-  animation: home-title-reveal var(--motion-focal) var(--ease-arrive) both;
+.home-entrance-full .home-title,
+html[data-home-entrance="full"] .home-entrance .home-title {
+  animation: home-title-reveal 680ms var(--ease-home) both;
+}
+
+.home-script {
+  --home-copy-final-opacity: 0.9;
 }
 
 .home-entrance-full .home-script,
-.home-entrance-full .home-intro,
-.home-entrance-full .home-rule {
-  animation: home-copy-settle var(--motion-focal) var(--ease-arrive) both;
+html[data-home-entrance="full"] .home-entrance .home-script {
+  animation: home-copy-settle 540ms var(--ease-home) 90ms both;
 }
 
-body:has(.home-entrance-full) .global-butterfly:not(.global-celestial) .butterfly-field {
-  animation: home-butterfly-resolve 900ms var(--ease-arrive);
+.home-entrance-full .home-intro,
+html[data-home-entrance="full"] .home-entrance .home-intro {
+  animation: home-copy-settle 550ms var(--ease-home) 150ms both;
+}
+
+.home-entrance-full .home-rule,
+html[data-home-entrance="full"] .home-entrance .home-rule {
+  animation: home-copy-settle 520ms var(--ease-home) 210ms both;
+}
+
+.home-entrance-full .home-rule span,
+html[data-home-entrance="full"] .home-entrance .home-rule span {
+  animation: home-rule-draw 500ms var(--ease-home) 240ms both;
+  transform-origin: center;
+}
+
+body:has(.home-entrance-full) .global-butterfly:not(.global-celestial) .butterfly-field,
+html[data-home-entrance="full"] body:has(.home-entrance) .global-butterfly:not(.global-celestial) .butterfly-field {
+  animation: home-butterfly-resolve 900ms var(--ease-home);
 }
 
 body:has(.home-reference-page) .global-butterfly:not(.global-celestial) .butterfly-field {
@@ -3854,18 +3876,23 @@ body:has(.home-reference-page) .global-butterfly:not(.global-celestial) .butterf
 }
 
 @keyframes home-title-reveal {
-  0%, 20% { clip-path: inset(16% 0 0); filter: blur(1.2px); transform: translateY(14px); }
-  70%, 100% { clip-path: inset(0); transform: translateY(0); }
+  from { opacity: 0.18; filter: blur(0.6px); transform: translateY(8px); }
+  to { opacity: 1; filter: blur(0); transform: translateY(0); }
 }
 
 @keyframes home-copy-settle {
-  0%, 40% { opacity: 0.52; transform: translateY(8px); }
-  78%, 100% { opacity: 1; transform: translateY(0); }
+  from { opacity: 0.08; transform: translateY(6px); }
+  to { opacity: var(--home-copy-final-opacity, 1); transform: translateY(0); }
+}
+
+@keyframes home-rule-draw {
+  from { opacity: 0.18; transform: scaleX(0); }
+  to { opacity: 1; transform: scaleX(1); }
 }
 
 @keyframes home-butterfly-resolve {
-  0%, 38% { opacity: 0; filter: blur(5px); }
-  100% { opacity: var(--home-butterfly-scroll-opacity); filter: blur(0); }
+  from { opacity: 0; filter: blur(3px); }
+  to { opacity: var(--home-butterfly-scroll-opacity); filter: blur(0); }
 }
 
 /* Connected-room route transition. */

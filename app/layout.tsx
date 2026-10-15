@@ -29,7 +29,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var r=window.matchMedia("(prefers-reduced-motion: reduce)").matches;var k="winnie-home-entrance-seen";var h=window.location.pathname==="/";var s=window.sessionStorage.getItem(k)==="true";var m=!r&&h&&!s?"full":"settled";document.documentElement.dataset.homeEntrance=m;if(m==="full")window.sessionStorage.setItem(k,"true")}catch(e){document.documentElement.dataset.homeEntrance="full"}`,
+          }}
+        />
+      </head>
       <body className="min-h-screen antialiased">
         <MotionProvider>
           <div className="site-bg" aria-hidden="true" />

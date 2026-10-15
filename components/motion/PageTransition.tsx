@@ -30,7 +30,7 @@ export function PageTransition() {
     setPhase(reducedMotion ? "idle" : "revealing");
 
     if (!reducedMotion) {
-      revealTimer.current = window.setTimeout(() => setPhase("idle"), 320);
+      revealTimer.current = window.setTimeout(() => setPhase("idle"), 400);
     }
 
     return () => {

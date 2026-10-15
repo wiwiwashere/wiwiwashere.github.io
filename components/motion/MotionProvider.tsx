@@ -51,18 +51,33 @@ export function MotionProvider({ children }: { children: React.ReactNode }) {
 
     if (motionPreference) {
       setHomeEntranceMode("settled");
+      document.documentElement.dataset.homeEntrance = "settled";
       return;
     }
 
     try {
+      const bootstrappedMode = document.documentElement.dataset.homeEntrance;
+
+      if (bootstrappedMode === "full") {
+        setHomeEntranceMode("full");
+        const settleTimer = window.setTimeout(() => {
+          setHomeEntranceMode("settled");
+          document.documentElement.dataset.homeEntrance = "settled";
+        }, 900);
+
+        return () => window.clearTimeout(settleTimer);
+      }
+
       const hasSeenEntrance = window.sessionStorage.getItem(homeEntranceKey) === "true";
       setHomeEntranceMode(hasSeenEntrance ? "settled" : "full");
+      document.documentElement.dataset.homeEntrance = hasSeenEntrance ? "settled" : "full";
 
       if (!hasSeenEntrance) {
         window.sessionStorage.setItem(homeEntranceKey, "true");
       }
     } catch {
       setHomeEntranceMode("full");
+      document.documentElement.dataset.homeEntrance = "full";
     }
   }, [motionPreference]);
 

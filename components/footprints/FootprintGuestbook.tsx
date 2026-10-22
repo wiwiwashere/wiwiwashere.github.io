@@ -190,7 +190,6 @@ export function FootprintGuestbook() {
     <div className="footprint-guestbook">
       <section className="footprint-constellation" aria-label="Visitor constellation">
         <div className="footprint-constellation-copy">
-          <p className="archive-kicker"></p>
           <h2>Become part of the sky.</h2>
           {activeFootprint ? (
             <article className="footprint-preview">
@@ -306,32 +305,37 @@ export function FootprintGuestbook() {
           {status ? <p className="footprint-status" aria-live="polite">{status}</p> : null}
         </form>
 
-        <div className="footprint-notes">
-          {footprints.map((footprint, index) => (
-            <article
-              key={footprint.id}
-              className={`footprint-note ${activeId === footprint.id ? "is-active" : ""} ${justAddedId === footprint.id ? "is-newest" : ""}`}
-              style={{ "--tilt": `${(index % 5) - 2}deg` } as React.CSSProperties}
-              tabIndex={0}
-              onClick={() => setActiveId(footprint.id)}
-              onMouseEnter={() => setActiveId(footprint.id)}
-              onFocus={() => setActiveId(footprint.id)}
-            >
-              <span className="footprint-note-stamp">{getSafeMood(footprint.mood)}</span>
-              <p>{footprint.message}</p>
-              <footer>
-                <span>{footprint.name || "someone"}</span>
-                <time dateTime={footprint.created_at}>{formatDate(footprint.created_at)}</time>
-              </footer>
-            </article>
-          ))}
-          {!isLoading && footprints.length === 0 ? (
-            <article className="footprint-note footprint-note-empty">
-              <span className="footprint-note-stamp">{stamps.butterfly}</span>
-              <p>No footprints yet. Leave the first tiny mark.</p>
-            </article>
-          ) : null}
-        </div>
+        <section className="footprint-archive" aria-labelledby="footprint-archive-title">
+          <div className="footprint-archive-heading">
+            <h2 id="footprint-archive-title">recent footprints</h2>
+            <span>newest first</span>
+          </div>
+          <div className="footprint-notes">
+            {footprints.map((footprint) => (
+              <article
+                key={footprint.id}
+                className={`footprint-note ${activeId === footprint.id ? "is-active" : ""} ${justAddedId === footprint.id ? "is-newest" : ""}`}
+                tabIndex={0}
+                onClick={() => setActiveId(footprint.id)}
+                onMouseEnter={() => setActiveId(footprint.id)}
+                onFocus={() => setActiveId(footprint.id)}
+              >
+                <span className="footprint-note-stamp">{getSafeMood(footprint.mood)}</span>
+                <p>{footprint.message}</p>
+                <footer>
+                  <span>{footprint.name || "someone"}</span>
+                  <time dateTime={footprint.created_at}>{formatDate(footprint.created_at)}</time>
+                </footer>
+              </article>
+            ))}
+            {!isLoading && footprints.length === 0 ? (
+              <article className="footprint-note footprint-note-empty">
+                <span className="footprint-note-stamp">{stamps.butterfly}</span>
+                <p>No footprints yet. Leave the first tiny mark.</p>
+              </article>
+            ) : null}
+          </div>
+        </section>
       </section>
     </div>
   );

@@ -1928,6 +1928,7 @@
 
 .project-feature-section > h2 {
   margin-bottom: clamp(1.5rem, 4vw, 3rem);
+  font-size: clamp(1.9rem, 3vw, 2.7rem);
 }
 
 .project-feature-section ul,

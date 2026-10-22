@@ -25,7 +25,9 @@ export function ButterflyCursor() {
 
     function handlePointerMove(event: PointerEvent) {
       cursorRef.current?.classList.remove("is-awaiting-pointer");
-      targetRef.current = { x: event.clientX, y: event.clientY };
+      cursorRef.current?.classList.add("is-flying");
+      targetRef.current.x = event.clientX;
+      targetRef.current.y = event.clientY;
 
       const dx = event.clientX - lastX;
       const dy = event.clientY - lastY;
@@ -71,11 +73,12 @@ export function ButterflyCursor() {
       } else {
         position.x = target.x;
         position.y = target.y;
+        cursor.classList.remove("is-flying");
         frameId = 0;
       }
     }
 
-    window.addEventListener("pointermove", handlePointerMove);
+    window.addEventListener("pointermove", handlePointerMove, { passive: true });
     window.addEventListener("pointerover", handlePointerOver);
 
     return () => {

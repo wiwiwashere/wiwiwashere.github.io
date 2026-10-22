@@ -204,6 +204,7 @@ button { font: inherit; }
   transform-origin: 50% 50%;
   animation: butterfly-float-3d 16s ease-in-out infinite alternate;
   filter: drop-shadow(0 26px 60px rgba(120, 166, 196, 0.18));
+  will-change: transform;
 }
 
 .butterfly-particle {
@@ -214,9 +215,27 @@ button { font: inherit; }
   height: var(--size);
   opacity: var(--opacity);
   transform: translate3d(var(--x), var(--y), var(--z));
-  animation: butterfly-pulse 3.2s ease-in-out infinite alternate;
-  animation-delay: var(--delay);
-  will-change: transform, opacity, filter;
+  animation: none;
+}
+
+.butterfly-wing,
+.butterfly-body {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+
+.butterfly-wing {
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+.butterfly-wing-left {
+  animation: butterfly-wingbeat-left 6.8s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+}
+
+.butterfly-wing-right {
+  animation: butterfly-wingbeat-right 6.8s cubic-bezier(0.45, 0, 0.2, 1) infinite;
 }
 
 .butterfly-particle::before {
@@ -226,6 +245,12 @@ button { font: inherit; }
   border-radius: 999px;
   background: radial-gradient(circle, rgba(255,255,255,0.98), rgba(194, 224, 243, 0.9) 42%, rgba(239, 167, 199, 0.24) 78%);
   box-shadow: 0 0 16px rgba(169, 212, 239, 0.42), 0 0 24px rgba(245, 169, 199, 0.18);
+}
+
+.butterfly-particle-animated:not(.butterfly-particle-spark)::before {
+  animation: butterfly-point-breathe 3.2s ease-in-out infinite alternate;
+  animation-delay: var(--delay);
+  will-change: transform, opacity;
 }
 
 .butterfly-particle-edge::before {
@@ -245,6 +270,8 @@ button { font: inherit; }
 
 .butterfly-particle-spark {
   animation: butterfly-sparkle 2.6s ease-in-out infinite;
+  animation-delay: var(--delay);
+  will-change: transform, opacity;
 }
 
 .butterfly-particle-spark::before {
@@ -331,9 +358,19 @@ button { font: inherit; }
   100% { transform: rotateX(53deg) rotateY(18deg) rotateZ(7deg) translate3d(-34px, 18px, 88px) scale(1.06); }
 }
 
-@keyframes butterfly-pulse {
-  from { opacity: calc(var(--opacity) * 0.58); filter: blur(0); }
-  to { opacity: var(--opacity); filter: blur(0.35px); }
+@keyframes butterfly-wingbeat-left {
+  0%, 16%, 62%, 100% { transform: rotateY(8deg) rotateZ(-0.6deg); }
+  34% { transform: rotateY(56deg) rotateZ(-2deg); }
+}
+
+@keyframes butterfly-wingbeat-right {
+  0%, 16%, 62%, 100% { transform: rotateY(-8deg) rotateZ(0.6deg); }
+  34% { transform: rotateY(-56deg) rotateZ(2deg); }
+}
+
+@keyframes butterfly-point-breathe {
+  from { opacity: 0.58; transform: scale(0.86); }
+  to { opacity: 1; transform: scale(1.12); }
 }
 
 @keyframes butterfly-sparkle {
@@ -1744,6 +1781,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 }
 
 html[data-motion-paused="true"] .butterfly-cloud,
+html[data-motion-paused="true"] .butterfly-wing,
 html[data-motion-paused="true"] .butterfly-particle,
 html[data-motion-paused="true"] .butterfly-star,
 html[data-motion-paused="true"] .butterfly-meteor,
@@ -2008,6 +2046,15 @@ body:has(.home-reference-page) .global-butterfly:not(.global-celestial) .butterf
 .butterfly-cursor.is-over-interactive span {
   color: #6f96be;
   transform: scale(1.18) rotate(-8deg);
+}
+
+.butterfly-cursor.is-flying:not(.is-over-interactive) span {
+  animation: butterfly-cursor-flutter 260ms ease-in-out infinite alternate;
+}
+
+@keyframes butterfly-cursor-flutter {
+  from { transform: scaleX(0.78) rotate(-4deg); }
+  to { transform: scaleX(1.08) rotate(4deg); }
 }
 
 .butterfly-cursor.is-paused {

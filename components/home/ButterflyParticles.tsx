@@ -1,4 +1,5 @@
 type ParticleKind = "fill" | "edge" | "vein" | "body" | "spark";
+type ParticleRegion = "left-wing" | "right-wing" | "body";
 
 type Particle = {
   index: number;
@@ -8,7 +9,9 @@ type Particle = {
   size: number;
   opacity: number;
   kind: ParticleKind;
+  region: ParticleRegion;
   delay: number;
+  animated: boolean;
 };
 
 function seededNoise(seed: number) {
@@ -18,9 +21,24 @@ function seededNoise(seed: number) {
 
 const particles: Particle[] = [];
 
-function pushParticle(x: number, y: number, z: number, size: number, opacity: number, kind: ParticleKind) {
+function pushParticle(
+  x: number,
+  y: number,
+  z: number,
+  size: number,
+  opacity: number,
+  kind: ParticleKind,
+  region: ParticleRegion,
+) {
   const index = particles.length;
-  particles.push({ index, x, y, z, size, opacity, kind, delay: (index % 29) * -0.11 });
+  const animated =
+    kind === "spark" ||
+    (kind === "edge" && index % 2 === 0) ||
+    (kind === "vein" && index % 6 === 0) ||
+    (kind === "body" && index % 5 === 0) ||
+    (kind === "fill" && index % 29 === 0);
+
+  particles.push({ index, x, y, z, size, opacity, kind, region, delay: (index % 29) * -0.11, animated });
 }
 
 function addWing(options: {
@@ -33,6 +51,7 @@ function addWing(options: {
   count: number;
 }) {
   const { side, upper, cx, cy, rx, ry, count } = options;
+  const region: ParticleRegion = side === -1 ? "left-wing" : "right-wing";
 
   for (let i = 0; i < count; i += 1) {
     const a = seededNoise(i * 7 + cx + cy) * Math.PI * 2;
@@ -48,49 +67,58 @@ function addWing(options: {
     const kind: ParticleKind = radius > 0.88 ? "edge" : "fill";
     const size = kind === "edge" ? 4.2 + seededNoise(i + 8) * 2.2 : 2.2 + seededNoise(i + 3) * 2.8;
     const opacity = kind === "edge" ? 0.72 : 0.34 + seededNoise(i + 4) * 0.34;
-    pushParticle(x, y, z, size, opacity, kind);
+    pushParticle(x, y, z, size, opacity, kind, region);
   }
 
   const veinAngles = upper ? [-0.72, -0.38, -0.08, 0.24] : [0.18, 0.48, 0.78];
+  const veinSteps = 14;
   veinAngles.forEach((angle, veinIndex) => {
-    for (let step = 0; step < 24; step += 1) {
-      const t = step / 23;
+    for (let step = 0; step < veinSteps; step += 1) {
+      const t = step / (veinSteps - 1);
       const bend = Math.sin(t * Math.PI) * (upper ? -24 : 18);
       const x = side * (18 + cx * t + Math.cos(angle) * rx * 0.72 * t + bend * 0.28);
       const y = 8 + cy * t + Math.sin(angle) * ry * 0.82 * t + bend;
       const z = 44 + Math.sin(t * Math.PI + veinIndex) * 22;
-      pushParticle(x, y, z, 2.1 + seededNoise(step + veinIndex) * 1.1, 0.62, "vein");
+      pushParticle(x, y, z, 2.1 + seededNoise(step + veinIndex) * 1.1, 0.62, "vein", region);
     }
   });
 }
 
-addWing({ side: -1, upper: true, cx: 104, cy: -76, rx: 104, ry: 156, count: 130 });
-addWing({ side: 1, upper: true, cx: 104, cy: -76, rx: 104, ry: 156, count: 130 });
-addWing({ side: -1, upper: false, cx: 82, cy: 88, rx: 92, ry: 112, count: 92 });
-addWing({ side: 1, upper: false, cx: 82, cy: 88, rx: 92, ry: 112, count: 92 });
+addWing({ side: -1, upper: true, cx: 104, cy: -76, rx: 104, ry: 156, count: 76 });
+addWing({ side: 1, upper: true, cx: 104, cy: -76, rx: 104, ry: 156, count: 76 });
+addWing({ side: -1, upper: false, cx: 82, cy: 88, rx: 92, ry: 112, count: 50 });
+addWing({ side: 1, upper: false, cx: 82, cy: 88, rx: 92, ry: 112, count: 50 });
 
-for (let i = 0; i < 70; i += 1) {
-  const t = i / 69;
+for (let i = 0; i < 48; i += 1) {
+  const t = i / 47;
   const x = Math.sin(t * Math.PI * 2) * 8;
   const y = -116 + t * 246;
   const z = 84 + Math.cos(t * Math.PI * 2) * 18;
-  pushParticle(x, y, z, 3.2 + seededNoise(i) * 2.2, 0.75, "body");
+  pushParticle(x, y, z, 3.2 + seededNoise(i) * 2.2, 0.75, "body", "body");
 }
 
-for (let i = 0; i < 34; i += 1) {
-  const t = i / 33;
+for (let i = 0; i < 24; i += 1) {
+  const t = i / 23;
   const side = i % 2 === 0 ? -1 : 1;
   const x = side * (12 + 54 * t + Math.sin(t * Math.PI) * 20);
   const y = -124 - 80 * t;
   const z = 96 + t * 30;
-  pushParticle(x, y, z, 2.1, 0.6, "vein");
+  pushParticle(x, y, z, 2.1, 0.6, "vein", "body");
 }
 
 const sparkPositions = [
   [-150, -138, 126], [152, -150, 120], [-132, 40, 104], [132, 32, 110],
   [-48, -184, 140], [58, 164, 88], [198, -36, 122], [-210, -24, 116]
 ];
-sparkPositions.forEach(([x, y, z], i) => pushParticle(x, y, z, 6 + (i % 3), 0.86, "spark"));
+sparkPositions.forEach(([x, y, z], i) =>
+  pushParticle(x, y, z, 6 + (i % 3), 0.86, "spark", x < 0 ? "left-wing" : "right-wing"),
+);
+
+const particleGroups = [
+  { region: "left-wing", className: "butterfly-wing butterfly-wing-left" },
+  { region: "right-wing", className: "butterfly-wing butterfly-wing-right" },
+  { region: "body", className: "butterfly-body" },
+] as const;
 
 const stars = [
   { index: 0, x: 62, y: 18, size: 34, delay: "-0.1s", variant: "burst" },
@@ -116,19 +144,23 @@ export function ButterflyParticles() {
       <div className="butterfly-trail butterfly-trail-one" />
       <div className="butterfly-trail butterfly-trail-two" />
       <div className="butterfly-cloud">
-        {particles.map((particle) => (
-          <span
-            key={particle.index}
-            className={`butterfly-particle butterfly-particle-${particle.kind}`}
-            style={{
-              "--x": `${particle.x}px`,
-              "--y": `${particle.y}px`,
-              "--z": `${particle.z}px`,
-              "--size": `${particle.size}px`,
-              "--opacity": particle.opacity,
-              "--delay": `${particle.delay}s`
-            } as React.CSSProperties}
-          />
+        {particleGroups.map((group) => (
+          <div key={group.region} className={group.className}>
+            {particles.filter((particle) => particle.region === group.region).map((particle) => (
+              <span
+                key={particle.index}
+                className={`butterfly-particle butterfly-particle-${particle.kind}${particle.animated ? " butterfly-particle-animated" : ""}`}
+                style={{
+                  "--x": `${particle.x}px`,
+                  "--y": `${particle.y}px`,
+                  "--z": `${particle.z}px`,
+                  "--size": `${particle.size}px`,
+                  "--opacity": particle.opacity,
+                  "--delay": `${particle.delay}s`
+                } as React.CSSProperties}
+              />
+            ))}
+          </div>
         ))}
       </div>
     </div>

@@ -1547,28 +1547,6 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 }
 
 @media (max-width: 900px) {
-  .site-poster-nav {
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 1rem;
-  }
-
-  .site-poster-nav .desktop-nav-links {
-    display: none;
-  }
-
-  .mobile-menu-button {
-    display: inline-flex;
-    justify-self: end;
-    min-height: 2rem;
-    align-items: center;
-  }
-
-  .mobile-nav-list.is-open {
-    display: grid;
-    grid-column: 1 / -1;
-    grid-template-columns: 1fr;
-  }
-
   .home-hero {
     grid-template-columns: 1fr;
   }
@@ -1684,52 +1662,6 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   .home-life-card {
     height: auto !important;
     min-height: 0 !important;
-  }
-}
-
-/* ==========================================================================
-   09. Final responsive/navbar overrides
-   ========================================================================== */
-
-/* Shared mobile navbar: keep this late so every page uses the same menu. */
-@media (max-width: 900px) {
-  .site-poster-header {
-    background: #f9f3e9;
-    backdrop-filter: none;
-  }
-
-  .site-poster-nav {
-    grid-template-columns: minmax(0, 1fr) auto !important;
-    gap: 1rem !important;
-  }
-
-  .site-poster-nav .desktop-nav-links {
-    display: none !important;
-  }
-
-  .site-poster-nav .mobile-menu-button {
-    display: inline-flex !important;
-    justify-self: end;
-    min-height: 2rem;
-    align-items: center;
-  }
-
-  .site-poster-nav .mobile-nav-list {
-    display: none !important;
-    grid-column: 1 / -1;
-    grid-template-columns: 1fr;
-    width: 100%;
-    border-top: 1px solid rgba(30, 43, 69, 0.18);
-    padding-top: 1rem;
-  }
-
-  .site-poster-nav .mobile-nav-list.is-open {
-    display: grid !important;
-  }
-
-  .site-poster-nav .mobile-nav-list a {
-    display: block;
-    padding: 0.65rem 0;
   }
 }
 
@@ -1982,38 +1914,94 @@ body:has(.home-reference-page) .global-butterfly:not(.global-celestial) .butterf
 }
 
 @media (max-width: 900px) {
+  .site-poster-header {
+    padding:
+      max(0.8rem, env(safe-area-inset-top))
+      max(1.1rem, env(safe-area-inset-right))
+      0
+      max(1.1rem, env(safe-area-inset-left));
+    background: rgba(249, 243, 233, 0.97);
+    backdrop-filter: none;
+  }
+
+  .site-poster-nav {
+    position: relative;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1rem;
+    min-height: 3.25rem;
+    padding: 0 0.25rem 0.75rem;
+  }
+
+  .site-poster-nav .desktop-nav-links {
+    display: none;
+  }
+
+  .site-poster-nav .mobile-menu-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    justify-self: end;
+    min-width: 4.75rem;
+    min-height: 2.75rem;
+    padding: 0.5rem 0 0.5rem 0.75rem;
+  }
+
   .site-poster-nav .mobile-nav-list {
     display: grid !important;
-    max-height: 0;
-    padding-top: 0;
-    border-top-color: transparent;
-    clip-path: inset(0 0 100%);
+    position: absolute;
+    top: 100%;
+    right: auto;
+    left: 50%;
+    width: 100vw;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding:
+      0.65rem
+      max(1.35rem, env(safe-area-inset-right))
+      0.85rem
+      max(1.35rem, env(safe-area-inset-left));
+    border-top: 1px solid rgba(30, 43, 69, 0.18);
+    border-bottom: 1px solid rgba(30, 43, 69, 0.28);
+    background: rgba(249, 243, 233, 0.985);
     opacity: 0;
     overflow: hidden;
     pointer-events: none;
+    transform: translate3d(-50%, -0.7rem, 0);
     visibility: hidden;
+    contain: layout paint;
     transition:
-      max-height var(--motion-component) var(--ease-arrive),
-      padding-top var(--motion-component) var(--ease-arrive),
-      border-color var(--motion-small) ease,
-      clip-path var(--motion-component) var(--ease-arrive),
       opacity var(--motion-small) ease,
+      transform var(--motion-component) var(--ease-arrive),
       visibility 0s linear var(--motion-component);
   }
 
   .site-poster-nav .mobile-nav-list.is-open {
-    max-height: 25rem;
-    padding-top: 1rem;
-    border-top-color: rgba(30, 43, 69, 0.18);
-    clip-path: inset(0);
     opacity: 1;
     pointer-events: auto;
+    transform: translate3d(-50%, 0, 0);
     visibility: visible;
     transition-delay: 0s;
   }
 
+  .site-poster-nav .mobile-nav-list a {
+    display: flex;
+    min-height: 3rem;
+    align-items: center;
+    padding: 0.7rem 0.35rem;
+  }
+
+  .site-poster-nav .mobile-nav-list a::after {
+    bottom: 0.4rem;
+  }
+
   .ascii-specimen-desktop { display: none; }
   .ascii-specimen-mobile { display: block; }
+}
+
+@media (max-width: 360px) {
+  .site-poster-nav,
+  .mobile-menu-button {
+    letter-spacing: 0.14em;
+  }
 }
 
 /* Persistent signatures. */

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const navItems = [
   { href: "/projects", label: "projects" },
@@ -16,24 +16,53 @@ const navItems = [
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const headerRef = useRef<HTMLElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key !== "Escape") return;
+      setIsOpen(false);
+      menuButtonRef.current?.focus();
+    }
+
+    function handlePointerDown(event: PointerEvent) {
+      const target = event.target;
+      if (target instanceof Node && !headerRef.current?.contains(target)) {
+        setIsOpen(false);
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("pointerdown", handlePointerDown, { passive: true });
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("pointerdown", handlePointerDown);
+    };
+  }, [isOpen]);
 
   function isActive(href: string) {
     return pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
   }
 
   return (
-    <header className="site-poster-header fixed inset-x-0 top-0 z-50">
+    <header ref={headerRef} className="site-poster-header fixed inset-x-0 top-0 z-50">
       <nav className="site-poster-nav" aria-label="Primary navigation">
         <Link className={`home-wordmark ${pathname === "/" ? "is-active" : ""}`} href="/" onClick={() => setIsOpen(false)}>WL</Link>
 
         <button
+          ref={menuButtonRef}
           type="button"
           className="mobile-menu-button"
           aria-expanded={isOpen}
           aria-controls="mobile-nav-list"
+          aria-label={isOpen ? "Close navigation" : "Open navigation"}
           onClick={() => setIsOpen((open) => !open)}
         >
-          {isOpen ? "close" : "menu"}
+          <span aria-hidden="true">{isOpen ? "close" : "menu"}</span>
         </button>
 
         <div className="home-nav-center desktop-nav-links">
@@ -48,7 +77,12 @@ export function Navbar() {
           <Link href="/resume" className={isActive("/resume") ? "is-active" : ""} aria-current={isActive("/resume") ? "page" : undefined}>resume</Link>
         </div>
 
-        <div id="mobile-nav-list" className={`mobile-nav-list ${isOpen ? "is-open" : ""}`}>
+        <div
+          id="mobile-nav-list"
+          className={`mobile-nav-list ${isOpen ? "is-open" : ""}`}
+          aria-hidden={!isOpen}
+          inert={!isOpen}
+        >
           {navItems.map((item) => (
             <Link key={item.href} href={item.href} className={isActive(item.href) ? "is-active" : ""} aria-current={isActive(item.href) ? "page" : undefined} onClick={() => setIsOpen(false)}>
               {item.label}

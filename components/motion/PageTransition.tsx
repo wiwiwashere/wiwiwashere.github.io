@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { AsciiSpecimen } from "./AsciiSpecimen";
 import { useMotionPreferences } from "./MotionProvider";
@@ -14,29 +14,51 @@ export function PageTransition() {
   const [phase, setPhase] = useState<TransitionPhase>("idle");
   const phaseRef = useRef<TransitionPhase>("idle");
   const previousPathname = useRef(pathname);
-  const navigationTimer = useRef<number | null>(null);
-  const revealTimer = useRef<number | null>(null);
-  const safetyTimer = useRef<number | null>(null);
+  const pendingDestination = useRef<string | null>(null);
+  const fallbackTimer = useRef<number | null>(null);
+
+  const updatePhase = useCallback((nextPhase: TransitionPhase) => {
+    phaseRef.current = nextPhase;
+    setPhase(nextPhase);
+  }, []);
+
+  const clearFallback = useCallback(() => {
+    if (fallbackTimer.current) {
+      window.clearTimeout(fallbackTimer.current);
+      fallbackTimer.current = null;
+    }
+  }, []);
+
+  const commitNavigation = useCallback(() => {
+    const destination = pendingDestination.current;
+    if (!destination) return;
+
+    clearFallback();
+    pendingDestination.current = null;
+    router.push(destination);
+
+    fallbackTimer.current = window.setTimeout(() => updatePhase("idle"), 1600);
+  }, [clearFallback, router, updatePhase]);
 
   useEffect(() => {
-    phaseRef.current = phase;
-  }, [phase]);
+    if (reducedMotion) {
+      clearFallback();
+      pendingDestination.current = null;
+      updatePhase("idle");
+      previousPathname.current = pathname;
+      return;
+    }
 
-  useEffect(() => {
     if (previousPathname.current === pathname) return;
 
     previousPathname.current = pathname;
-    if (safetyTimer.current) window.clearTimeout(safetyTimer.current);
-    setPhase(reducedMotion ? "idle" : "revealing");
+    clearFallback();
+    updatePhase("revealing");
 
-    if (!reducedMotion) {
-      revealTimer.current = window.setTimeout(() => setPhase("idle"), 400);
-    }
+    fallbackTimer.current = window.setTimeout(() => updatePhase("idle"), 650);
 
-    return () => {
-      if (revealTimer.current) window.clearTimeout(revealTimer.current);
-    };
-  }, [pathname, reducedMotion]);
+    return clearFallback;
+  }, [clearFallback, pathname, reducedMotion, updatePhase]);
 
   useEffect(() => {
     function handleInternalNavigation(event: MouseEvent) {
@@ -69,27 +91,36 @@ export function PageTransition() {
       if (destination.pathname === current.pathname && destination.search === current.search) return;
 
       event.preventDefault();
-      phaseRef.current = "covering";
-      setPhase("covering");
-      navigationTimer.current = window.setTimeout(() => {
-        router.push(`${destination.pathname}${destination.search}${destination.hash}`);
-        safetyTimer.current = window.setTimeout(() => {
-          phaseRef.current = "idle";
-          setPhase("idle");
-        }, 1600);
-      }, 280);
+      pendingDestination.current = `${destination.pathname}${destination.search}${destination.hash}`;
+      updatePhase("covering");
+      clearFallback();
+      fallbackTimer.current = window.setTimeout(commitNavigation, 450);
     }
 
     document.addEventListener("click", handleInternalNavigation);
     return () => {
       document.removeEventListener("click", handleInternalNavigation);
-      if (navigationTimer.current) window.clearTimeout(navigationTimer.current);
-      if (safetyTimer.current) window.clearTimeout(safetyTimer.current);
+      clearFallback();
     };
-  }, [reducedMotion, router]);
+  }, [clearFallback, commitNavigation, reducedMotion, updatePhase]);
+
+  function handleTransitionEnd(event: React.TransitionEvent<HTMLDivElement>) {
+    if (event.currentTarget !== event.target || event.propertyName !== "clip-path") return;
+
+    if (phaseRef.current === "covering") {
+      commitNavigation();
+    } else if (phaseRef.current === "revealing") {
+      clearFallback();
+      updatePhase("idle");
+    }
+  }
 
   return (
-    <div className={`page-transition-veil page-transition-${phase}`} aria-hidden="true">
+    <div
+      className={`page-transition-veil page-transition-${phase}`}
+      aria-hidden="true"
+      onTransitionEnd={handleTransitionEnd}
+    >
       <span className="page-transition-arch" />
       <AsciiSpecimen variant="butterfly-conservatory" state="static" />
     </div>

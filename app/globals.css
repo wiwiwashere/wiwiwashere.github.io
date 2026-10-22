@@ -1904,6 +1904,9 @@ body:has(.home-reference-page) .global-butterfly:not(.global-celestial) .butterf
     rgba(249, 243, 233, 0.96);
   clip-path: inset(100% 0 0);
   opacity: 0;
+  visibility: hidden;
+  content-visibility: hidden;
+  contain: layout paint style;
   pointer-events: none;
 }
 
@@ -1924,13 +1927,19 @@ body:has(.home-reference-page) .global-butterfly:not(.global-celestial) .butterf
 .page-transition-covering {
   clip-path: inset(0);
   opacity: 1;
+  visibility: visible;
+  content-visibility: visible;
   pointer-events: auto;
+  will-change: clip-path, opacity;
   transition: clip-path 280ms var(--ease-leave), opacity 140ms linear;
 }
 
 .page-transition-revealing {
   clip-path: inset(0 0 100%);
   opacity: 0;
+  visibility: visible;
+  content-visibility: visible;
+  will-change: clip-path, opacity;
   transition: clip-path 400ms var(--ease-arrive), opacity 330ms ease 55ms;
 }
 

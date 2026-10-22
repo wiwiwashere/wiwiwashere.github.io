@@ -234,5 +234,6 @@ export const diaryNotes = [
   "Where there's a will, there is a way.",
   "Avoiding the things that make you uncomfortable is a temporary solution. Facing them is a long-term solution.",
   "Live Laugh Love LeetCode... 🫠",
-  "There is a crack in everything, that's how the light gets in."
+  "There is a crack in everything, that's how the light gets in.",
+  "GHC 2026..."
 ];

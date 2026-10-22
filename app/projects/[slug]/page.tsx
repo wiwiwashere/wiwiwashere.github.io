@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import "../../archive.css";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { ProjectDetailHeader } from "@/components/projects/ProjectDetailHeader";
 import { ProjectMediaCarousel } from "@/components/projects/ProjectMediaCarousel";

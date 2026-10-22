@@ -1,4 +1,5 @@
 import Link from "next/link";
+import "../archive.css";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { diaryNotes, lifeEntries } from "@/data/life";
 import { InViewGroup } from "@/components/motion/InViewGroup";

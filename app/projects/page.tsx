@@ -1,4 +1,5 @@
 import Link from "next/link";
+import "../archive.css";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { ProjectFilter } from "@/components/projects/ProjectFilter";
 import { projects } from "@/data/projects";

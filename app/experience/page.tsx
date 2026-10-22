@@ -1,4 +1,5 @@
 import Link from "next/link";
+import "../archive.css";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { experienceItems } from "@/data/experience";
 import { skills } from "@/data/contact";

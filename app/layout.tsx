@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { CelestialParticles } from "@/components/home/ButterflyParticles";
 import { Navbar } from "@/components/layout/Navbar";
 import { FloatingMusicPlayer } from "@/components/music/FloatingMusicPlayer";
 import { ButterflyCursor } from "@/components/layout/ButterflyCursor";
@@ -40,11 +39,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className="min-h-screen antialiased">
         <MotionProvider>
           <div className="site-bg" aria-hidden="true" />
-          <div className="global-butterfly global-celestial" aria-hidden="true">
-            <div className="butterfly-field">
-              <CelestialParticles />
-            </div>
-          </div>
           <Navbar />
           <FloatingMusicPlayer />
           <ButterflyCursor />

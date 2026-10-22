@@ -18,7 +18,7 @@ export default function HomePage() {
       <div className="global-butterfly" aria-hidden="true">
         <ButterflyParticles />
       </div>
-      <PageContainer className="home-reference-page">
+      <PageContainer className="home-reference-page" showCelestial={false}>
         <section className="home-poster">
           <HomeEntrance>
             <div className="home-botanical home-botanical-left" aria-hidden="true" />

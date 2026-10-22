@@ -7,6 +7,12 @@ const playlist = musicPicks[0];
 
 export function FloatingMusicPlayer() {
   const [isOpen, setIsOpen] = useState(false);
+  const [hasOpened, setHasOpened] = useState(false);
+
+  function togglePlayer() {
+    if (!isOpen) setHasOpened(true);
+    setIsOpen((current) => !current);
+  }
 
   return (
     <aside className={`floating-music ${isOpen ? "is-open" : ""}`} aria-label="Persistent music player">
@@ -15,7 +21,7 @@ export function FloatingMusicPlayer() {
         type="button"
         aria-expanded={isOpen}
         aria-controls="floating-music-panel"
-        onClick={() => setIsOpen((current) => !current)}
+        onClick={togglePlayer}
       >
         {/* <span aria-hidden="true"></span> */}
         <span>⇄ ◃◃   ⅠⅠ   ▹▹ ↻</span>
@@ -27,17 +33,19 @@ export function FloatingMusicPlayer() {
             x
           </button>
         </div>
-        <iframe
-          className="floating-spotify-embed"
-          src={playlist.embedUrl}
-          width="100%"
-          height="352"
-          frameBorder="0"
-          allowFullScreen
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-          title="Spotify playlist"
-        />
+        {hasOpened ? (
+          <iframe
+            className="floating-spotify-embed"
+            src={playlist.embedUrl}
+            width="100%"
+            height="352"
+            frameBorder="0"
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            title="Spotify playlist"
+          />
+        ) : null}
       </div>
     </aside>
   );

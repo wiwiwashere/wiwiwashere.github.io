@@ -1,4 +1,5 @@
 import Link from "next/link";
+import "../archive.css";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { ResumeViewer } from "@/components/resume/ResumeViewer";
 import { contact } from "@/data/contact";

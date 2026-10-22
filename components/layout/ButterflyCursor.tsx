@@ -36,6 +36,8 @@ export function ButterflyCursor() {
 
       lastX = event.clientX;
       lastY = event.clientY;
+
+      if (!frameId) frameId = window.requestAnimationFrame(animate);
     }
 
     function handlePointerOver(event: PointerEvent) {
@@ -61,17 +63,25 @@ export function ButterflyCursor() {
 
       cursor.style.transform = `translate3d(${position.x + offsetX}px, ${position.y + offsetY}px, 0) translate(-50%, -50%) rotate(${rotationRef.current}deg)`;
 
-      frameId = window.requestAnimationFrame(animate);
+      const distanceX = Math.abs(target.x - position.x);
+      const distanceY = Math.abs(target.y - position.y);
+
+      if (distanceX > 0.1 || distanceY > 0.1) {
+        frameId = window.requestAnimationFrame(animate);
+      } else {
+        position.x = target.x;
+        position.y = target.y;
+        frameId = 0;
+      }
     }
 
     window.addEventListener("pointermove", handlePointerMove);
     window.addEventListener("pointerover", handlePointerOver);
-    frameId = window.requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener("pointermove", handlePointerMove);
       window.removeEventListener("pointerover", handlePointerOver);
-      window.cancelAnimationFrame(frameId);
+      if (frameId) window.cancelAnimationFrame(frameId);
     };
   }, [isDocumentVisible, reducedMotion]);
 

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import "../archive.css";
 import { FootprintGuestbook } from "@/components/footprints/FootprintGuestbook";
 import { PageContainer } from "@/components/layout/PageContainer";
 

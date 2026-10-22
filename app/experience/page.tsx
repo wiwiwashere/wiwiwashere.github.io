@@ -9,6 +9,10 @@ const typeLabels = {
   program: "program"
 };
 
+const chronologicalExperienceItems = [...experienceItems].sort(
+  (first, second) => Date.parse(`1 ${second.startDate}`) - Date.parse(`1 ${first.startDate}`),
+);
+
 export default function ExperiencePage() {
   return (
     <PageContainer className="archive-page py-12">
@@ -52,8 +56,13 @@ export default function ExperiencePage() {
         </div>
 
         <div className="experience-archive-map">
-          {experienceItems.map((item, index) => (
-            <article key={item.id} className="experience-archive-card">
+          {chronologicalExperienceItems.map((item, index) => (
+            <article
+              key={item.id}
+              className="experience-archive-card"
+              data-experience-type={item.type}
+              style={{ gridRow: index + 1 }}
+            >
               <div className="experience-node-mark" aria-hidden="true" />
               <div className="experience-archive-card-inner">
                 <div className="experience-card-topline">

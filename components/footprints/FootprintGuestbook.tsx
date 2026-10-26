@@ -110,8 +110,9 @@ export function FootprintGuestbook() {
     if (error) {
       setStatus("Could not load footprints yet.");
     } else {
-      setFootprints(data ?? []);
-      setActiveId(data?.[0]?.id ?? null);
+      const loadedFootprints = data ?? [];
+      setFootprints(loadedFootprints);
+      setActiveId(loadedFootprints.at(-1)?.id ?? null);
       setStatus("");
     }
 

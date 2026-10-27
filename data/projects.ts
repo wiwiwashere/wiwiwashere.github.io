@@ -428,7 +428,7 @@ export const projects: Project[] = [
     role:
       "Contributed to the project concept, user flow, feature planning, and implementation of application functionality. Focused on making the experience intuitive and aligned with real user needs.",
     techStack: ["React", "JavaScript", "HTML", "CSS"],
-    tags: ["Full-Stack", "Team project"],
+    tags: ["Full-Stack", "Team Project"],
     features: [
       "Organizes ride information around user preferences"
     ],
@@ -463,7 +463,7 @@ export const projects: Project[] = [
     role:
       "Designed UI/UX for the mobile flow.",
     techStack: ["React Native", "Google Vision", "Gemini API"],
-    tags: ["Mobile", "AI / ML", "Team project"],
+    tags: ["Mobile", "AI / ML", "Team Project"],
     features: [
       "Mobile-first scan experience",
       "OCR-powered label extraction",

@@ -3,6 +3,6 @@ import { ProjectCard } from "./ProjectCard";
 
 export function ProjectGrid({ projects }: { projects: Project[] }) {
   return <div className="project-grid-motion grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-    {projects.map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}
+    {projects.map((project, index) => <ProjectCard key={project.id} project={project} index={index} total={projects.length} />)}
   </div>;
 }

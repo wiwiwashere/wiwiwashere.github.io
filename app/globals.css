@@ -1551,6 +1551,13 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   margin: 0;
 }
 
+.site-footer {
+  position: relative;
+  z-index: 10;
+  padding-bottom: 1.6rem;
+  font-family: var(--font-label);
+}
+
 @media (max-width: 1180px) {
   .home-archive-layout {
     grid-template-columns: 1fr;

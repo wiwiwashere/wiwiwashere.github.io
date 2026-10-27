@@ -98,11 +98,6 @@ export default function HomePage() {
             </aside>
           </section>
 
-          <footer className="home-poster-footer">
-            <span>*</span>
-            <p>© 2026 Winnie Lin</p>
-            <p>building soft things with strong intention.</p>
-          </footer>
         </section>
       </PageContainer>
     </>

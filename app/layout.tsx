@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 import { FloatingMusicPlayer } from "@/components/music/FloatingMusicPlayer";
 import { ButterflyCursor } from "@/components/layout/ButterflyCursor";
 import { MotionProvider } from "@/components/motion/MotionProvider";
@@ -44,6 +45,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <ButterflyCursor />
           <PageTransition />
           <main id="main-content" className="relative z-10 pt-24">{children}</main>
+          <Footer />
         </MotionProvider>
       </body>
     </html>

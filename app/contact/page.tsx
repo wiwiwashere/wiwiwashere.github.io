@@ -4,9 +4,9 @@ import { PageContainer } from "@/components/layout/PageContainer";
 import { contact } from "@/data/contact";
 
 const contactLinks = [
-  { label: "email", value: contact.email, href: `mailto:${contact.email}` },
-  { label: "github", value: "github.com/wiwiwashere", href: contact.github },
-  { label: "linkedin", value: "linkedin.com/in/winniellin", href: contact.linkedin }
+  { label: "linkedin", value: "linkedin.com/in/winniellin", href: contact.linkedin, action: "connect" },
+  { label: "email", value: contact.email, href: `mailto:${contact.email}`, action: "write" },
+  { label: "github", value: "github.com/wiwiwashere", href: contact.github, action: "browse" }
 ];
 
 export default function ContactPage() {
@@ -48,17 +48,12 @@ export default function ContactPage() {
               <p className="archive-kicker">{String(index + 1).padStart(2, "0")}</p>
               <h2>{item.label}</h2>
               <p>{item.value}</p>
-              <span>open -&gt;</span>
+              <span>{item.action} -&gt;</span>
             </a>
           ))}
         </div>
       </section>
 
-      <footer className="home-poster-footer">
-          <span>*</span>
-          <p>© 2026 Winnie Lin</p>
-          <p>building soft things with strong intention.</p>
-      </footer>
     </PageContainer>
   );
 }

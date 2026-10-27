@@ -83,11 +83,6 @@ export default function LifePage() {
         </InViewGroup>
       </section>
 
-      <footer className="home-poster-footer">
-          <span>*</span>
-          <p>© 2026 Winnie Lin</p>
-          <p>building soft things with strong intention.</p>
-        </footer>
     </PageContainer>
   );
 }

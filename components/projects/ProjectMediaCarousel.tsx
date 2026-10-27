@@ -32,8 +32,27 @@ export function ProjectMediaCarousel({ media = [] }: ProjectMediaCarouselProps) 
     setActiveIndex(index);
   }
 
+  function handleKeyDown(event: React.KeyboardEvent<HTMLElement>) {
+    if (count < 2) return;
+    const target = event.target;
+    if (target instanceof HTMLVideoElement || target instanceof HTMLIFrameElement) return;
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      showPrevious();
+    } else if (event.key === "ArrowRight") {
+      event.preventDefault();
+      showNext();
+    }
+  }
+
   return (
-    <section className="project-media-card project-detail-wide" aria-labelledby="project-media-title">
+    <section
+      className="project-media-card project-detail-wide"
+      aria-labelledby="project-media-title"
+      aria-roledescription="carousel"
+      tabIndex={count > 1 ? 0 : undefined}
+      onKeyDown={handleKeyDown}
+    >
       <div className="project-media-header">
         <div>
           <h2 id="project-media-title">Demo / Gallery</h2>
@@ -55,8 +74,8 @@ export function ProjectMediaCarousel({ media = [] }: ProjectMediaCarouselProps) 
         </div>
         {count > 1 ? (
           <div className="project-media-controls" aria-label="Media carousel controls">
-            <button type="button" onClick={showPrevious}>prev</button>
-            <button type="button" onClick={showNext}>next</button>
+            <button type="button" onClick={showPrevious} aria-label="Previous media (left arrow)">prev</button>
+            <button type="button" onClick={showNext} aria-label="Next media (right arrow)">next</button>
             {/* <Link onClick={showPrevious}>  -&gt; prev</Link>
             <Link onClick={showNext}> next -&gt;</Link> */}
           </div>

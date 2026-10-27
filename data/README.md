@@ -52,6 +52,7 @@ type Project = {
   startDate?: string;    // "June 2026" or "2026"
   endDate?: string;
   status?: "Completed" | "In Progress" | "Prototype";
+  award?: string;        // "Top 10 Finalist, Gator Hack V"
   githubUrl?: string;
   demoUrl?: string;
   imageUrl?: string;     // card fallback image if no media image
@@ -83,6 +84,7 @@ type Project = {
 - **startDate / endDate**: "June 2026" style (full or 3-letter month + year) or just "2026".
 - **status**: exactly `"Completed"`, `"In Progress"` or `"Prototype"`.
 - **featured**: `true` only if Winnie says so.
+- **award**: only for a real award Winnie gives you, written as "<Award>, <Event>" (e.g. "Top 10 Finalist, Gator Hack V"). It shows a round stamp on the card (award on top, event below), a banner under the title on the project page, and puts the project under the "Award Winning" filter automatically. Do not add "Award Winning" to `tags`.
 - **githubUrl / demoUrl / imageUrl**: empty strings `""` are tolerated in existing entries, but prefer leaving the field out when there's no value. Never guess a repo URL.
 
 ### media

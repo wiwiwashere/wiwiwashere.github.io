@@ -367,6 +367,26 @@
   text-transform: Snakecase;
 }
 
+.archive-hero p.project-award-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1.2rem 0 0;
+  line-height: 1.4;
+  border: 1px solid rgba(30, 43, 69, 0.18);
+  background: rgba(255, 225, 230, 0.58);
+  padding: 0.28rem 0.7rem;
+  color: #1e2b45;
+  font-family: var(--font-label);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-award-banner span {
+  color: #b85f7c;
+}
+
 .project-detail-actions {
   display: flex;
   flex-wrap: wrap;
@@ -570,6 +590,57 @@
   color: #b85f7c;
   font-size: 0.68rem;
   letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-archive-card {
+  position: relative;
+}
+
+.project-award-stamp {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  z-index: 2;
+  display: flex;
+  width: 5.8rem;
+  height: 5.8rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  border: 1px solid rgba(47, 68, 90, 0.42);
+  border-radius: 999px;
+  outline: 1px dashed rgba(184, 95, 124, 0.55);
+  outline-offset: -5px;
+  background: rgba(255, 245, 247, 0.94);
+  padding: 0.7rem;
+  color: #2f445a;
+  text-align: center;
+  transform: rotate(-8deg);
+  box-shadow: 0 4px 12px rgba(47, 68, 90, 0.08);
+}
+
+.project-award-stamp span:first-child {
+  color: #b85f7c;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.project-award-stamp strong {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.project-award-stamp span:last-child:not(:first-child) {
+  color: #b85f7c;
+  font-family: var(--font-label);
+  font-size: 0.5rem;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
   text-transform: uppercase;
 }
 

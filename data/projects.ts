@@ -26,6 +26,7 @@ export type Project = {
   startDate?: string;
   endDate?: string;
   status?: ProjectStatus;
+  award?: string;
   githubUrl?: string;
   demoUrl?: string;
   imageUrl?: string;
@@ -44,6 +45,7 @@ export const projectTags = [
   "Mobile",
   "Cybersecurity",
   "Team Project",
+  "Award Winning",
 ];
 
 export const projects: Project[] = [
@@ -101,6 +103,7 @@ export const projects: Project[] = [
     ],
     startDate: "Oct 2026",
     status: "Completed",
+    award: "Top 10 Finalist, Gator Hack V",
     githubUrl: "https://github.com/wiwiwashere/neuroSim",
     imageUrl: "/project/neurosim.png",
     featured: false,
@@ -213,6 +216,7 @@ export const projects: Project[] = [
       "Practiced designing model strategies for imbalanced and multi-scale datasets",
       // "Developed a stronger understanding of how AI can support scientific integrity and research trust",
     ],
+    award: "Kaggle Gold Medal, 11th of 1564 Teams",
     githubUrl: "",
     demoUrl: "",
     imageUrl: "",

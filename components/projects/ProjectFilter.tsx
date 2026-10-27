@@ -12,7 +12,7 @@ type ViewTransitionDocument = Document & {
 export function ProjectFilter({ projects }: { projects: Project[] }) {
   const [activeTag, setActiveTag] = useState("All");
   const { reducedMotion } = useMotionPreferences();
-  const filteredProjects = useMemo(() => activeTag === "All" ? projects : projects.filter((project) => project.tags.includes(activeTag)), [activeTag, projects]);
+  const filteredProjects = useMemo(() => activeTag === "All" ? projects : projects.filter((project) => activeTag === "Award Winning" ? Boolean(project.award) : project.tags.includes(activeTag)), [activeTag, projects]);
 
   function selectTag(tag: string) {
     if (tag === activeTag) return;

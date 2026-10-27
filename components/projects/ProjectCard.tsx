@@ -11,6 +11,7 @@ export function ProjectCard({ project, index = 0, total = 1 }: ProjectCardProps)
       className={`project-archive-card group flex h-full flex-col p-5 ${cardMedia ? "project-archive-card-with-media" : ""}`}
       style={{ viewTransitionName: `project-${project.id}` }}
     >
+      {project.award ? <AwardStamp award={project.award} /> : null}
       {cardMedia ? (
         <div className="project-card-media">
           <img src={cardMedia.src} alt={cardMedia.alt} />
@@ -34,6 +35,18 @@ export function ProjectCard({ project, index = 0, total = 1 }: ProjectCardProps)
         {/* {project.githubUrl ? <ButtonLink href={project.githubUrl} variant="secondary" external>View Code</ButtonLink> : null} */}
       </div>
     </article>
+  );
+}
+
+function AwardStamp({ award }: { award: string }) {
+  const [title, ...event] = award.split(", ");
+
+  return (
+    <p className="project-award-stamp" aria-label={`Award: ${award}`}>
+      <span aria-hidden="true">★</span>
+      <strong>{title}</strong>
+      {event.length ? <span>{event.join(", ")}</span> : null}
+    </p>
   );
 }
 

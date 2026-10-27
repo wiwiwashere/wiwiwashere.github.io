@@ -6,6 +6,12 @@ export function ProjectDetailHeader({ project }: { project: Project }) {
     <section className="archive-hero project-detail-hero">
       <div>
         <h1>{project.title}</h1>
+        {project.award ? (
+          <p className="project-award-banner">
+            <span aria-hidden="true">★</span>
+            {project.award.split(", ").join(" / ")}
+          </p>
+        ) : null}
       </div>
       <div className="archive-side-note">
         <span></span>

@@ -106,6 +106,11 @@ export const projects: Project[] = [
     featured: false,
     media: [
       {
+        type: "youtube",
+        src: "https://www.youtube.com/embed/9H6OWbzfhI4",
+        title: "neuroSim demo",
+      },
+      {
         type: "image",
         src: "/project/neurosim.png",
         title: "neuroSim thumbnail",

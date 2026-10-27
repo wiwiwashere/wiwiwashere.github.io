@@ -1,4 +1,3 @@
-import Link from "next/link";
 import "../archive.css";
 import { FootprintGuestbook } from "@/components/footprints/FootprintGuestbook";
 import { PageContainer } from "@/components/layout/PageContainer";
@@ -8,7 +7,6 @@ export default function FootprintsPage() {
     <PageContainer className="archive-page footprint-page py-12">
       <section className="archive-hero archive-hero-blue footprint-hero">
         <div>
-          <p className="archive-kicker"></p>
           <h1>Footprints</h1>
           <p>
             Leave a mark in the guestbook!
@@ -17,7 +15,7 @@ export default function FootprintsPage() {
         <div className="archive-side-note">
           <span>stamp</span>
           <strong>{"\u029A\u025E"}</strong>
-          <Link href="/">back home -&gt;</Link>
+          <a href="#leave-footprint">leave yours -&gt;</a>
         </div>
       </section>
 

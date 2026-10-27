@@ -7,8 +7,9 @@ export function ProjectCard({ project, index = 0, total = 1 }: ProjectCardProps)
   const cardMedia = getProjectCardMedia(project);
 
   return (
-    <article
-      className={`project-archive-card group flex h-full flex-col p-5 ${cardMedia ? "project-archive-card-with-media" : ""}`}
+    <Link
+      href={`/projects/${project.slug}`}
+      className="project-archive-card project-archive-card-with-media group flex h-full flex-col p-5"
       style={{ viewTransitionName: `project-${project.id}` }}
     >
       {project.award ? <AwardStamp award={project.award} /> : null}
@@ -16,7 +17,12 @@ export function ProjectCard({ project, index = 0, total = 1 }: ProjectCardProps)
         <div className="project-card-media">
           <img src={cardMedia.src} alt={cardMedia.alt} />
         </div>
-      ) : null}
+      ) : (
+        <div className="project-card-media project-card-placeholder" aria-hidden="true">
+          <strong>{project.title.split(" ")[0]}</strong>
+          <span>no preview yet</span>
+        </div>
+      )}
       <div className="flex items-center justify-between gap-4">
         <p className="archive-kicker">{String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}</p>
         <p className="project-archive-tag">{project.tags[0]}</p>
@@ -29,12 +35,12 @@ export function ProjectCard({ project, index = 0, total = 1 }: ProjectCardProps)
       </div>
       <div className="mt-7 flex flex-wrap gap-3">
         {/* <ButtonLink href={`/projects/${project.slug}`}>Read More</ButtonLink> */}
-        <Link href={`/projects/${project.slug}`} className="home-section-action">
+        <span className="home-section-action">
           read more -&gt;
-        </Link>
+        </span>
         {/* {project.githubUrl ? <ButtonLink href={project.githubUrl} variant="secondary" external>View Code</ButtonLink> : null} */}
       </div>
-    </article>
+    </Link>
   );
 }
 

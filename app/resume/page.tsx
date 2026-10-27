@@ -9,10 +9,9 @@ export default function ResumePage() {
     <PageContainer className="archive-page py-12">
       <section className="archive-hero archive-hero-contact">
         <div>
-          <p className="archive-kicker"></p>
           <h1>Resume</h1>
           <p>
-            A more formal snapshot of the my work
+            A more formal snapshot of my work.
           </p>
         </div>
         <div className="archive-side-note">
@@ -22,13 +21,13 @@ export default function ResumePage() {
         </div>
       </section>
 
-      {/* <section className="archive-section resume-archive-card">
+      <section className="archive-section resume-archive-card">
         <div className="archive-section-heading">
           <span>*</span>
           <h2>preview</h2>
         </div>
         <ResumeViewer />
-      </section> */}
+      </section>
 
     </PageContainer>
   );

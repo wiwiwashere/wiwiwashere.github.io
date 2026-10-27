@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import "../../archive.css";
 import { PageContainer } from "@/components/layout/PageContainer";
@@ -16,6 +17,9 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
   const features = project.features ?? [];
   const challenges = project.challenges ?? [];
   const lessons = project.insights ?? [];
+  const projectIndex = projects.findIndex((item) => item.slug === project.slug);
+  const previousProject = projects[(projectIndex - 1 + projects.length) % projects.length];
+  const nextProject = projects[(projectIndex + 1) % projects.length];
   return (
     <PageContainer className="project-detail-page py-14">
       <ProjectDetailHeader project={project} />
@@ -56,6 +60,15 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                 <div>
                   <dt>Status</dt>
                   <dd>{project.status}</dd>
+                </div>
+              ) : null}
+              {project.githubUrl || project.demoUrl ? (
+                <div>
+                  <dt>Links</dt>
+                  <dd className="project-story-links">
+                    {project.githubUrl ? <a href={project.githubUrl} target="_blank" rel="noreferrer">view code -&gt;</a> : null}
+                    {project.demoUrl ? <a href={project.demoUrl} target="_blank" rel="noreferrer">live demo -&gt;</a> : null}
+                  </dd>
                 </div>
               ) : null}
             </dl>
@@ -105,6 +118,17 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
               ) : null}
             </div>
           ) : null}
+
+          <nav className="project-pagination" aria-label="More projects">
+            <Link href={`/projects/${previousProject.slug}`} rel="prev">
+              <span>&lt;- previous</span>
+              <strong>{previousProject.title}</strong>
+            </Link>
+            <Link href={`/projects/${nextProject.slug}`} rel="next">
+              <span>next -&gt;</span>
+              <strong>{nextProject.title}</strong>
+            </Link>
+          </nav>
         </article>
       </div>
     </PageContainer>

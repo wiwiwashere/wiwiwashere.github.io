@@ -19,7 +19,6 @@ export default function ExperiencePage() {
     <PageContainer className="archive-page py-12">
       <section className="archive-hero archive-hero-blue">
         <div>
-          <p className="archive-kicker"></p>
           <h1>Experiences</h1>
           <p>
             A growth map that collects my work, leadership, and other technical experiences.
@@ -28,7 +27,7 @@ export default function ExperiencePage() {
         <div className="archive-side-note">
           <span>entries</span>
           <strong>{experienceItems.length.toString().padStart(2, "0")}</strong>
-          <Link href="/">back home -&gt;</Link>
+          <Link href="/resume">view resume -&gt;</Link>
         </div>
       </section>
 

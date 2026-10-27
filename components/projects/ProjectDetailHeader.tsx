@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Project } from "@/data/projects";
 
 export function ProjectDetailHeader({ project }: { project: Project }) {
+  const year = project.startDate?.match(/\d{4}/)?.[0];
+
   return (
     <section className="archive-hero project-detail-hero">
       <div>
@@ -14,9 +16,11 @@ export function ProjectDetailHeader({ project }: { project: Project }) {
         ) : null}
       </div>
       <div className="archive-side-note">
-        <span></span>
-        <strong>↩</strong>
-        <Link href="/projects">back projects -&gt;</Link>
+        <span>{project.status ? project.status.toLowerCase() : "case study"}</span>
+        <strong>{year ?? "↩"}</strong>
+        {project.githubUrl ? <a href={project.githubUrl} target="_blank" rel="noreferrer">view code -&gt;</a> : null}
+        {project.demoUrl ? <a href={project.demoUrl} target="_blank" rel="noreferrer">live demo -&gt;</a> : null}
+        <Link href="/projects">all projects -&gt;</Link>
       </div>
     </section>
   );

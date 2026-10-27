@@ -1,5 +1,5 @@
-import Link from "next/link";
 import "../archive.css";
+import { CopyEmailButton } from "@/components/contact/CopyEmailButton";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { contact } from "@/data/contact";
 
@@ -14,7 +14,6 @@ export default function ContactPage() {
     <PageContainer className="archive-page py-12">
       <section className="archive-hero archive-hero-contact">
         <div>
-          <p className="archive-kicker"></p>
           <h1>Let&apos;s connect</h1>
           <p>
             I&apos;m someone who values connections with genuine people, 
@@ -27,7 +26,7 @@ export default function ContactPage() {
         <div className="archive-side-note">
           <span>open to</span>
           <strong>chat</strong>
-          <Link href="/">back home -&gt;</Link>
+          <CopyEmailButton email={contact.email} />
         </div>
       </section>
 

@@ -156,7 +156,7 @@ button { font: inherit; }
 
 /* Hide the embedded resume viewer on small screens. */
 @media (max-width: 768px) {
-  .resume-viewer {
+  .resume-archive-card {
     display: none;
   }
 }
@@ -580,7 +580,7 @@ body {
   --sky-blue: #c8d9e6;
   --beige: #f5efeb;
   --ink: #1f2230;
-  --pink-strong: #b85f7c;
+  --pink-strong: #9e4466;
   --line: rgba(47, 68, 90, 0.16);
 }
 
@@ -771,7 +771,7 @@ footer a:hover {
 }
 
 .site-poster-nav a:hover {
-  color: #b85f7c;
+  color: #9e4466;
 }
 
 .mobile-menu-button,
@@ -791,7 +791,7 @@ footer a:hover {
 
 .mobile-menu-button:hover,
 .mobile-menu-button[aria-expanded="true"] {
-  color: #b85f7c;
+  color: #9e4466;
 }
 
 .mobile-nav-list {
@@ -1112,7 +1112,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 }
 
 .home-section-action {
-  color: #b85f7c;
+  color: #9e4466;
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: lowercase;
@@ -1289,7 +1289,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
 .home-card-link {
   display: inline-block;
   margin-top: 1rem;
-  color: #b85f7c;
+  color: #9e4466;
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: lowercase;
@@ -1536,7 +1536,7 @@ body:has(.home-reference-page) .global-butterfly .butterfly-trail-two {
   align-items: end;
   gap: 1rem;
   padding: 2rem 1.35rem 0;
-  color: rgba(30, 43, 69, 0.5);
+  color: #2f445a;
   font-size: 0.68rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;

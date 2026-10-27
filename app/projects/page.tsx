@@ -1,15 +1,14 @@
-import Link from "next/link";
 import "../archive.css";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { ProjectFilter } from "@/components/projects/ProjectFilter";
 import { projects } from "@/data/projects";
+import { contact } from "@/data/contact";
 
 export default function ProjectsPage() {
   return (
     <PageContainer className="archive-page py-12">
       <section className="archive-hero archive-hero-blue">
         <div>
-          <p className="archive-kicker"></p>
           <h1>Projects</h1>
           {/* <p>
             The Home page only holds a few selected oroject. This is the full collection.
@@ -18,7 +17,7 @@ export default function ProjectsPage() {
         <div className="archive-side-note">
           <span>project count</span>
           <strong>{projects.length.toString().padStart(2, "0")}</strong>
-          <Link href="/">back home -&gt;</Link>
+          <a href={contact.github} target="_blank" rel="noreferrer">github -&gt;</a>
         </div>
       </section>
 

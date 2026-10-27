@@ -15,13 +15,13 @@ export default function LifePage() {
     <PageContainer className="archive-page py-12">
       <section className="archive-hero archive-hero-pink">
         <div>
-          <p className="archive-kicker"></p>
           <h1>Moments in Life</h1>
         </div>
         <div className="archive-side-note">
           <span>life fragments</span>
           <strong>{lifeEntries.length.toString().padStart(2, "0")}</strong>
-          <Link href="/">back home -&gt;</Link>
+          <span>latest · {lifeEntries[0]?.date}</span>
+          <Link href="/footprints">leave a footprint -&gt;</Link>
         </div>
       </section>
 

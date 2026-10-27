@@ -9,8 +9,8 @@ export function ResumeViewer() {
       title="Resume preview"
       loading="lazy"
       allow="autoplay"
-      width = "100%"
-      height = "600px"
+      width="100%"
+      height="900"
     />
     {/* <object data={contact.resumeUrl} type="application/pdf" width="100%" height="600px"> </object> */}
   </div>;

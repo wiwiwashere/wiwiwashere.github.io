@@ -25,6 +25,17 @@ const moodOptions = [
   stamps.butterflyI,
   stamps.swirl
 ];
+const stampLabels: Record<string, string> = {
+  [stamps.starSolid]: "solid star",
+  [stamps.starOpen]: "open star",
+  [stamps.starEight]: "eight-point star",
+  [stamps.starTen]: "sparkle",
+  [stamps.heart]: "heart",
+  [stamps.butterfly]: "butterfly",
+  [stamps.butterflyI]: "butterfly with body",
+  [stamps.swirl]: "swirl"
+};
+const unavailableMessage = "The guestbook is resting right now. Please try again later.";
 const maxMessageLength = 50;
 const submitCooldownMs = 10000; // 10 seconds
 
@@ -96,7 +107,8 @@ export function FootprintGuestbook() {
 
   async function loadFootprints() {
     if (!supabase) {
-      setStatus("Supabase env vars are missing.");
+      console.warn("Footprints: Supabase env vars are missing.");
+      setStatus(unavailableMessage);
       setIsLoading(false);
       return;
     }
@@ -108,7 +120,8 @@ export function FootprintGuestbook() {
       .limit(40);
 
     if (error) {
-      setStatus("Could not load footprints yet.");
+      console.error("Footprints: could not load", error);
+      setStatus("The sky is cloudy right now. Try refreshing in a moment.");
     } else {
       const loadedFootprints = data ?? [];
       setFootprints(loadedFootprints);
@@ -137,7 +150,8 @@ export function FootprintGuestbook() {
     const safeMood = getSafeMood(mood);
 
     if (!supabase) {
-      setStatus("Supabase env vars are missing.");
+      console.warn("Footprints: Supabase env vars are missing.");
+      setStatus(unavailableMessage);
       return;
     }
 
@@ -171,7 +185,8 @@ export function FootprintGuestbook() {
       .single();
 
     if (error) {
-      setStatus("The footprint did not save. Check your Supabase insert policy.");
+      console.error("Footprints: could not save", error);
+      setStatus("Your footprint didn't land. Please try again in a moment.");
     } else if (data) {
       setFootprints((current) => [data, ...current]);
       setActiveId(data.id);
@@ -241,7 +256,6 @@ export function FootprintGuestbook() {
                   aria-label={`Open footprint from ${footprint.name || "someone"}`}
                   title={`${footprint.name ?? "someone"}: ${footprint.message}`}
                   onClick={() => setActiveId(footprint.id)}
-                  onMouseEnter={() => setActiveId(footprint.id)}
                 >
                   {getSafeMood(footprint.mood)}
                 </button>
@@ -254,7 +268,7 @@ export function FootprintGuestbook() {
       </section>
 
       <section className="footprint-board">
-        <form className="footprint-form" onSubmit={handleSubmit}>
+        <form id="leave-footprint" className="footprint-form" onSubmit={handleSubmit}>
           <p className="archive-kicker">leave a footprint</p>
           <label>
             name
@@ -284,7 +298,7 @@ export function FootprintGuestbook() {
               autoComplete="off"
             />
           </label>
-          <div className="footprint-stamp-picker" aria-label="Choose a stamp">
+          <div className="footprint-stamp-picker" role="group" aria-label="Choose a stamp">
             {moodOptions.map((option) => (
               <button
                 key={option}
@@ -292,6 +306,7 @@ export function FootprintGuestbook() {
                 className={mood === option ? "is-selected" : ""}
                 onClick={() => setMood(option)}
                 aria-pressed={mood === option}
+                aria-label={stampLabels[option]}
               >
                 {option}
               </button>
@@ -318,7 +333,6 @@ export function FootprintGuestbook() {
                 className={`footprint-note ${activeId === footprint.id ? "is-active" : ""} ${justAddedId === footprint.id ? "is-newest" : ""}`}
                 tabIndex={0}
                 onClick={() => setActiveId(footprint.id)}
-                onMouseEnter={() => setActiveId(footprint.id)}
                 onFocus={() => setActiveId(footprint.id)}
               >
                 <span className="footprint-note-stamp">{getSafeMood(footprint.mood)}</span>

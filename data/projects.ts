@@ -48,6 +48,71 @@ export const projectTags = [
 
 export const projects: Project[] = [
   {
+    id: "neurosim",
+    slug: "neurosim-disease-circuit-simulator",
+    title: "neuroSim",
+    subtitle: "Disease Circuit Simulator for the FlyWire Connectome",
+    cardSummary:
+      "Built a tool that links Parkinson's genes to affected fruit fly neurons and simulates how their loss spreads through the FlyWire connectome.",
+    description:
+      "A disease circuit simulator that maps human disease genes to affected fruit fly neurons and ranks which brain regions lose an unusually large share of input compared with chance.",
+    problem:
+      "Parkinson's genes such as PINK1 and PRKN are studied in fruit flies, where broken copies cause the loss of specific dopamine neuron clusters. The 2024 FlyWire project published a complete adult fly brain wiring diagram, but there was no simple way to trace which downstream circuits depend most on those lost neurons and decide what to investigate next.",
+    solution:
+      "neuroSim maps a human gene to its fly ortholog, the dopamine clusters lost in published fly models, and individual FlyWire neurons, with a citation and confidence at every link. It then removes those neurons' output, measures input loss across the brain within 3 synapses, and compares each result against 200 runs that remove random dopamine neurons.",
+    role:
+      "Built the infrastructure, including data prep, seed resolution, the simulation pipeline and caching, validation, the FastAPI backend, the Gemma agent, paper upload, custom diseases, all frontend screens and the tests.",
+    techStack: [
+      "Python",
+      "FastAPI",
+      "Next.js",
+      "TypeScript",
+      "Gemma",
+      "Gemini API",
+      "React",
+      "Pandas",
+      "NumPy",
+      "SciPy",
+      "NetworkX",
+      "Three.js",
+      "Tailwind CSS",
+    ],
+    tags: ["AI / ML", "Full-Stack", "Data", "Team Project"],
+    features: [
+      "Gene to fly ortholog to dopamine cluster to FlyWire neuron mapping with citations and confidence scores",
+      "Linear propagation model over 3 synapses with decay 0.5",
+      "Z-scores and Benjamini-Hochberg correction against 200 random dopamine-neuron baselines",
+      "Network view and 3D connectome that replays degeneration over time",
+      "PINK1 vs PRKN gene comparison",
+      "Gemma 4 agent that calls the same tools as the screens and proposes evidence rows from uploaded papers for human approval",
+      "Custom diseases added as a small table, with Huntington's included as an example",
+    ],
+    challenges: [
+      "Working around free-tier API limits and server errors with retries, a fallback model and time caps",
+      "Replacing predicted neurotransmitter labels that mislabeled about 5,170 Kenyon cells as dopaminergic",
+      "Building a crosswalk with confidence scores between paper cluster names and FlyWire cell types",
+      "Handling 64-bit neuron IDs as strings to avoid precision loss in JavaScript",
+      "Choosing a random dopamine-neuron baseline so dense hubs like the mushroom body were not falsely flagged",
+    ],
+    insights: [
+      "The baseline is what makes results meaningful, since raw impact favors densely connected hubs",
+      "A small open model can be useful when grounded in tools and barred from inventing numbers",
+      "A simple, explainable model can be more useful than a realistic but opaque one",
+    ],
+    startDate: "Oct 2026",
+    status: "Completed",
+    githubUrl: "https://github.com/wiwiwashere/neuroSim",
+    imageUrl: "/project/neurosim.png",
+    featured: false,
+    media: [
+      {
+        type: "image",
+        src: "/project/neurosim.png",
+        title: "neuroSim thumbnail",
+      },
+    ],
+  },
+  {
     id: "iot",
     slug: "iot-network-intrusion-detection",
     title: "IoT Network Intrusion Detection",

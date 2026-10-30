@@ -221,7 +221,20 @@ export const projects: Project[] = [
     ],
     startDate: "June 2026",
     status: "In Progress",
-    featured: true
+    imageUrl: "/project/iot-final-presentation.png",
+    featured: true,
+    media: [
+      {
+        type: "image",
+        src: "/project/iot-final-presentation.png",
+        title: "IoT Network Intrusion Detection final presentation",
+      },
+      {
+        type: "drive",
+        src: "https://docs.google.com/presentation/d/1KvN-076MVYosK_zvPfpkhNJVVP72ANQiaD3W7d-4X1s/preview",
+        title: "Final presentation",
+      },
+    ],
   },
   {
     id: "recod-ai",

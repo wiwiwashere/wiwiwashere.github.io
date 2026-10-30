@@ -121,6 +121,56 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: "scioly-hub",
+    slug: "gator-science-olympiad-volunteer-hub",
+    title: "Gator Science Olympiad Volunteer Hub",
+    subtitle: "Volunteer and Tournament Operations Platform",
+    cardSummary:
+      "Built a full-stack operations hub that centralizes applications, assignments, resources, communications, and contribution history for Gator Science Olympiad.",
+    description:
+      "A full-stack volunteer operations platform that centralizes role applications, tournament assignments, shared resources, and participant management for Gator Science Olympiad.",
+    problem:
+      "Running a Science Olympiad tournament required organizers to repeatedly answer questions and coordinate test writers, volunteers, assignments, and resources across disconnected channels.",
+    solution:
+      "The hub gives volunteers and test writers accounts where they can apply, follow their application status, review past contributions, and access published assignments and resources. Organizer workspaces manage participants and tournament information from the same system.",
+    role:
+      "Designed and built the platform independently, translating workflows learned on UF Science Olympiad's executive board into role-based applicant, participant, and organizer experiences.",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Supabase",
+      "React",
+      "Tailwind CSS",
+      "Vercel",
+      "Resend",
+    ],
+    tags: ["Full-Stack", "Backend"],
+    features: [
+      "Account creation and role-based access",
+      "Applications for event supervisors, test writers, and volunteers",
+      "Application status and contribution history tracking",
+      "Published tournament assignments and preparation resources",
+      "Organizer tools for participant and tournament management",
+      "Communication and notification workflows",
+    ],
+    insights: [
+      "Direct experience with a workflow made it easier to identify which repeated questions could become self-service",
+      "Continuous user feedback helps an operations platform stay aligned with the people who rely on it",
+    ],
+    startDate: "Aug 2026",
+    status: "In Progress",
+    demoUrl: "https://supervisors.gatorscienceolympiad.com/",
+    imageUrl: "/project/scioly-hub.png",
+    featured: false,
+    media: [
+      {
+        type: "image",
+        src: "/project/scioly-hub.png",
+        title: "Gator Science Olympiad Volunteer Hub homepage",
+      },
+    ],
+  },
+  {
     id: "iot",
     slug: "iot-network-intrusion-detection",
     title: "IoT Network Intrusion Detection",

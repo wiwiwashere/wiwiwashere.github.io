@@ -134,5 +134,19 @@ export const experienceItems: Experience[] = [
       // "Helped organize resources and processes to support volunteers, event supervisors, and competitors.",
     ],
     skills: ["Coordination", "Operations", "STEM Outreach"],
+  },
+  {
+    id: "4g-net",
+    title: "Website Developer Intern",
+    organization: "4G Net Inc.",
+    type: "technical",
+    startDate: "May 2024",
+    endDate: "Aug 2024",
+    location: "Miami, FL",
+    // highlight: "Built an e-commerce website using foundational web technologies.",
+    description: [
+      "Built an e-commerce website using HTML, CSS, and JavaScript.",
+    ],
+    skills: ["HTML", "CSS", "JavaScript"],
   }
 ];
